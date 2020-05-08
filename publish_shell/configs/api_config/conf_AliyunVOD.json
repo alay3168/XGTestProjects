@@ -1,0 +1,12 @@
+{
+"NVRIp":"10.58.123.42",
+"NVRPort":"8000",
+"User":"admin",
+"PassWD":"abc123456",
+"Ip":"10.58.122.238",
+"Port":"8999",
+"AccessKey":"LTAIbIXzJ2U4K3gj",
+"AccessKeySecret":"WDHcRuAqU1wrU2V1fMrTGX7CKXY399",
+"BasePath":"/var/tmp/AliyunVOD/",
+"FilePeriod":48
+}

@@ -1,0 +1,115 @@
+#!/usr/bin/env python
+import base64
+import glob
+import hashlib
+import logging
+import os
+import sys
+
+import requests
+
+HOMEY_ADDRRESS = "http://10.58.150.6:9104"
+
+logging.basicConfig(level=logging.DEBUG)
+
+
+def upload(pic_path, timestamp, cam_info, full=False):
+    img_b64 = ''
+
+    with open(pic_path, 'rb') as fd:
+        data = fd.read()
+        img_b64 = base64.b64encode(data)
+
+    header = {
+        'Content-Type': "application/x-www-form-urlencoded",
+        'Connection': 'Keep-Alive'
+    }
+
+    if full:
+        img_name = os.path.basename(pic_path).replace(".full.jpg", "").split('.')[0] + "_YT.jpg"
+    else:
+        img_name = os.path.basename(pic_path).split('.')[0] + "_0.jpg"
+
+    # cam_info = "c902a939-c1f0-4c14-8b48-b85c6daf1476"
+
+    to_md5 = "camera_uuid=%s&day_night=day&face_body=face&image=%s&image_name=%s&time=%s&code=123456" % (
+        cam_info, img_b64, img_name, timestamp)
+
+    md5 = hashlib.md5()
+    md5.update(to_md5)
+    md5_res = md5.hexdigest()
+
+    url = "%s/api/v1/imagelogs/logs" % (HOMEY_ADDRRESS)
+
+    params = {
+        "access_token": md5_res,
+        "index": "10000"
+    }
+
+    data = {
+        "camera_uuid": (None, cam_info),
+        "day_night": (None, "day"),
+        "face_body": (None, "face"),
+        "image": (None, img_b64),
+        "time": (None, timestamp),
+        "path": (None, ""),
+        "image_name": (None, img_name)
+    }
+
+    logging.info("load image_file:%s, image_name:%s", pic_path, img_name)
+
+    resp = requests.post(url, params=params, files=data, verify=True)
+
+    logging.info("code=%d,msg=%s", resp.status_code, resp.content)
+
+    try:
+        pass
+        # os.remove(pic_path)
+    except:
+        logging.error("could not remove file %s", pic_path)
+
+
+def get_file_mtime(file_path):
+    try:
+        stat = os.stat(file_path)
+    except Exception as e:
+        raise e
+
+    return "%f" % stat.st_mtime
+
+
+def file_fail_or_uploaded(path):
+    try:
+        if os.path.exists(path + ".fail"):
+            return True
+        if os.path.exists(path + ".uploaded"):
+            return True
+    except Exception:
+        return True
+
+    return False
+
+
+def main():
+    assert len(sys.argv) == 2
+    folder = sys.argv[1]
+    files = glob.glob(folder + "/*.jpg")
+    files = [f for f in files if not file_fail_or_uploaded(f)]
+    logging.info("found %d files in %s ", len(files), folder)
+
+    for f in files:
+        try:
+            epoch = get_file_mtime(f)
+            upload(f, epoch, "00000000-0000-0000-0000-000000000001",
+                   f.find("full") > 0)
+            with open(f + ".uploaded", 'w') as fd:
+                pass
+
+            logging.info("%s uploaded", f)
+
+        except Exception:
+            logging.error("could not upload file %s", f)
+
+
+if __name__ == '__main__':
+    main()

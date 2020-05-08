@@ -1,0 +1,411 @@
+version: "2.3"
+services:
+  OperationManage:
+    image: ${XGFACE_ENV}
+    container_name: ${COMPOSE_NAME}_OperationManage
+    privileged: true
+    restart: always
+    runtime: nvidia
+    volumes:
+      - ./binary:/workspace
+    command:
+      - /bin/bash
+      - -c
+      - chown -R root /workspace && chgrp -R root /workspace && cd /workspace/OperationManage && ./OperationManage >> /workspace/OperationManage.log 2>&1
+    depends_on:
+      - nsqd
+      - nsqd2
+      - mysql
+      - redis
+      - getway
+      - xgface
+      - xgindex_1
+      - xgindex_2
+  xgface:
+    image: ${XGFACE_ENV}
+    container_name: ${COMPOSE_NAME}_xgface
+    privileged: true
+    restart: always
+    ports:
+      - ${XGFACE_PORT}:50000
+    runtime: nvidia
+    volumes:
+      - ./binary/xgface_server:/workspace
+    command:
+      - /bin/bash
+      - -c
+      - chown -R root /workspace && chgrp -R root /workspace && cd /workspace/Solace/build/bin && ./xgface_server --port=50000 --gpu_no=$GPU_NO  >> /workspace/xgface.log 2>&1
+  xgindex_1:
+    image: ${XGINDEX_ENV}
+    container_name: ${COMPOSE_NAME}_xgindex_1
+    restart: always
+    ports:
+      - ${XGINDEX1_PORT}:50001
+    volumes:
+      - ./binary/index_server_1:/workspace
+      - ./binary/index_server_1/TheGood/libxgindex.so:/usr/lib/libxgindex.so
+      - ./binary/index_server_1/TheGood/libflann_cpp.so:/usr/lib/libflann_cpp.so
+      - ./binary/index_server_1/TheGood/libflann_cpp.so.1.9:/usr/lib/libflann_cpp.so.1.9
+      - ./binary/index_server_1/TheGood/libflann_cpp.so.1.9.1:/usr/lib/libflann_cpp.so.1.9.1
+    command:
+      - /bin/bash
+      - -c
+      - chown -R root /workspace && chgrp -R root /workspace && cd /workspace/TheGood/service && ./index_server 50001 >> /workspace/xgindex_50001.log 2>&1
+  xgindex_2:
+    image: ${XGINDEX_ENV}
+    container_name: ${COMPOSE_NAME}_xgindex_2
+    restart: always
+    ports:
+      - ${XGINDEX2_PORT}:50002
+    volumes:
+      - ./binary/index_server_2:/workspace
+      - ./binary/index_server_2/TheGood/libxgindex.so:/usr/lib/libxgindex.so
+      - ./binary/index_server_1/TheGood/libflann_cpp.so:/usr/lib/libflann_cpp.so
+      - ./binary/index_server_1/TheGood/libflann_cpp.so.1.9:/usr/lib/libflann_cpp.so.1.9
+      - ./binary/index_server_1/TheGood/libflann_cpp.so.1.9.1:/usr/lib/libflann_cpp.so.1.9.1
+    command:
+      - /bin/bash
+      - -c
+      - chown -R root /workspace && chgrp -R root /workspace && cd /workspace/TheGood/service && ./index_server 50002 >> /workspace/xgindex_50002.log 2>&1
+  openresty:
+    image: ${OPENRESTY_ENV}
+    container_name: ${COMPOSE_NAME}_openresty
+    restart: always
+    ports:
+      - ${OPENRESTY_PORT_1}:80
+      - ${OPENRESTY_PORT_2}:443
+    depends_on:
+      - xgface
+      - xgindex_1
+      - xgindex_2
+      - mysql
+      - redis
+      - nsqlookupd
+      - nsqd
+      - nsqd2
+      - nsqadmin
+      - WebSystemImageService
+      - StaffRepository
+      - AlarmSystem
+      - authentication
+      - DeviceManager
+      - nvr
+      - RtspClient
+      - MapManager
+      - ImageRetrieve
+      - getway
+      - Ftp
+      - FtpImage
+      - BodyDetect
+      - OperationManage
+    volumes:
+      - ${IMAGE_DIR}:/home/image/cameraimages
+      - ./openresty/nginx/logs:/usr/local/openresty/nginx/logs
+      - ./openresty/nginx/conf/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
+      - ./openresty/nginx/conf/AccessAuth:/usr/local/openresty/nginx/conf/AccessAuth
+      - ./openresty/nginx/www:/usr/local/openresty/nginx/html
+      - ${RTSP_DIR}:/var/tmp/RTSP
+  mysql:
+    image: ${MYSQL_ENV}
+    container_name: ${COMPOSE_NAME}_mysql
+    restart: always
+    ports:
+      - ${MYSQL_PORT}:3306
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/conf/my.cnf:/etc/my.cnf
+    environment:
+      MYSQL_USER: puppy
+      MYSQL_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: xgface
+  redis:
+    image: ${REDIS_ENV}
+    container_name: ${COMPOSE_NAME}_redis
+    restart: always
+    ports:
+      - ${REDIS_PORT}:6379
+    volumes:
+      - ./redis/data:/data
+    command: redis-server --appendonly yes --appendfsync always
+  nsqlookupd:
+    image: ${NSQ_ENV}
+    container_name: ${COMPOSE_NAME}_nsqlookupd
+    restart: always
+    command: /nsqlookupd
+  nsqd:
+    image: ${NSQ_ENV}
+    container_name: ${COMPOSE_NAME}_nsqd
+    restart: always
+    command: /nsqd --data-path=/data -max-msg-size=1510000 --lookupd-tcp-address=nsqlookupd:4160
+    depends_on:
+      - nsqlookupd
+    volumes:
+      - ./nsq/nsqd/data:/data
+    ports:
+      - ${NSQD_PORT_1}:4150
+      - ${NSQD_PORT_2}:4151
+  nsqd2:
+    image: ${NSQ_ENV}
+    container_name: ${COMPOSE_NAME}_nsqd2
+    restart: always
+    command: /nsqd --data-path=/data -max-msg-size=1510000 --lookupd-tcp-address=nsqlookupd:4160
+    depends_on:
+      - nsqlookupd
+    volumes:
+      - ./nsq/nsqd2/data:/data
+    ports:
+      - ${NSQD2_PORT_1}:4150
+      - ${NSQD2_PORT_2}:4151
+  nsqadmin:
+    image: ${NSQ_ENV}
+    container_name: ${COMPOSE_NAME}_nsqadmin
+    restart: always
+    command: /nsqadmin --lookupd-http-address=nsqlookupd:4161
+    depends_on:
+      - nsqlookupd
+    ports:
+      - ${NSQADMIN_PORT}:4171
+  WebSystemImageService:
+    image: ${SERVICE_ENV_V2}
+    container_name: ${COMPOSE_NAME}_WebSystemImageService
+    restart: always
+    volumes:
+      - ${IMAGE_DIR}:/home/root/image
+      - ./binary:/workspace
+    ports:
+      - ${WEBSYSIMG_PORT}:9004
+    command:
+      - /bin/bash
+      - -c
+      - chown -R root /home/root/image && chgrp -R root /home/root/image && chown -R root /workspace && chgrp -R root /workspace && cd /workspace/WebSystemImageService && ./WebSystemImageService >> /workspace/Websysimg.log 2>&1
+    depends_on:
+      - nsqd
+      - nsqd2
+      - mysql
+      - redis
+      - xgface
+      - xgindex_1
+      - xgindex_2
+  StaffRepository:
+    image: ${SERVICE_ENV_V2}
+    container_name: ${COMPOSE_NAME}_StaffRepository
+    restart: always
+    volumes:
+      - ${IMAGE_DIR}:/home/root/image
+      - ./binary:/workspace
+    command:
+      - /bin/bash
+      - -c
+      - chown -R root /home/root/image && chgrp -R root /home/root/image && chown -R root /workspace && chgrp -R root /workspace && cd /workspace/StaffRepository && ./StaffRepository >> /workspace/Staffrepository.log 2>&1
+    depends_on:
+      - nsqd
+      - nsqd2
+      - mysql
+      - redis
+      - xgface
+      - xgindex_1
+      - xgindex_2
+  AlarmSystem:
+    image: ${SERVICE_ENV_V2}
+    container_name: ${COMPOSE_NAME}_AlarmSystem
+    restart: always
+    ports:
+      - ${ALARM_PORT}:9005
+    volumes:
+      - ${IMAGE_DIR}:/home/root/image
+      - ./binary:/workspace
+    command:
+      - /bin/bash
+      - -c
+      - chown -R root /home/root/image && chgrp -R root /home/root/image && chown -R root /workspace && chgrp -R root /workspace && cd /workspace/AlarmSystem && ./AlarmSystem >> /workspace/AlarmSystem.log 2>&1
+    depends_on:
+      - nsqd
+      - nsqd2
+      - mysql
+      - redis
+      - xgface
+      - xgindex_1
+      - xgindex_2
+  authentication:
+    image: ${SERVICE_ENV_V2}
+    container_name: ${COMPOSE_NAME}_authentication
+    restart: always
+    ports:
+      - ${AUTH_PORT}:8181
+    volumes:
+      - ./binary:/workspace
+    command:
+      - /bin/bash
+      - -c
+      - chown -R root /workspace && chgrp -R root /workspace && cd /workspace/authentication && ./authentication >> /workspace/authentication.log 2>&1
+    depends_on:
+      - nsqd
+      - nsqd2
+      - mysql
+      - redis
+      - xgface
+      - xgindex_1
+      - xgindex_2
+  DeviceManager:
+    image: ${SERVICE_ENV_V1}
+    container_name: ${COMPOSE_NAME}_DeviceManager
+    restart: always
+    network_mode: host
+    volumes:
+      - ./binary:/workspace
+      - ./binary/DeviceManager/libcamctrl.so:/usr/lib/libcamctrl.so
+    command:
+      - /bin/bash
+      - -c
+      - chown -R root /workspace && chgrp -R root /workspace && cd /workspace/DeviceManager && ./DeviceManager >> /workspace/DeviceManager.log 2>&1
+    depends_on:
+      - nsqd
+      - nsqd2
+      - mysql
+      - redis
+      - xgface
+      - xgindex_1
+      - xgindex_2
+  nvr:
+    image: ${SERVICE_ENV_NVR}
+    container_name: ${COMPOSE_NAME}_nvr
+    restart: always
+    ports:
+      - ${NVR_PORT}:8099
+    volumes:
+      - ./binary:/workspace
+      - ${RTSP_DIR}:/var/tmp/RTSP
+    command:
+      - /bin/bash
+      - -c
+      - chown -R root /workspace && chgrp -R root /workspace && cd /workspace/nvr/HIK_SDK_RPC && ./server >> /workspace/nvr.log 2>&1
+    depends_on:
+      - mysql
+      - redis
+  RtspClient:
+    image: ${SERVICE_ENV_V2}
+    container_name: ${COMPOSE_NAME}_RtspClient
+    restart: always
+    ports:
+      - ${RTSPCLIENT_PORT}:8089
+    volumes:
+      - ./binary:/workspace
+      - ${RTSP_DIR}:/var/tmp/RTSP
+    command:
+      - /bin/bash
+      - -c
+      - chown -R root /workspace && chgrp -R root /workspace && cd /workspace/RtspClient && ./server >> /workspace/RtspClient.log 2>&1
+    depends_on:
+      - mysql
+      - redis
+  MapManager:
+    image: ${SERVICE_ENV_V1}
+    container_name: ${COMPOSE_NAME}_MapManager
+    restart: always
+    ports:
+      - ${MAPMANAGER_PORT}:9001
+    volumes:
+      - ${MAP_DIR}:/home/image/map
+      - ./binary:/workspace
+    command:
+      - /bin/bash
+      - -c
+      - chown -R root /home/image/map && chgrp -R root /home/image/map && chown -R root /workspace && chgrp -R root /workspace&& cd /workspace/MapManager && ./MapManager >> /workspace/MapManager.log 2>&1
+    depends_on:
+      - nsqd
+      - nsqd2
+      - mysql
+      - redis
+      - xgface
+      - xgindex_1
+      - xgindex_2
+  ImageRetrieve:
+    image: ${SERVICE_ENV_V2}
+    container_name: ${COMPOSE_NAME}_ImageRetrieve
+    restart: always
+    volumes:
+      - ${IMAGE_DIR}:/home/root/image
+      - ./binary:/workspace
+    command:
+      - /bin/bash
+      - -c
+      - cd /workspace/ImageRetrieve && ./ImageRetrieve >> /workspace/ImageRetrieve.log 2>&1
+    depends_on:
+      - nsqd
+      - nsqd2
+      - mysql
+      - redis
+      - xgface
+      - xgindex_1
+      - xgindex_2
+  getway:
+    image: ${SERVICE_ENV_V2}
+    container_name: ${COMPOSE_NAME}_grpc-getway
+    restart: always
+    volumes:
+      - ./openresty:/usr/local/openresty/
+      - ./binary:/workspace
+    command:
+      - /bin/bash
+      - -c
+      - cd /workspace/grpc-getway && ./grpc-getway >> /workspace/grpc-getway.log 2>&1
+    depends_on:
+      - nsqd
+      - nsqd2
+      - mysql
+      - redis
+      - xgface
+      - xgindex_1
+      - xgindex_2
+      - StaffRepository
+      - AlarmSystem
+      - MapManager
+  Ftp:
+    image: 10.58.122.61:90/production/alpine-ftp:muti-user
+    container_name: ${COMPOSE_NAME}_Ftp
+    restart: always
+    ports:
+      - ${FTP_PORT}:21
+      - ${PASV_PORT}:21100-21110
+    volumes:
+      - ${FTP_DIR}:/home
+      - ${FTP_DIR}/logs/:/var/log/
+    environment:
+      - FTP_USER=ftp-puppy ftp-third
+      - FTP_PASS=123456
+      - PASV_ADDRESS=${PASV_ADDRESS}
+      - PASV_MIN=21100
+      - PASV_MAX=21110
+  FtpImage:
+    image: ${SERVICE_ENV_V2}
+    container_name: ${COMPOSE_NAME}_FtpImage
+    restart: always
+    volumes:
+      - ./binary:/workspace
+      - ${FTP_DIR}:/workspace/ftp
+    command:
+      - /bin/bash
+      - -c
+      - cd /workspace/FtpImage && ./FtpImage -nsqd=nsqd:4150 -redis=redis:6379 -puppypath=/workspace/ftp/ftp-puppy/ -thirdpath=/workspace/ftp/ftp-third/ >> /workspace/FtpImage.log 2>&1
+  BodyDetect:
+    image: ${BODY_ENV}
+    container_name: ${COMPOSE_NAME}_BodyDetect
+    runtime: nvidia
+    restart: always
+    privileged: true
+    ports:
+      - ${BODY_PORT}:8999
+    volumes:
+      - ./binary/BodyDetect:/workspace/BodyDetect
+      - ${IMAGE_DIR}:/home/root
+    command:
+      - /bin/bash
+      - -c
+      - chown -R root /home/root && chgrp -R root /home/root && chown -R root /workspace && chgrp -R root /workspace && cd /workspace/BodyDetect/build && ./BodyDetect >> /workspace/BodyDetect/BodyDetect.log 2>&1
+    depends_on:
+      - nsqd2
+      - redis
+networks:
+    default:
+        name: ${COMPOSE_NAME}

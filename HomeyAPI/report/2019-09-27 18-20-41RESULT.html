@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>防飞单-接口自动化测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: block;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+# file_info = open('/Users/kaibinliu/Desktop/iber_request/report/3.html','r')
+result_dir =  os.path.join(os.path.dirname(os.path.abspath(__file__)),"report")
+file_new = os.path.join(result_dir, lists[-1])
+file_info = open(file_new,'r')
+values = file_info.readlines()
+values=''.join(values)
+# print values
+file_info.close()
+
+b=values.replace(".hiddenRow  { display: none; }",'')
+body=b
+
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>防飞单-接口自动化测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2019-09-27 18:20:41</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:01.421000</p>
+<p class='attribute'><strong>Status:</strong> Pass 12</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_alarms.AlarmsCase</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_Cardrecord_case_00001: test_Cardrecord_case_00001</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'block' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: ------------开始执行用例-----------
+报警记录
+{"errCode":"0","errMessage":"","data":{"list":[],"total":"0"}}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr class='passClass'>
+    <td>test_deviceManager.DeviceMangerCase</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',2)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_caseread_case_00001: test_caseread_case_00001</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'block' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: ------------开始执行用例-----------
+搜索-注册设备
+{"errCode":"0","errMessage":"","data":{"list":[{"UUID":"910e5854-23cb-4f44-b86c-b9e208b59d62","ID":48,"Name":"IP222","IP":"10.58.123.222","RTSPPort":554,"ServicePort":8000,"HTTPPort":80,"Type":"seemart摄像机","SNO":"CM02201180910002","Protocol":"puppy","Marked":0,"Remark":"","RegisterTime":1569555135,"Status":3,"Channel":0,"CtrlStatus":[]},{"UUID":"c902a939-c1f0-4c14-8b48-b85c6daf1456","ID":47,"Name":"小狗机器人","IP":"10.58.122.252","RTSPPort":554,"ServicePort":8000,"HTTPPort":80,"Type":"seemart摄像机","SNO":"CM0220118091000X","Protocol":"puppy","Marked":0,"Remark":"","RegisterTime":1568710025,"Status":2,"Channel":0,"CtrlStatus":[]},{"UUID":"4355791A-AC8A-48A7-B029-D8B48272C250","ID":46,"Name":"测试专属设备111","IP":"10.58.122.111","RTSPPort":554,"ServicePort":8000,"HTTPPort":80,"Type":"seemart摄像机","SNO":"CM0220118091000X","Protocol":"puppy","Marked":0,"Remark":"","RegisterTime":1568704970,"Status":3,"Channel":0,"CtrlStatus":[]},{"UUID":"4a3b5bc9-5269-4d80-b7e3-8a94e9cd68c3","ID":45,"Name":"12层进（勿动）","IP":"10.58.123.217","RTSPPort":554,"ServicePort":8000,"HTTPPort":80,"Type":"seemart摄像机","SNO":"CM02201180910011","Protocol":"puppy","Marked":0,"Remark":"","RegisterTime":1568615349,"Status":3,"Channel":0,"CtrlStatus":[]},{"UUID":"DS-8664N-K81620190725CCRRD44154553WCVU","ID":43,"Name":"海康NVR","IP":"10.58.123.44","RTSPPort":554,"ServicePort":8000,"HTTPPort":80,"Type":"第三方NVR","SNO":"DS-8664N-K81620190725CCRRD44154553WCVU","Protocol":"SDK","Marked":0,"Remark":"","RegisterTime":1568109244,"Status":3,"Channel":0,"CtrlStatus":[]},{"UUID":"DS-8664N-I161620190711CCRRD38702397WCVU","ID":41,"Name":"海康NVR","IP":"10.58.123.43","RTSPPort":554,"ServicePort":8000,"HTTPPort":80,"Type":"第三方NVR","SNO":"DS-8664N-I161620190711CCRRD38702397WCVU","Protocol":"SDK","Marked":0,"Remark":"","RegisterTime":1568096464,"Status":3,"Channel":0,"CtrlStatus":[]},{"UUID":"DS-7716N-K4/16P1620190822CCRRD53683235WCVU","ID":42,"Name":"海康NVR","IP":"10.58.123.45","RTSPPort":554,"ServicePort":8000,"HTTPPort":80,"Type":"第三方NVR","SNO":"DS-7716N-K4/16P1620190822CCRRD53683235WCVU","Protocol":"SDK","Marked":0,"Remark":"","RegisterTime":1568096464,"Status":2,"Channel":0,"CtrlStatus":[]},{"UUID":"0c06000d-08b6-8301-ac36-0c06000d08b6","ID":40,"Name":"东视119new1","IP":"10.58.122.119","RTSPPort":0,"ServicePort":0,"HTTPPort":80,"Type":"第三方摄像机","SNO":"854198","Protocol":"onvif","Marked":0,"Remark":"","RegisterTime":1568085421,"Status":2,"Channel":0,"CtrlStatus":[]},{"UUID":"6bc4c3d3-5674-4665-a6ef-e3571b2efa74","ID":36,"Name":"10号位","IP":"10.58.123.233","RTSPPort":554,"ServicePort":8000,"HTTPPort":80,"Type":"seemart摄像机","SNO":"CM02201180910013","Protocol":"puppy","Marked":0,"Remark":"","RegisterTime":1568027447,"Status":3,"Channel":0,"CtrlStatus":[]},{"UUID":"232F4B33-6FAA-409B-8088-647B2877AF2D","ID":34,"Name":"test110","IP":"10.58.122.110","RTSPPort":554,"ServicePort":8000,"HTTPPort":80,"Type":"seemart摄像机","SNO":"CM02201190610434","Protocol":"puppy","Marked":0,"Remark":"","RegisterTime":1568024502,"Status":3,"Channel":0,"CtrlStatus":[]}],"total":19,"online":14}}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_caseread_case_00002: test_caseread_case_00002</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.2')" >
+        pass</a>
+
+    <div id='div_pt2.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.2').style.display = 'block' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.2: ------------开始执行用例-----------
+搜索-在线设备
+{"errCode":"0","errMessage":"成功","data":{"list":[],"total":0}}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr class='passClass'>
+    <td>test_event.EventCase</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_caseread_case_00001: test_caseread_case_00001</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'block' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: ------------开始执行用例-----------
+查看人员库列表
+{"errCode":"0","errMessage":"","data":[{"name":"bodyFallSensitivity","value":"2","comment":"异常姿态 人脸识别灵敏度 1-宽松 2-常规 3-严格"},{"name":"bodyFallFrequency","value":"1","comment":"异常姿态报警频率 1分钟≤X≤20 分钟"},{"name":"childAloneSensitivity","value":"2","comment":"儿童落单 人脸识别灵敏度 1-宽松 2-常规 3-严格"},{"name":"childAloneFrequency","value":"1","comment":"儿童落单报警频率 1分钟≤X≤20 分钟"},{"name":"blacklistSensitivity","value":"2","comment":"黑名单人脸识别灵敏度 1-宽松 2-常规 3-严格"},{"name":"doubtSensitivity","value":"3","comment":"可疑人员人脸识别灵敏度 1-宽松 2-常规 3-严格"},{"name":"doubtType","value":"1","comment":"可疑人员 1-关注所有人员 2-只关注陌生人"},{"name":"longrepeatStatus","value":"1","comment":"长期复现 0-关闭 1-开启"},{"name":"longrepeatDay","value":"2","comment":"长期复现总天数 2~30天"},{"name":"longrepeatThreshold","value":"1","comment":"长期复现阈值 1~10天"},{"name":"longstayStatus","value":"1","comment":"长期逗留 0-关闭 1-开启"},{"name":"longstayThreshold","value":"1","comment":"长期逗留阈值 1~24小时 每个小时都出现"},{"name":"shorttrackStatus","value":"1","comment":"短期轨迹 0-关闭 1-开启"},{"name":"shorttrackHour","value":"1","comment":"短期轨迹 1~24小时"},{"name":"shorttrackCamera","value":"1","comment":"短期轨迹 1~在地图标注的全部摄像机个数"},{"name":"hotspotMale","value":"1","comment":"男性 0关闭 1开启"},{"name":"hotspotFemale","value":"1","comment":"女性 0关闭 1开启"},{"name":"hotspotChild","value":"0","comment":"0~12的儿童 0关闭 1开启"},{"name":"hotspotAdolescence","value":"0","comment":"13~35青年 0关闭 1开启"},{"name":"hotspotMidlife","value":"0","comment":"36~60中年 0关闭 1开启"},{"name":"hotspotSenium","value":"0","comment":"60~老年 0关闭 1开启"},{"name":"hotspotHat","value":"0","comment":"戴帽子的 0关闭 1开启"},{"name":"hotspotHatless","value":"0","comment":"不戴帽子的 0关闭 1开启"},{"name":"hotspoWithglasses","value":"0","comment":"戴眼镜的 0关闭 1开启"},{"name":"hotspotWithoutglasses","value":"0","comment":"不戴眼镜的 0关闭 1开启"},{"name":"protectPush","value":"2","comment":"禁区防护推送方式：1人脸 2人体 3人脸+人体  两项都选优先推送人体图片"},{"name":"protectSensitivity","value":"2","comment":"禁区防护灵敏度 1-宽松 2-常规 3-严格"},{"name":"protectFrequency","value":"1","comment":"禁区防护报警频率 0分钟≤X≤20 分钟"},{"name":"hotspotFrequency","value":"1","comment":"点人员报警频率 0分钟≤X≤20 分钟"},{"name":"blacklistFrequency","value":"1","comment":"黑名单报警频率 0分钟≤X≤20 分钟"}]}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr class='passClass'>
+    <td>test_librarys.LibraryCase</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',2)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_caseread_case_00001: test_caseread_case_00001</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'block' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: ------------开始执行用例-----------
+查看人员库列表
+{"errCode":"0","errMessage":"","data":{"list":[{"id":"4","name":"物业2","editable":"1","peopleCounts":"0","createdAt":"1567560673","updatedAt":"1567560673"},{"id":"3","name":"物业1","editable":"1","peopleCounts":"0","createdAt":"1567560664","updatedAt":"1567560664"},{"id":"19","name":"接口测试3","editable":"1","peopleCounts":"0","createdAt":"1569398885","updatedAt":"1569399912"},{"id":"13","name":"黑名单2","editable":"1","peopleCounts":"0","createdAt":"1567561032","updatedAt":"1567561032"},{"id":"1","name":"黑名单","editable":"0","peopleCounts":"0","createdAt":"1566790276","updatedAt":"1566790276"},{"id":"5","name":"测试Abc","editable":"1","peopleCounts":"0","createdAt":"1567560687","updatedAt":"1567560714"},{"id":"2","name":"保洁a","editable":"1","peopleCounts":"0","createdAt":"1567560654","updatedAt":"1567560885"},{"id":"14","name":"啊啊","editable":"1","peopleCounts":"0","createdAt":"1567561050","updatedAt":"1567561050"},{"id":"9","name":"zsd","editable":"1","peopleCounts":"0","createdAt":"1567560934","updatedAt":"1567560934"},{"id":"18","name":"sss","editable":"1","peopleCounts":"0","createdAt":"1567583901","updatedAt":"1567583901"},{"id":"17","name":"ddd","editable":"1","peopleCounts":"0","createdAt":"1567583843","updatedAt":"1567583843"},{"id":"16","name":"ceshi111","editable":"1","peopleCounts":"0","createdAt":"1567583836","updatedAt":"1567583836"},{"id":"8","name":"abc","editable":"1","peopleCounts":"0","createdAt":"1567560929","updatedAt":"1567560929"},{"id":"7","name":"Z11","editable":"1","peopleCounts":"0","createdAt":"1567560923","updatedAt":"1567560923"},{"id":"6","name":"AAbc","editable":"1","peopleCounts":"0","createdAt":"1567560917","updatedAt":"1567560917"},{"id":"12","name":"33","editable":"1","peopleCounts":"0","createdAt":"1567560988","updatedAt":"1567560988"},{"id":"15","name":"112","editable":"1","peopleCounts":"0","createdAt":"1567562421","updatedAt":"1567562421"},{"id":"10","name":"11","editable":"1","peopleCounts":"0","createdAt":"1567560941","updatedAt":"1567560941"}],"total":"18"}}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt4.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_caseread_case_00002: test_caseread_case_00002</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.2')" >
+        pass</a>
+
+    <div id='div_pt4.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.2').style.display = 'block' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.2: ------------开始执行用例-----------
+查看人员库人员-黑名单
+{"errCode":"0","errMessage":"","data":{"list":[],"total":"0"}}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr class='passClass'>
+    <td>test_MapManger.MapMangerCase</td>
+    <td>4</td>
+    <td>4</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',4)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_RiskRank_case_00001: test_RiskRank_case_00001</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'block' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: ------------开始执行用例-----------
+地图管理-查看地图1-摄像机标注
+{"errCode":"0","errMessage":"ok","data":{"list":[{"device":{"id":4,"uuid":"d9b04000-d0fb-11b2-80e4-94e1ac16a701","name":"ipcam42","type":"第三方摄像机","mask":"","gateway":"","dns":"8.8.8.8","ip":"10.58.122.210","mac":"94:e1:ac:16:a7:01","x_addrs":"http://10.58.122.210/onvif/device_service","main_stream":"u4zr3YiDUlYngkOw7zTZBCKcQeW7JilNsLX2Oi26dHm9GEsLL3L2szzY+PPExgS9OFtORTgF2kIu1ZZd4CraqBEkUrmnlpbCHxVEENRfkt7tS34nj1EaZnAyrv4CtXYaUEXxWb+/5AiouG0l9ghEJg==","sub_stream":"u4zr3YiDUlYngkOw7zTZBCKcQeW7JilNsLX2Oi26dHm9GEsLL3L2szzY+PPExgS9FuPG1JrsKXuEpFLIoCKgnxEkUrmnlpbCHxVEENRfkt7tS34nj1EaZnAyrv4CtXYakwoP7RaOa/IqCZWMN9V0kA==","rtsp_port":0,"service_port":0,"http_port":80,"sno":"DS-2CD7027FWD/F-A20180228AACHC07107648","manufacture":"HIKVISION","protocol":"onvif","area_id":0,"map_id":1,"geom":"[427.05,769.49]","marked":1,"status":3,"softver":"","remark":"","register_time":1566878998},"nvr":{"NVRUuid":"DS-8664N-K81620190725CCRRD44154553WCVU","NVRChannel":5}},{"device":{"id":5,"uuid":"657ba57b-cea0-11b2-80e1-94e1ac10d8fd","name":"测试相机123","type":"第三方摄像机","mask":"","gateway":"","dns":"8.8.8.8","ip":"10.58.122.203","mac":"","x_addrs":"http://10.58.122.203/onvif/device_service","main_stream":"u4zr3YiDUlYngkOw7zTZBCKcQeW7JilNsLX2Oi26dHnnDUesWI7fHvPUjOnFyF2wOFtORTgF2kIu1ZZd4CraqBEkUrmnlpbCHxVEENRfkt7tS34nj1EaZnAyrv4CtXYaUEXxWb+/5AiouG0l9ghEJg==","sub_stream":"u4zr3YiDUlYngkOw7zTZBCKcQeW7JilNsLX2Oi26dHnnDUesWI7fHvPUjOnFyF2wFuPG1JrsKXuEpFLIoCKgnxEkUrmnlpbCHxVEENRfkt7tS34nj1EaZnAyrv4CtXYakwoP7RaOa/IqCZWMN9V0kA==","rtsp_port":0,"service_port":0,"http_port":80,"sno":"DS-2CD7627FWD/F-LZS20180225AACH185116027","manufacture":"HIKVISION","protocol":"onvif","area_id":0,"map_id":1,"geom":"[839.66,877.68]","marked":1,"status":3,"softver":"","remark":"","register_time":1566879005},"nvr":{"NVRUuid":"DS-8664N-K81620190725CCRRD44154553WCVU","NVRChannel":4}},{"device":{"id":12,"uuid":"95469516-AA81-4109-8E13-DEFBA3C9C0D5","name":"OSD枪机147new","type":"seemart摄像机","mask":"255.255.255.0","gateway":"10.58.122.1","dns":"8.8.8.8","ip":"10.58.122.147","mac":"00:01:05:07:AA:FC","x_addrs":"","main_stream":"HPcbuRFksejAW/Mnbzm4/ijqFJ4yXXEr2V1/5pR+8Q0/ocyvfRDmydCcRjayCzE4OGIW9p6TYGLHQr09h86A7w==","sub_stream":"HPcbuRFksejAW/Mnbzm4/ijqFJ4yXXEr2V1/5pR+8Q2xDA5PW7nNM925DDAwfwws","rtsp_port":554,"service_port":8000,"http_port":80,"sno":"CM0220118091000X","manufacture":"XGKJ","protocol":"puppy","area_id":0,"map_id":1,"geom":"[1478.37,901.58]","marked":1,"status":2,"softver":"1.1.3.20190322","remark":"","register_time":1566891131},"nvr":{"NVRUuid":"DS-8664N-K81620190725CCRRD44154553WCVU","NVRChannel":3}},{"device":{"id":22,"uuid":"c902a939-c1f0-4c14-8b48-b85c6daf1467","name":"饮水机上方","type":"seemart摄像机","mask":"255.255.255.0","gateway":"10.58.123.1","dns":"8.8.8.8","ip":"10.58.123.230","mac":"7C:BC:84:00:00:17","x_addrs":"","main_stream":"HPcbuRFksejAW/Mnbzm4/gFhqIQio1liPx71+gMt7vY423VrL+LriMqXfwyjINlaOGIW9p6TYGLHQr09h86A7w==","sub_stream":"HPcbuRFksejAW/Mnbzm4/gFhqIQio1liPx71+gMt7va4M8kCqroNczEK1xePge4q","rtsp_port":554,"service_port":8000,"http_port":80,"sno":"CM0220118091000X","manufacture":"XGKJ","protocol":"puppy","area_id":0,"map_id":1,"geom":"[1241.57,317.18]","marked":1,"status":3,"softver":"1.0.11.20190924","remark":"","register_time":1567567507},"nvr":{"NVRUuid":"DS-8632N-K81620180820CCRRC44416670WCVU","NVRChannel":6}},{"device":{"id":25,"uuid":"8DF07D9F-62C4-4794-B1A8-6D96DAF079BB","name":"测试207","type":"seemart摄像机","mask":"255.255.255.0","gateway":"10.58.122.1","dns":"8.8.8.8","ip":"10.58.122.207","mac":"00:01:05:07:AA:EA","x_addrs":"","main_stream":"HPcbuRFksejAW/Mnbzm4/uqsIFaW+9fJDB4pO4ZFWfI/ocyvfRDmydCcRjayCzE4OGIW9p6TYGLHQr09h86A7w==","sub_stream":"HPcbuRFksejAW/Mnbzm4/uqsIFaW+9fJDB4pO4ZFWfKxDA5PW7nNM925DDAwfwws","rtsp_port":554,"service_port":8000,"http_port":80,"sno":"CM0220118091000X","manufacture":"XGKJ","protocol":"puppy","area_id":0,"map_id":1,"geom":"[357.37,512.71]","marked":1,"status":3,"softver":"1.1.3.20190322","remark":"","register_time":1567583648},"nvr":{"NVRUuid":"DS-8664N-K81620190725CCRRD44154553WCVU","NVRChannel":2}},{"device":{"id":26,"uuid":"38EE28AB-49E0-4038-B9C1-E02672BE68EF","name":"测试相机名称","type":"seemart摄像机","mask":"255.255.255.0","gateway":"10.58.122.1","dns":"8.8.8.8","ip":"10.58.122.114","mac":"7C:BC:84:B0:00:36","x_addrs":"","main_stream":"kYy3tQfebyNW3eF0bz/+KJTO1KASPdMkUaht8/HdpRHKjnNCyCI7c0VJB0d2b/k+OGIW9p6TYGLHQr09h86A7w==","sub_stream":"kYy3tQfebyNW3eF0bz/+KJTO1KASPdMkUaht8/HdpRHeuObUui3mYiHNQb4+Oz7g","rtsp_port":554,"service_port":8000,"http_port":80,"sno":"CM02201181210055","manufacture":"XGKJ","protocol":"puppy","area_id":0,"map_id":1,"geom":"[928.74,386.7]","marked":1,"status":3,"softver":"1.0.11.20190916","remark":"","register_time":1567587027},"nvr":{"NVRUuid":"DS-8664N-I161620190711CCRRD38702397WCVU","NVRChannel":5}},{"device":{"id":30,"uuid":"BC1BED74-E175-47CA-AD59-FFF459CF4472","name":"小狗机器人","type":"seemart摄像机","mask":"255.255.255.0","gateway":"10.58.122.1","dns":"8.8.8.8","ip":"10.58.122.138","mac":"7C:BC:84:B0:08:45","x_addrs":"","main_stream":"HPcbuRFksejAW/Mnbzm4/mLsvIzwUGUfH1Dn80ucZyqpYu0bpmEf5s/swwqOqLyTOGIW9p6TYGLHQr09h86A7w==","sub_stream":"HPcbuRFksejAW/Mnbzm4/mLsvIzwUGUfH1Dn80ucZypslaLosFX2p96XyCULMpg1","rtsp_port":554,"service_port":8000,"http_port":80,"sno":"CM0220118091000X","manufacture":"XGKJ","protocol":"puppy","area_id":0,"map_id":1,"geom":"[1608.72,310.67]","marked":1,"status":2,"softver":"1.0.11.20190924","remark":"","register_time":1567671754},"nvr":{"NVRUuid":"DS-8632N-K81620180820CCRRC44416670WCVU","NVRChannel":29}},{"device":{"id":33,"uuid":"ddea81b6-b659-49c5-b031-575b0c9906fb","name":"办公区桌子上方","type":"seemart摄像机","mask":"255.255.255.0","gateway":"10.58.123.1","dns":"8.8.8.8","ip":"10.58.123.221","mac":"7C:BC:84:B0:70:02","x_addrs":"","main_stream":"HPcbuRFksejAW/Mnbzm4/uFaMxhFbVqlcypVTYoHqUuWYd5ushMphQa/HcnELv8rOGIW9p6TYGLHQr09h86A7w==","sub_stream":"HPcbuRFksejAW/Mnbzm4/uFaMxhFbVqlcypVTYoHqUvn5xmIi2PHCPYV6wylTaMh","rtsp_port":554,"service_port":8000,"http_port":80,"sno":"CM02201190520003","manufacture":"XGKJ","protocol":"puppy","area_id":0,"map_id":1,"geom":"[1319.78,360.63]","marked":1,"status":3,"softver":"1.0.11.20190924","remark":"","register_time":1567758497},"nvr":{"NVRUuid":"DS-8664N-I161620190711CCRRD38702397WCVU","NVRChannel":1}},{"device":{"id":34,"uuid":"232F4B33-6FAA-409B-8088-647B2877AF2D","name":"test110","type":"seemart摄像机","mask":"255.255.255.0","gateway":"10.58.122.1","dns":"8.8.8.8","ip":"10.58.122.110","mac":"7C:BC:84:B0:02:B7","x_addrs":"","main_stream":"HPcbuRFksejAW/Mnbzm4/hbk64sWQ/3h0++XrmqfEmU423VrL+LriMqXfwyjINlaOGIW9p6TYGLHQr09h86A7w==","sub_stream":"HPcbuRFksejAW/Mnbzm4/hbk64sWQ/3h0++XrmqfEmW4M8kCqroNczEK1xePge4q","rtsp_port":554,"service_port":8000,"http_port":80,"sno":"CM02201190610434","manufacture":"XGKJ","protocol":"puppy","area_id":0,"map_id":1,"geom":"[748.2,579.47]","marked":1,"status":3,"softver":"1.0.11.20190805","remark":"","register_time":1568024502},"nvr":{"NVRUuid":"DS-8664N-K81620190725CCRRD44154553WCVU","NVRChannel":1}},{"device":{"id":36,"uuid":"6bc4c3d3-5674-4665-a6ef-e3571b2efa74","name":"10号位","type":"seemart摄像机","mask":"255.255.255.0","gateway":"10.58.123.1","dns":"8.8.8.8","ip":"10.58.123.233","mac":"00:0A:05:A1:0C:ED","x_addrs":"","main_stream":"HPcbuRFksejAW/Mnbzm4/gFhqIQio1liPx71+gMt7vYUcPcz0zhBRLEe67CBJpT5OGIW9p6TYGLHQr09h86A7w==","sub_stream":"HPcbuRFksejAW/Mnbzm4/gFhqIQio1liPx71+gMt7vZ/KQiVSjXXQmu2/Q+iNLlv","rtsp_port":554,"service_port":8000,"http_port":80,"sno":"CM02201180910013","manufacture":"XGKJ","protocol":"puppy","area_id":0,"map_id":1,"geom":"[1072.63,686.07]","marked":1,"status":3,"softver":"1.0.11.20190924","remark":"","register_time":1568027447},"nvr":{"NVRUuid":"DS-8664N-K81620190725CCRRD44154553WCVU","NVRChannel":6}},{"device":{"id":40,"uuid":"0c06000d-08b6-8301-ac36-0c06000d08b6","name":"东视119new1","type":"第三方摄像机","mask":"","gateway":"","dns":"8.8.4.4","ip":"10.58.122.119","mac":"","x_addrs":"http://10.58.122.119:2000/onvif/device_service","main_stream":"HPcbuRFksejAW/Mnbzm4/hbk64sWQ/3h0++XrmqfEmXCfiq0vRtiPVWVNhyTaMpv","sub_stream":"HPcbuRFksejAW/Mnbzm4/hbk64sWQ/3h0++XrmqfEmV/KmV3pZa+Y//NvlteOsEI","rtsp_port":0,"service_port":0,"http_port":80,"sno":"854198","manufacture":"IPC","protocol":"onvif","area_id":0,"map_id":1,"geom":"[522.48,955.89]","marked":1,"status":2,"softver":"","remark":"","register_time":1568085421},"nvr":{"NVRUuid":"DS-8664N-K81620190725CCRRD44154553WCVU","NVRChannel":8}},{"device":{"id":45,"uuid":"4a3b5bc9-5269-4d80-b7e3-8a94e9cd68c3","name":"12层进（勿动）","type":"seemart摄像机","mask":"255.255.255.0","gateway":"10.58.123.1","dns":"8.8.8.8","ip":"10.58.123.217","mac":"00:09:05:A0:AA:ED","x_addrs":"","main_stream":"HPcbuRFksejAW/Mnbzm4/sLhVV4TTDCuVNum/u7Ivdk/ocyvfRDmydCcRjayCzE4OGIW9p6TYGLHQr09h86A7w==","sub_stream":"HPcbuRFksejAW/Mnbzm4/sLhVV4TTDCuVNum/u7IvdmxDA5PW7nNM925DDAwfwws","rtsp_port":554,"service_port":8000,"http_port":80,"sno":"CM02201180910011","manufacture":"XGKJ","protocol":"puppy","area_id":0,"map_id":0,"geom":"","marked":0,"status":3,"softver":"1.0.11.20190924","remark":"","register_time":1568615349},"nvr":{"NVRUuid":"DS-8664N-I161620190711CCRRD38702397WCVU","NVRChannel":10}},{"device":{"id":46,"uuid":"4355791A-AC8A-48A7-B029-D8B48272C250","name":"测试专属设备111","type":"seemart摄像机","mask":"255.255.255.0","gateway":"10.58.122.1","dns":"8.8.8.8","ip":"10.58.122.111","mac":"00:01:05:07:AA:E9","x_addrs":"","main_stream":"HPcbuRFksejAW/Mnbzm4/hbk64sWQ/3h0++XrmqfEmWWYd5ushMphQa/HcnELv8rOGIW9p6TYGLHQr09h86A7w==","sub_stream":"HPcbuRFksejAW/Mnbzm4/hbk64sWQ/3h0++XrmqfEmXn5xmIi2PHCPYV6wylTaMh","rtsp_port":554,"service_port":8000,"http_port":80,"sno":"CM0220118091000X","manufacture":"XGKJ","protocol":"puppy","area_id":0,"map_id":1,"geom":"[738.93,456.66]","marked":1,"status":3,"softver":"1.0.11.20190924","remark":"","register_time":1568704970},"nvr":{"NVRUuid":"DS-8664N-I161620190711CCRRD38702397WCVU","NVRChannel":4}},{"device":{"id":47,"uuid":"c902a939-c1f0-4c14-8b48-b85c6daf1456","name":"小狗机器人","type":"seemart摄像机","mask":"255.255.255.0","gateway":"10.58.122.1","dns":"8.8.8.8","ip":"10.58.122.252","mac":"00:01:05:07:AB:EB","x_addrs":"","main_stream":"HPcbuRFksejAW/Mnbzm4/k7hsShOc/4RKgmILOpLe+Kq1E9j8JW0fXY+q5IiEK4nOGIW9p6TYGLHQr09h86A7w==","sub_stream":"HPcbuRFksejAW/Mnbzm4/k7hsShOc/4RKgmILOpLe+KTSc1fqPV0UhmB6svKIacP","rtsp_port":554,"service_port":8000,"http_port":80,"sno":"CM0220118091000X","manufacture":"XGKJ","protocol":"puppy","area_id":0,"map_id":0,"geom":"","marked":0,"status":2,"softver":"1.0.11.20190918","remark":"","register_time":1568710025},"nvr":{"NVRUuid":"","NVRChannel":0}},{"device":{"id":48,"uuid":"910e5854-23cb-4f44-b86c-b9e208b59d62","name":"IP222","type":"seemart摄像机","mask":"255.255.255.0","gateway":"10.58.123.1","dns":"8.8.8.8","ip":"10.58.123.222","mac":"00:01:05:07:01:ED","x_addrs":"","main_stream":"HPcbuRFksejAW/Mnbzm4/uFaMxhFbVqlcypVTYoHqUuq1E9j8JW0fXY+q5IiEK4nOGIW9p6TYGLHQr09h86A7w==","sub_stream":"HPcbuRFksejAW/Mnbzm4/uFaMxhFbVqlcypVTYoHqUuTSc1fqPV0UhmB6svKIacP","rtsp_port":554,"service_port":8000,"http_port":80,"sno":"CM02201180910002","manufacture":"XGKJ","protocol":"puppy","area_id":0,"map_id":1,"geom":"[1434.92,556.16]","marked":1,"status":3,"softver":"1.0.11.20190924","remark":"","register_time":1569555135},"nvr":{"NVRUuid":"DS-8664N-I161620190711CCRRD38702397WCVU","NVRChannel":6}}],"total":15,"online":0}}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt5.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_RiskRank_case_00002: test_RiskRank_case_00002</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.2')" >
+        pass</a>
+
+    <div id='div_pt5.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.2').style.display = 'block' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.2: ------------开始执行用例-----------
+地图管理-查看地图1-区域标注
+{"errCode":"0","errMessage":"OK","data":[]}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt5.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_RiskRank_case_00003: test_RiskRank_case_00003</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.3')" >
+        pass</a>
+
+    <div id='div_pt5.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.3').style.display = 'block' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.3: ------------开始执行用例-----------
+地图管理-查找地图
+{"errCode":"0","errMessage":"OK","data":[{"id":1,"image_url":"办公区.png","name":"办公区","type":"image/png","width":1920,"height":1080,"description":""},{"id":2,"image_url":"第二张地图.jpg","name":"第二张地图","type":"image/jpeg","width":1256,"height":789,"description":""},{"id":3,"image_url":"第三张地图.jpg","name":"第三张地图","type":"image/jpeg","width":1020,"height":789,"description":""}]}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt5.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_RiskRank_case_00004: test_RiskRank_case_00004</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.4')" >
+        pass</a>
+
+    <div id='div_pt5.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.4').style.display = 'block' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.4: ------------开始执行用例-----------
+地图管理-检索地图信息
+{"errCode":"0","errMessage":"检索成功","data":{"list":[{"UUID":"d9b04000-d0fb-11b2-80e4-94e1ac16a701","IP":"10.58.122.210","ID":4,"Name":"ipcam42","Marked":1,"Type":"第三方摄像机","MainStream":"u4zr3YiDUlYngkOw7zTZBCKcQeW7JilNsLX2Oi26dHm9GEsLL3L2szzY+PPExgS9OFtORTgF2kIu1ZZd4CraqBEkUrmnlpbCHxVEENRfkt7tS34nj1EaZnAyrv4CtXYaUEXxWb+/5AiouG0l9ghEJg==","SubStream":"u4zr3YiDUlYngkOw7zTZBCKcQeW7JilNsLX2Oi26dHm9GEsLL3L2szzY+PPExgS9FuPG1JrsKXuEpFLIoCKgnxEkUrmnlpbCHxVEENRfkt7tS34nj1EaZnAyrv4CtXYakwoP7RaOa/IqCZWMN9V0kA==","Status":3,"AreaId":0,"AreaName":""},{"UUID":"657ba57b-cea0-11b2-80e1-94e1ac10d8fd","IP":"10.58.122.203","ID":5,"Name":"测试相机123","Marked":1,"Type":"第三方摄像机","MainStream":"u4zr3YiDUlYngkOw7zTZBCKcQeW7JilNsLX2Oi26dHnnDUesWI7fHvPUjOnFyF2wOFtORTgF2kIu1ZZd4CraqBEkUrmnlpbCHxVEENRfkt7tS34nj1EaZnAyrv4CtXYaUEXxWb+/5AiouG0l9ghEJg==","SubStream":"u4zr3YiDUlYngkOw7zTZBCKcQeW7JilNsLX2Oi26dHnnDUesWI7fHvPUjOnFyF2wFuPG1JrsKXuEpFLIoCKgnxEkUrmnlpbCHxVEENRfkt7tS34nj1EaZnAyrv4CtXYakwoP7RaOa/IqCZWMN9V0kA==","Status":3,"AreaId":0,"AreaName":""},{"UUID":"95469516-AA81-4109-8E13-DEFBA3C9C0D5","IP":"10.58.122.147","ID":12,"Name":"OSD枪机147new","Marked":1,"Type":"seemart摄像机","MainStream":"HPcbuRFksejAW/Mnbzm4/ijqFJ4yXXEr2V1/5pR+8Q0/ocyvfRDmydCcRjayCzE4OGIW9p6TYGLHQr09h86A7w==","SubStream":"HPcbuRFksejAW/Mnbzm4/ijqFJ4yXXEr2V1/5pR+8Q2xDA5PW7nNM925DDAwfwws","Status":2,"AreaId":0,"AreaName":""},{"UUID":"c902a939-c1f0-4c14-8b48-b85c6daf1467","IP":"10.58.123.230","ID":22,"Name":"饮水机上方","Marked":1,"Type":"seemart摄像机","MainStream":"HPcbuRFksejAW/Mnbzm4/gFhqIQio1liPx71+gMt7vY423VrL+LriMqXfwyjINlaOGIW9p6TYGLHQr09h86A7w==","SubStream":"HPcbuRFksejAW/Mnbzm4/gFhqIQio1liPx71+gMt7va4M8kCqroNczEK1xePge4q","Status":3,"AreaId":0,"AreaName":""},{"UUID":"8DF07D9F-62C4-4794-B1A8-6D96DAF079BB","IP":"10.58.122.207","ID":25,"Name":"测试207","Marked":1,"Type":"seemart摄像机","MainStream":"HPcbuRFksejAW/Mnbzm4/uqsIFaW+9fJDB4pO4ZFWfI/ocyvfRDmydCcRjayCzE4OGIW9p6TYGLHQr09h86A7w==","SubStream":"HPcbuRFksejAW/Mnbzm4/uqsIFaW+9fJDB4pO4ZFWfKxDA5PW7nNM925DDAwfwws","Status":3,"AreaId":0,"AreaName":""},{"UUID":"38EE28AB-49E0-4038-B9C1-E02672BE68EF","IP":"10.58.122.114","ID":26,"Name":"测试相机名称","Marked":1,"Type":"seemart摄像机","MainStream":"kYy3tQfebyNW3eF0bz/+KJTO1KASPdMkUaht8/HdpRHKjnNCyCI7c0VJB0d2b/k+OGIW9p6TYGLHQr09h86A7w==","SubStream":"kYy3tQfebyNW3eF0bz/+KJTO1KASPdMkUaht8/HdpRHeuObUui3mYiHNQb4+Oz7g","Status":3,"AreaId":0,"AreaName":""},{"UUID":"BC1BED74-E175-47CA-AD59-FFF459CF4472","IP":"10.58.122.138","ID":30,"Name":"小狗机器人","Marked":1,"Type":"seemart摄像机","MainStream":"HPcbuRFksejAW/Mnbzm4/mLsvIzwUGUfH1Dn80ucZyqpYu0bpmEf5s/swwqOqLyTOGIW9p6TYGLHQr09h86A7w==","SubStream":"HPcbuRFksejAW/Mnbzm4/mLsvIzwUGUfH1Dn80ucZypslaLosFX2p96XyCULMpg1","Status":2,"AreaId":0,"AreaName":""},{"UUID":"DS-8632N-K81620180820CCRRC44416670WCVU","IP":"10.58.123.42","ID":31,"Name":"海康NVR","Marked":0,"Type":"第三方NVR","MainStream":"","SubStream":"","Status":3,"AreaId":0,"AreaName":""},{"UUID":"ddea81b6-b659-49c5-b031-575b0c9906fb","IP":"10.58.123.221","ID":33,"Name":"办公区桌子上方","Marked":1,"Type":"seemart摄像机","MainStream":"HPcbuRFksejAW/Mnbzm4/uFaMxhFbVqlcypVTYoHqUuWYd5ushMphQa/HcnELv8rOGIW9p6TYGLHQr09h86A7w==","SubStream":"HPcbuRFksejAW/Mnbzm4/uFaMxhFbVqlcypVTYoHqUvn5xmIi2PHCPYV6wylTaMh","Status":3,"AreaId":0,"AreaName":""},{"UUID":"232F4B33-6FAA-409B-8088-647B2877AF2D","IP":"10.58.122.110","ID":34,"Name":"test110","Marked":1,"Type":"seemart摄像机","MainStream":"HPcbuRFksejAW/Mnbzm4/hbk64sWQ/3h0++XrmqfEmU423VrL+LriMqXfwyjINlaOGIW9p6TYGLHQr09h86A7w==","SubStream":"HPcbuRFksejAW/Mnbzm4/hbk64sWQ/3h0++XrmqfEmW4M8kCqroNczEK1xePge4q","Status":3,"AreaId":0,"AreaName":""},{"UUID":"6bc4c3d3-5674-4665-a6ef-e3571b2efa74","IP":"10.58.123.233","ID":36,"Name":"10号位","Marked":1,"Type":"seemart摄像机","MainStream":"HPcbuRFksejAW/Mnbzm4/gFhqIQio1liPx71+gMt7vYUcPcz0zhBRLEe67CBJpT5OGIW9p6TYGLHQr09h86A7w==","SubStream":"HPcbuRFksejAW/Mnbzm4/gFhqIQio1liPx71+gMt7vZ/KQiVSjXXQmu2/Q+iNLlv","Status":3,"AreaId":0,"AreaName":""},{"UUID":"0c06000d-08b6-8301-ac36-0c06000d08b6","IP":"10.58.122.119","ID":40,"Name":"东视119new1","Marked":1,"Type":"第三方摄像机","MainStream":"HPcbuRFksejAW/Mnbzm4/hbk64sWQ/3h0++XrmqfEmXCfiq0vRtiPVWVNhyTaMpv","SubStream":"HPcbuRFksejAW/Mnbzm4/hbk64sWQ/3h0++XrmqfEmV/KmV3pZa+Y//NvlteOsEI","Status":2,"AreaId":0,"AreaName":""},{"UUID":"DS-8664N-I161620190711CCRRD38702397WCVU","IP":"10.58.123.43","ID":41,"Name":"海康NVR","Marked":0,"Type":"第三方NVR","MainStream":"","SubStream":"","Status":3,"AreaId":0,"AreaName":""},{"UUID":"DS-7716N-K4/16P1620190822CCRRD53683235WCVU","IP":"10.58.123.45","ID":42,"Name":"海康NVR","Marked":0,"Type":"第三方NVR","MainStream":"","SubStream":"","Status":2,"AreaId":0,"AreaName":""},{"UUID":"DS-8664N-K81620190725CCRRD44154553WCVU","IP":"10.58.123.44","ID":43,"Name":"海康NVR","Marked":0,"Type":"第三方NVR","MainStream":"","SubStream":"","Status":3,"AreaId":0,"AreaName":""},{"UUID":"4a3b5bc9-5269-4d80-b7e3-8a94e9cd68c3","IP":"10.58.123.217","ID":45,"Name":"12层进（勿动）","Marked":0,"Type":"seemart摄像机","MainStream":"HPcbuRFksejAW/Mnbzm4/sLhVV4TTDCuVNum/u7Ivdk/ocyvfRDmydCcRjayCzE4OGIW9p6TYGLHQr09h86A7w==","SubStream":"HPcbuRFksejAW/Mnbzm4/sLhVV4TTDCuVNum/u7IvdmxDA5PW7nNM925DDAwfwws","Status":3,"AreaId":0,"AreaName":""},{"UUID":"4355791A-AC8A-48A7-B029-D8B48272C250","IP":"10.58.122.111","ID":46,"Name":"测试专属设备111","Marked":1,"Type":"seemart摄像机","MainStream":"HPcbuRFksejAW/Mnbzm4/hbk64sWQ/3h0++XrmqfEmWWYd5ushMphQa/HcnELv8rOGIW9p6TYGLHQr09h86A7w==","SubStream":"HPcbuRFksejAW/Mnbzm4/hbk64sWQ/3h0++XrmqfEmXn5xmIi2PHCPYV6wylTaMh","Status":3,"AreaId":0,"AreaName":""},{"UUID":"c902a939-c1f0-4c14-8b48-b85c6daf1456","IP":"10.58.122.252","ID":47,"Name":"小狗机器人","Marked":0,"Type":"seemart摄像机","MainStream":"HPcbuRFksejAW/Mnbzm4/k7hsShOc/4RKgmILOpLe+Kq1E9j8JW0fXY+q5IiEK4nOGIW9p6TYGLHQr09h86A7w==","SubStream":"HPcbuRFksejAW/Mnbzm4/k7hsShOc/4RKgmILOpLe+KTSc1fqPV0UhmB6svKIacP","Status":2,"AreaId":0,"AreaName":""},{"UUID":"910e5854-23cb-4f44-b86c-b9e208b59d62","IP":"10.58.123.222","ID":48,"Name":"IP222","Marked":1,"Type":"seemart摄像机","MainStream":"HPcbuRFksejAW/Mnbzm4/uFaMxhFbVqlcypVTYoHqUuq1E9j8JW0fXY+q5IiEK4nOGIW9p6TYGLHQr09h86A7w==","SubStream":"HPcbuRFksejAW/Mnbzm4/uFaMxhFbVqlcypVTYoHqUuTSc1fqPV0UhmB6svKIacP","Status":3,"AreaId":0,"AreaName":""}],"total":19}}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr class='passClass'>
+    <td>test_staffs.StaffsCase</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',2)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_caseread_case_00001: test_caseread_case_00001</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'block' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: ------------开始执行用例-----------
+查看人员
+{"errCode":"0","errMessage":"","data":{"list":[{"id":"7485","name":"chengjia","source":"","gender":"男","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3943","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1569576704892836514.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1569578815","updatedAt":"1569578815"},{"id":"7484","name":"chengjia","source":"","gender":"男","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3943","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1569576704892836514.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1569577548","updatedAt":"1569577548"},{"id":"7480","name":"test1498","source":"","gender":"女","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3940","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801261385955981.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804527","updatedAt":"1568804527"},{"id":"7481","name":"test1499","source":"","gender":"女","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3941","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801261728371877.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804527","updatedAt":"1568804527"},{"id":"7482","name":"test1500","source":"","gender":"女","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3942","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801262165370493.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804527","updatedAt":"1568804527"},{"id":"7478","name":"test1496","source":"","gender":"女","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3938","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801260660695986.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804526","updatedAt":"1568804526"},{"id":"7479","name":"test1497","source":"","gender":"男","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3939","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801261026231846.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804526","updatedAt":"1568804526"},{"id":"7475","name":"test1493","source":"","gender":"男","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3935","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801259427931047.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804525","updatedAt":"1568804525"},{"id":"7476","name":"test1494","source":"","gender":"男","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3936","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801259765580882.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804525","updatedAt":"1568804525"},{"id":"7477","name":"test1495","source":"","gender":"女","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3937","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801260106741655.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804525","updatedAt":"1568804525"},{"id":"7472","name":"test1490","source":"","gender":"男","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3932","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801258412453735.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804524","updatedAt":"1568804524"},{"id":"7473","name":"test1491","source":"","gender":"男","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3933","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801258767487169.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804524","updatedAt":"1568804524"},{"id":"7474","name":"test1492","source":"","gender":"男","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3934","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801259097081207.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804524","updatedAt":"1568804524"},{"id":"7470","name":"test1488","source":"","gender":"男","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3930","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801257693415641.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804523","updatedAt":"1568804523"},{"id":"7471","name":"test1489","source":"","gender":"男","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3931","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801258052787283.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804523","updatedAt":"1568804523"},{"id":"7467","name":"test1485","source":"","gender":"男","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3927","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801256678259306.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804522","updatedAt":"1568804522"},{"id":"7468","name":"test1486","source":"","gender":"女","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3928","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801257016594966.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804522","updatedAt":"1568804522"},{"id":"7469","name":"test1487","source":"","gender":"女","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3929","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801257355425050.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804522","updatedAt":"1568804522"},{"id":"7464","name":"test1482","source":"","gender":"男","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3924","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801255693393571.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804521","updatedAt":"1568804521"},{"id":"7465","name":"test1483","source":"","gender":"男","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3925","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801256017576498.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804521","updatedAt":"1568804521"},{"id":"7466","name":"test1484","source":"","gender":"男","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3926","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801256345158255.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804521","updatedAt":"1568804521"},{"id":"7461","name":"test1479","source":"","gender":"女","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3921","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801254691599079.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804520","updatedAt":"1568804520"},{"id":"7462","name":"test1480","source":"","gender":"女","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3922","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801255026169120.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804520","updatedAt":"1568804520"},{"id":"7463","name":"test1481","source":"","gender":"女","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3923","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1568801255367759471.jpeg","isRegistered":"1","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1568804520","updatedAt":"1568804520"}],"total":"2286"}}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt6.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_caseread_case_00002: test_caseread_case_00002</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.2')" >
+        pass</a>
+
+    <div id='div_pt6.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.2').style.display = 'block' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.2: ------------开始执行用例-----------
+新增人员
+{"errCode":"0","errMessage":"","data":{"id":"7486","name":"chengjia","source":"","gender":"ç”·","age":"0","idNo":"","tel":"","comment":"","images":[{"id":"3943","clusterId":"0","path":"/cameraimages/camera/facefile/staff_1569576704892836514.jpeg","isRegistered":"0","createdAt":"0","updatedAt":"0"}],"librarys":[],"createdAt":"1569579642","updatedAt":"1569579642"}}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>12</td>
+    <td>12</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

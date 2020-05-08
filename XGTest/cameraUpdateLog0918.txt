@@ -1,0 +1,1164 @@
+2020-04-28 19:52:32.235679------------------------------摄像机10.58.123.230第1次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-28 19:56:52.108846------------------------------摄像机10.58.123.230第2次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-28 20:05:31.285569------------------------------摄像机10.58.123.230第3次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-28 20:09:50.328763------------------------------摄像机10.58.123.230第4次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2020-04-28 20:20:36.699909------------------------------摄像机10.58.123.230第5次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-28 20:24:57.109867------------------------------摄像机10.58.123.230第6次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-28 20:33:35.227894------------------------------摄像机10.58.123.230第7次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-28 20:37:54.578910------------------------------摄像机10.58.123.230第8次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-28 20:46:32.730540------------------------------摄像机10.58.123.230第9次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-28 20:50:52.084579------------------------------摄像机10.58.123.230第10次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-28 20:59:31.137341------------------------------摄像机10.58.123.230第11次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-28 21:03:51.313987------------------------------摄像机10.58.123.230第12次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-28 21:12:29.433513------------------------------摄像机10.58.123.230第13次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-28 21:16:48.795818------------------------------摄像机10.58.123.230第14次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-28 21:25:26.879130------------------------------摄像机10.58.123.230第15次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-28 21:29:47.077964------------------------------摄像机10.58.123.230第16次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-28 21:38:26.140204------------------------------摄像机10.58.123.230第17次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-28 21:42:45.563801------------------------------摄像机10.58.123.230第18次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-28 21:51:24.014253------------------------------摄像机10.58.123.230第19次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-28 21:55:43.222824------------------------------摄像机10.58.123.230第20次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-28 22:04:22.692436------------------------------摄像机10.58.123.230第21次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-28 22:08:42.348230------------------------------摄像机10.58.123.230第22次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-28 22:17:20.279872------------------------------摄像机10.58.123.230第23次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-28 22:21:40.158830------------------------------摄像机10.58.123.230第24次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2020-04-28 22:32:01.690075------------------------------摄像机10.58.123.230第25次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-28 22:36:21.312756------------------------------摄像机10.58.123.230第26次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-28 22:44:59.819206------------------------------摄像机10.58.123.230第27次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-28 22:49:19.527242------------------------------摄像机10.58.123.230第28次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+2020-04-28 22:58:29.325222------------------------------摄像机10.58.123.230第29次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-28 23:02:50.334732------------------------------摄像机10.58.123.230第30次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2020-04-28 23:13:40.018392------------------------------摄像机10.58.123.230第31次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+2020-04-28 23:18:20.746854------------------------------摄像机10.58.123.230第32次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+2020-04-28 23:30:45.784851------------------------------摄像机10.58.123.230第33次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 345, in run
+    nfs_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 275, in nfs_upgrade
+    res5 = cmd_res(ip, port, username, password, finish, cmds[7])
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 179, in cmd_res
+    Outres = tn.read_all()
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 333, in read_all
+    self.fill_rawq()
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 524, in fill_rawq
+    buf = self.sock.recv(50)
+socket.timeout: timed out
+timed out
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2020-04-28 23:52:31.788775------------------------------摄像机10.58.123.230第34次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+2020-04-28 23:57:55.030672------------------------------摄像机10.58.123.230第35次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+2020-04-29 00:07:09.316757------------------------------摄像机10.58.123.230第36次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 00:11:29.351275------------------------------摄像机10.58.123.230第37次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2020-04-29 00:23:02.416397------------------------------摄像机10.58.123.230第38次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 00:27:30.790911------------------------------摄像机10.58.123.230第39次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2020-04-29 00:42:08.017477------------------------------摄像机10.58.123.230第40次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+2020-04-29 00:47:04.973889------------------------------摄像机10.58.123.230第41次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 00:55:43.522317------------------------------摄像机10.58.123.230第42次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+2020-04-29 01:00:47.689514------------------------------摄像机10.58.123.230第43次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2020-04-29 01:11:47.107908------------------------------摄像机10.58.123.230第44次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 01:16:07.504556------------------------------摄像机10.58.123.230第45次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 01:24:45.913326------------------------------摄像机10.58.123.230第46次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 345, in run
+    nfs_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 275, in nfs_upgrade
+    res5 = cmd_res(ip, port, username, password, finish, cmds[7])
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 179, in cmd_res
+    Outres = tn.read_all()
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 333, in read_all
+    self.fill_rawq()
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 524, in fill_rawq
+    buf = self.sock.recv(50)
+socket.timeout: timed out
+timed out
+2020-04-29 01:39:29.083674------------------------------摄像机10.58.123.230第47次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 01:43:49.477619------------------------------摄像机10.58.123.230第48次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 01:52:27.122747------------------------------摄像机10.58.123.230第49次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+2020-04-29 01:58:05.125815------------------------------摄像机10.58.123.230第50次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 02:06:43.478912------------------------------摄像机10.58.123.230第51次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 02:12:03.617565------------------------------摄像机10.58.123.230第52次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 02:20:41.972154------------------------------摄像机10.58.123.230第53次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 02:25:02.659240------------------------------摄像机10.58.123.230第54次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2020-04-29 02:36:04.532372------------------------------摄像机10.58.123.230第55次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 02:40:25.250062------------------------------摄像机10.58.123.230第56次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2020-04-29 02:52:37.708104------------------------------摄像机10.58.123.230第57次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 02:57:15.023913------------------------------摄像机10.58.123.230第58次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+2020-04-29 03:06:15.116245------------------------------摄像机10.58.123.230第59次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 03:10:39.371233------------------------------摄像机10.58.123.230第60次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 03:19:17.447516------------------------------摄像机10.58.123.230第61次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 03:24:36.368216------------------------------摄像机10.58.123.230第62次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2020-04-29 03:35:40.964391------------------------------摄像机10.58.123.230第63次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 03:40:52.380977------------------------------摄像机10.58.123.230第64次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+2020-04-29 03:49:50.832922------------------------------摄像机10.58.123.230第65次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 03:54:11.879575------------------------------摄像机10.58.123.230第66次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 04:02:49.732436------------------------------摄像机10.58.123.230第67次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 04:07:11.067063------------------------------摄像机10.58.123.230第68次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2020-04-29 04:19:15.832823------------------------------摄像机10.58.123.230第69次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+2020-04-29 04:24:04.545681------------------------------摄像机10.58.123.230第70次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2020-04-29 04:37:57.862013------------------------------摄像机10.58.123.230第71次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 345, in run
+    nfs_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 275, in nfs_upgrade
+    res5 = cmd_res(ip, port, username, password, finish, cmds[7])
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 179, in cmd_res
+    Outres = tn.read_all()
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 333, in read_all
+    self.fill_rawq()
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 524, in fill_rawq
+    buf = self.sock.recv(50)
+socket.timeout: timed out
+timed out
+2020-04-29 04:52:24.045329------------------------------摄像机10.58.123.230第72次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+2020-04-29 04:57:21.705504------------------------------摄像机10.58.123.230第73次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2020-04-29 05:11:15.106107------------------------------摄像机10.58.123.230第74次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 05:16:36.451439------------------------------摄像机10.58.123.230第75次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 05:25:14.376300------------------------------摄像机10.58.123.230第76次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 05:29:50.269497------------------------------摄像机10.58.123.230第77次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 05:38:44.455322------------------------------摄像机10.58.123.230第78次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+2020-04-29 05:44:16.910688------------------------------摄像机10.58.123.230第79次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 05:52:55.986622------------------------------摄像机10.58.123.230第80次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 05:57:17.544106------------------------------摄像机10.58.123.230第81次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 06:05:56.523278------------------------------摄像机10.58.123.230第82次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 06:10:17.966295------------------------------摄像机10.58.123.230第83次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 06:18:58.310329------------------------------摄像机10.58.123.230第84次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 06:23:20.014932------------------------------摄像机10.58.123.230第85次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 06:31:58.796041------------------------------摄像机10.58.123.230第86次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 06:36:19.892136------------------------------摄像机10.58.123.230第87次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 06:44:58.175403------------------------------摄像机10.58.123.230第88次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 06:49:19.935012------------------------------摄像机10.58.123.230第89次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 06:57:58.581804------------------------------摄像机10.58.123.230第90次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 07:02:20.223855------------------------------摄像机10.58.123.230第91次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 07:10:58.802440------------------------------摄像机10.58.123.230第92次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 07:15:19.526662------------------------------摄像机10.58.123.230第93次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 07:23:58.042758------------------------------摄像机10.58.123.230第94次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 07:28:19.930455------------------------------摄像机10.58.123.230第95次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 07:37:00.729730------------------------------摄像机10.58.123.230第96次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 07:41:22.078433------------------------------摄像机10.58.123.230第97次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 07:49:59.563208------------------------------摄像机10.58.123.230第98次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 07:54:20.576917------------------------------摄像机10.58.123.230第99次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 08:02:58.808767------------------------------摄像机10.58.123.230第100次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 08:07:20.583389------------------------------摄像机10.58.123.230第101次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 08:15:59.715498------------------------------摄像机10.58.123.230第102次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 08:20:21.588002------------------------------摄像机10.58.123.230第103次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 08:29:01.185019------------------------------摄像机10.58.123.230第104次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 08:33:22.649211------------------------------摄像机10.58.123.230第105次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 08:42:02.622183------------------------------摄像机10.58.123.230第106次升级失败，升级前的版本号：1.0.12.20200424,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 08:50:41.980314------------------------------摄像机10.58.123.230第107次升级失败，升级前的版本号：1.0.12.20200424,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 08:59:21.260728------------------------------摄像机10.58.123.230第108次升级失败，升级前的版本号：1.0.12.20200424,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 115, in recv
+    "Connection is already closed.")
+websocket._exceptions.WebSocketConnectionClosedException: Connection is already closed.
+Connection is already closed.
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+2020-04-29 09:10:05.316457------------------------------摄像机10.58.123.230第109次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 09:14:27.342100------------------------------摄像机10.58.123.230第110次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 09:23:06.951591------------------------------摄像机10.58.123.230第111次升级失败，升级前的版本号：1.0.12.20200424,升级后的版本号：1.0.12.20200424------------------------------
+2020-04-29 09:31:46.562895------------------------------摄像机10.58.123.230第112次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 345, in run
+    nfs_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 275, in nfs_upgrade
+    res5 = cmd_res(ip, port, username, password, finish, cmds[7])
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 179, in cmd_res
+    Outres = tn.read_all()
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 333, in read_all
+    self.fill_rawq()
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 524, in fill_rawq
+    buf = self.sock.recv(50)
+socket.timeout: timed out
+timed out
+2020-04-29 09:46:39.564583------------------------------摄像机10.58.123.230第113次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 09:51:03.356094------------------------------摄像机10.58.123.230第114次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+2020-04-29 10:00:21.400268------------------------------摄像机10.58.123.230第115次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 10:04:43.735639------------------------------摄像机10.58.123.230第116次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+[WinError 10054] 远程主机强迫关闭了一个现有的连接。
+2020-04-29 10:18:55.654743------------------------------摄像机10.58.123.230第117次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 10:25:36.513175------------------------------摄像机10.58.123.230第119次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 335, in run
+    ws_upgrade(ip, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 223, in ws_upgrade
+    Upgrade(ip, ws, file1, file1Size, num)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 155, in Upgrade
+    UpgradeTrans(ip, ws, Num, file, filename, endNum, number)
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 87, in UpgradeTrans
+    transUpdateReqRes = ws.recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 313, in recv
+    opcode, data = self.recv_data()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 330, in recv_data
+    opcode, frame = self.recv_data_frame(control_frame)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 343, in recv_data_frame
+    frame = self.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 377, in recv_frame
+    return self.frame_buffer.recv_frame()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 361, in recv_frame
+    self.recv_header()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 309, in recv_header
+    header = self.recv_strict(2)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_abnf.py", line 396, in recv_strict
+    bytes_ = self.recv(min(16384, shortage))
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_core.py", line 452, in _recv
+    return recv(self.sock, bufsize)
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 102, in recv
+    bytes_ = _recv()
+  File "D:\Program Files\Python37\lib\site-packages\websocket\_socket.py", line 84, in _recv
+    return sock.recv(bufsize)
+ConnectionResetError: [WinError 10054] 远程主机强迫关闭了一个现有的连接。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0918.py", line 164, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=180)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+2020-04-29 10:34:17.901444------------------------------摄像机10.58.123.230第120次升级成功，升级后的版本号：1.0.11.20190918------------------------------
+2020-04-29 10:38:41.060881------------------------------摄像机10.58.123.230第121次升级成功，升级前的版本号：1.0.11.20190918,升级后的版本号：1.0.12.20200424------------------------------

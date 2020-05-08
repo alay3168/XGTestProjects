@@ -1,0 +1,48 @@
+base:
+  name: devctrl
+  user: admin
+  pass: maps
+  addr: 0.0.0.0
+  port: 9002
+  version: 0.0.1
+timer: 1
+key-nvr: 221423u9y8d2fwfl
+puppy-port: 50100
+onvif-port: 50101
+check-port: 60100
+dependencies:
+  mysql:
+    base:
+      user: puppy 
+      pass: 123456
+      addr: localhost 
+      port: 3306
+    database: xgface
+  redis:
+    base:
+      addr: localhost
+      port: 6379
+    max-idle: 1
+    idle-timeout: 60
+    max-active: 10
+    timeout: 10
+  nsq:
+    base:
+      addr: localhost
+      port: 4150
+  sdk:
+    base:
+      addr: localhost
+      port: 8099
+  map:
+    base:
+      addr: localhost
+      port: 9001
+  alarm:
+    base:
+      addr: localhost
+      port: 9005
+  secure:
+    base:
+      addr: localhost
+      port: 8181

@@ -1,0 +1,44 @@
+base:
+  name: webimage
+  user: admin
+  pass: images
+  addr: 0.0.0.0
+  port: 9004
+  version: 0.0.1
+extent:
+  year: 5
+  deadline: 5
+  imgbasepath:  /home/root/image
+  faceimgpath:  /camera/face/
+  bodyimgpath:  /camera/body/
+  errimgpath:   /camera/err/
+  facefilepath: /camera/facefile/
+  img_server: http://10.58.122.61/cameraimages
+dependencies:
+  mysql:
+    base:
+      user: puppy
+      pass: 123456
+      addr: mysql
+      port: 3306
+    database: xgface
+  redis:
+    base:
+      addr: redis
+      port: 6379
+  nsq1:
+    base:
+      addr: nsqd
+      port: 4150
+  nsq2:
+    base:
+      addr: nsqd2
+      port: 4150
+  xgface:
+    base:
+      addr: xgface
+      port: 50000
+  index:
+      base:
+        addr: xgindex_1
+        port: 50001

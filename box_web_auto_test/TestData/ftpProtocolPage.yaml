@@ -1,0 +1,74 @@
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+
+-
+  caseDescription : '抓拍协议配置-输入不存在的FTP服务器地址,上传图片测试失败'
+  ftpServerIPField: '10.58.133.99'
+  ftpPortField: '1221'
+  ftpUserNameField: 'ftp-puppy'
+  ftpPasswdField: '123456'
+  expected_re : '保存成功'
+  msg : '输入不存在的FTP服务器地址保存时断言失败'
+
+-
+  caseDescription : '抓拍协议配置-不输入ftp服务地址保存失败，并提示:请输入服务器地址'
+  ftpServerIPField: ''
+  ftpPortField: '1221'
+  ftpUserNameField: 'ftp-puppy'
+  ftpPasswdField: '123456'
+  expected_re : '请输入服务器地址'
+  msg : '编辑ftp服务配置保存时断言失败'
+
+-
+  caseDescription : '抓拍协议配置-输入输入错误的ftp服务器地址保存失败，并提示：请输入正确的服务器地址'
+  ftpServerIPField: '55555555555'
+  ftpPortField: '1221'
+  ftpUserNameField: 'ftp-puppy'
+  ftpPasswdField: '123456'
+  expected_re : '请输入正确的服务器地址'
+  msg : '编辑ftp服务配置保存时断言失败'
+
+-
+  caseDescription : '抓拍协议配置-不输入ftp服务端口保存失败，并提示：请输入端口号'
+  ftpServerIPField: '10.58.122.65'
+  ftpPortField: ''
+  ftpUserNameField: 'ftp-puppy'
+  ftpPasswdField: '123456'
+  expected_re : '请输入端口号'
+  msg : '编辑ftp服务配置保存时断言失败'
+
+-
+  caseDescription : '抓拍协议配置-输入非法的ftp服务器端口保存失败，并提示：端口号不在1-65535范围内'
+  ftpServerIPField: '10.58.122.65'
+  ftpPortField: 'xxss'
+  ftpUserNameField: 'ftp-puppy'
+  ftpPasswdField: '123456'
+  expected_re : '端口号不在1-65535范围内'
+  msg : '编辑ftp服务配置保存时断言失败'
+
+-
+  caseDescription : '抓拍协议配置-不输入ftp服务器用户名保存失败，并提示：请输入服务器用户名'
+  ftpServerIPField: '10.58.122.65'
+  ftpPortField: '1221'
+  ftpUserNameField: ''
+  ftpPasswdField: '123456'
+  expected_re : '请输入服务器用户名'
+  msg : '编辑ftp服务配置保存时断言失败'
+
+-
+  caseDescription : '抓拍协议配置-不输入ftp服务器用户密码保存失败，并提示：请输入连接服务器密码'
+  ftpServerIPField: '10.58.122.65'
+  ftpPortField: '1221'
+  ftpUserNameField: 'ftp-puppy'
+  ftpPasswdField: ''
+  expected_re : '请输入连接服务器密码'
+  msg : '编辑ftp服务配置保存时断言失败'
+
+- caseDescription: '抓拍协议配置-输入所有正确的ftp配置能保存成功'
+  ftpServerIPField: '10.58.122.65'
+  ftpPortField: '1221'
+  ftpUserNameField: 'ftp-puppy'
+  ftpPasswdField: '123456'
+  expected_re: '保存成功'
+  msg: '编辑ftp服务配置保存时断言失败'
+

@@ -1,0 +1,59 @@
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+
+-
+  caseDescription : '时间设置-输入所有正确的NTP配置信息能保存成功'
+  NTPServerIP: '10.58.150.6'
+  NTPPort: '123'
+  timeInterval: '6'
+  expected_re : '保存成功'
+  msg : '输入所有正确的NTP信息保存时断言失败'
+
+#-
+#  caseDescription : '时间设置-不输入NTP服务器地址保存失败，并提示：请输入服务器地址'
+#  NTPServerIP: ''
+#  NTPPort: '123'
+#  timeInterval: '6'
+#  expected_re : '请输入服务器地址'
+#  msg : '不输入NTP服务器地址保存时断言失败'
+
+#-
+#  caseDescription : '时间设置-不输入NTP服务器端口保存失败，并提示：请输入NTP端口'
+#  NTPServerIP: '10.58.150.6'
+#  NTPPort: ''
+#  timeInterval: '6'
+#  expected_re : '请输入NTP端口'
+#  msg : '不输入NTP端口信息保存时断言失败'
+
+
+-
+  caseDescription : '时间设置-输入非法NTP服务器端口保存失败，并提示：请输入正确格式的NTP端口'
+  NTPServerIP: '10.58.150.6'
+  NTPPort: 'sdd@#%^'
+  timeInterval: '6'
+  expected_re : '请输入正确格式的NTP端口'
+  msg : '不输入NTP服务器端口保存时断言失败'
+
+#-
+#  caseDescription : '时间设置-不输入NTP校时间隔保存失败，并提示：请输入校时间隔'
+#  NTPServerIP: '10.58.150.6'
+#  NTPPort: '123'
+#  timeInterval: ''
+#  expected_re : '请输入校时间隔'
+#  msg : '不输入NTP校时间隔保存时断言失败'
+
+-
+  caseDescription : '时间设置-输入非法NTP校时间隔保存失败，并提示：校时时间间隔应为大于5的整数'
+  NTPServerIP: '10.58.150.6'
+  NTPPort: '123'
+  timeInterval: 'ss#@^&*><'
+  expected_re : '校时时间间隔应为大于5的整数'
+  msg : '输入非法NTP校时间隔保存时断言失败'
+
+-
+  caseDescription : '时间设置-输入不存在的NTP服务器地址保存可以成功但测试端口失败'
+  NTPServerIP: '10.58.150.999'
+  NTPPort: '123'
+  timeInterval: '6'
+  expected_re : '保存成功'
+  msg : '输入非法NTP校时间隔保存时断言失败'

@@ -1,0 +1,16 @@
+version: "2"
+services:
+  nsqdtcpaddr: nsqd:4150
+  commonsaddr: CommunitySystemApi:9000
+  staffsaddr: StaffRepository:9003
+  imagelogsaddr: WebSystemImageService:9004
+  warningsaddr: AlarmSystem:9005
+  imagesaddr: ImageRetrieve:9008
+  mapsaddr: MapManager:9001
+  authsaddr: authentication:8181
+  host: 0.0.0.0:9007
+  xgfaceaddr: xgface:50000
+  staffindexaddr: xgindex_2:50002
+  alarmindexaddr: xgindex_2:50002
+  baseip: 0.0.0.0
+  port: 9007

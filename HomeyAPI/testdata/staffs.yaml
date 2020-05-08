@@ -1,0 +1,29 @@
+-
+  url : http://10.58.150.5:180/api/v1/1/staffs/peoples
+  method : get  # 请求方式
+  detail : 查看人员 # 用例描述
+  header:
+       content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    orderby: updatedat
+    direction: desc
+    pageSize: 24
+    currentPage: 1
+  check:  # 检查点
+     - errCode: '0'
+-
+  url : http://10.58.150.5:180/api/v1/1/staffs/peoples
+  method : post  # 请求方式
+  detail : 新增人员 # 用例描述
+  header:
+       content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    gender: "男"
+    name: chengjia
+    imageIds: ["3943"]
+  check:  # 检查点
+     - errCode: '0'

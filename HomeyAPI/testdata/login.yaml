@@ -1,0 +1,27 @@
+-
+  url : http://10.58.150.6:180/api/v2/auth/login
+  method : post  # 请求方式
+  detail : 登陆 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    username: super
+    password: 'Abc123'
+  check:  # 检查点
+     - errCode: 0
+
+-
+  url : http://10.58.150.6:180/api/v2/auth/logout
+  method : post  # 请求方式
+  detail : 登陆 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    username: super
+    password: 'Abc123'
+  check:  # 检查点
+     - errCode: 0

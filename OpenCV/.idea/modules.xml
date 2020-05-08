@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../HttpTest/.idea/HttpTest.iml" filepath="$PROJECT_DIR$/../HttpTest/.idea/HttpTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Image Search Engine/.idea/Image Search Engine.iml" filepath="$PROJECT_DIR$/../Image Search Engine/.idea/Image Search Engine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/OpenCV.iml" filepath="$PROJECT_DIR$/.idea/OpenCV.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PythonStudy_API/.idea/PythonStudy_API.iml" filepath="$PROJECT_DIR$/../PythonStudy_API/.idea/PythonStudy_API.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../XGTest/.idea/XGTest.iml" filepath="$PROJECT_DIR$/../XGTest/.idea/XGTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../algorithm-master/.idea/algorithm-master.iml" filepath="$PROJECT_DIR$/../algorithm-master/.idea/algorithm-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../eval-master/.idea/eval-master.iml" filepath="$PROJECT_DIR$/../eval-master/.idea/eval-master.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,9 @@
+[requires]
+xgface/1.0@demo/xgface
+cuda/8.0@demo/xgface
+caffe/1.0@demo/xgface
+mxnet/1.0@demo/xgface
+boost/1.0@demo/xgface
+opencv/3.3@demo/xgface
+[generators]
+cmake

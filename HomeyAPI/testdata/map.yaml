@@ -1,0 +1,46 @@
+-
+  url : http://10.58.150.5:180/api/v1/devices/cameras
+  method : get  # 请求方式
+  detail : 地图管理-查看地图1-摄像机标注 # 用例描述
+  header:
+       content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+       mapId: 1
+  check:  # 检查点
+     - errCode: '0'
+-
+  url : http://10.58.150.5:180/api/v2/maps/area
+  method : get  # 请求方式area
+  detail : 地图管理-查看地图1-区域标注 # 用例描述
+  header:
+       content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+       mapId: 1
+  check:  # 检查点
+     - errCode: '0'
+-
+  url : http://10.58.150.5:180/api/v2/maps/search
+  method : get  # 请求方式area
+  detail : 地图管理-查找地图 # 用例描述
+  header:
+       content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+  check:  # 检查点
+     - errCode: '0'
+-
+  url : http://10.58.150.5:180/api/v1/devices/camera/condition/search
+  method : get  # 请求方式area
+  detail : 地图管理-检索地图信息 # 用例描述
+  header:
+       content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+  check:  # 检查点
+     - errCode: '0'

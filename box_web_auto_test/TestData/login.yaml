@@ -1,0 +1,38 @@
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+-
+  caseDescription : '登陆-输入正确用户名密码能正常登录'
+  UserName: 'admin'
+  Passwd: '123456'
+  expected_re : '预览'
+  expected_re1 : '主菜单'
+  msg : '输入正确用户名和密码登录断言失败'
+
+
+-
+  caseDescription: '登陆-输入错误的密码登录失败并提示：用户名或密码错误'
+  UserName: 'admin'
+  Passwd: '456456'
+  expected_re: '用户名或密码错误'
+  msg : '输入错误密码登录，断言失败'
+
+-
+  caseDescription: '登陆-输入超长密码登录失败并提示：请输入6-20位密码'
+  UserName: 'admin'
+  Passwd: '123123123123123132123123123123132132132123132123'
+  expected_re: '请输入6~20位密码'
+  msg : '输入超长密码登录，断言失败'
+
+-
+  caseDescription: '登陆-不输入用户名登陆失败并提示：请输入用户名'
+  UserName: ''
+  Passwd: '1231321'
+  expected_re: '请输入用户名'
+  msg : '不输入用户名点击登录，断言失败'
+
+-
+  caseDescription: '登陆-不输入用户密码登陆失败并提示：请输入用户密码'
+  UserName: 'admin'
+  Passwd: ''
+  expected_re: '请输入密码'
+  msg : '不输入用户密码点击登录，断言失败'

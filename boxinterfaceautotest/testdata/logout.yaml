@@ -1,0 +1,13 @@
+-
+  url : ws://10.58.122.108:8000
+  detail : 退出登录 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: Logout
+    Page: Logout
+  check:  # 检查点
+     - RetCode: 0
+     - Page: Logout
+     - Method: Logout
+     - Message: OK！

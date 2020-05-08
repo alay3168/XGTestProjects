@@ -1,0 +1,50 @@
+-
+  url : http://10.58.122.61:84/api/v1/1/staffs/librarys
+  method : post  # 请求方式
+  detail : 新增人员库接口-成功用例  # 用例描述
+  header:
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    content : 测试TestA001
+  check:  # 检查点
+      - name
+      - 测试TestA001
+
+-
+  url : http://10.58.122.61:84/api/v1/1/staffs/librarys
+  method : post  # 请求方式
+  detail : 新增人员库接口-失败用例(含有非法字符)  # 用例描述
+  header:
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    content : test_002
+  check:  # 检查点
+      - errCode
+      - 只支持中文，大小英文字母，数字，最多可输入 20 字符
+
+-
+  url : http://10.58.122.61:84/api/v1/1/staffs/librarys
+  method : post  # 请求方式
+  detail : 新增人员库接口-失败用例（重复添加）  # 用例描述
+  header:
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    content : 黑名单
+  check:  # 检查点
+      - errCode
+      - 库名称已存在
+-
+  url : http://10.58.122.61:84/api/v1/1/staffs/librarys
+  method : post  # 请求方式
+  detail : 新增人员库接口-失败用例（字符超长限制）  # 用例描述
+  header:
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    content : 测试20个字符ABCDE123456789
+  check:  # 检查点
+      - errCode
+      - 只支持中文，大小英文字母，数字，最多可输入 20 字符

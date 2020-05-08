@@ -1,0 +1,11 @@
+{
+  "test_personnel.py::PersonnelTestCase::test_personnel_case1_00001_error": true, 
+  "test_personnel.py::PersonnelTestCase::test_personnel_case2_00003": true, 
+  "test_personnel.py::PersonnelTestCase::test_personnel_case2_00004": true, 
+  "test_personnel.py::PersonnelTestCase::test_personnel_case3_00003": true, 
+  "test_personnel.py::PersonnelTestCase::test_personnel_case3_00004": true, 
+  "test_personnel.py::PersonnelTestCase::test_personnel_case3_1": true, 
+  "test_personnel.py::PersonnelTestCase::test_personnel_case3_2": true, 
+  "test_personnel.py::PersonnelTestCase::test_personnel_case3_3": true, 
+  "test_personnel.py::PersonnelTestCase::test_personnel_case3_4": true
+}

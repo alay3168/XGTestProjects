@@ -1,0 +1,13 @@
+-
+  url : ws://10.58.122.205:8000
+  detail : 获取设备信息 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: DevInfo
+  check:  # 检查点
+     - 多目标智能抓拍盒
+     - DevInfo
+     - GetConfig
+     - PY-BC1H0-08

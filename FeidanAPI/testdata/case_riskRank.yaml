@@ -1,0 +1,24 @@
+-
+  url :  https://feidan.puppyrobot.com/feidan/api/caseread/riskRank/case/case1_case2_case3_case4_case5_case6_case7_case8_case9_case10_case11_case12
+  method : get  # 请求方式
+  detail : 项目风险排行 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+  check:  # 检查点
+     - errCode: 0
+     - errMsg: success
+-
+  url : https://feidan.puppyrobot.com/feidan/api/caseread/chanRiskRank/case/case1_case2_case3_case4_case5_case6_case7_case8_case9_case10_case11_case12
+  method : get  # 请求方式
+  detail : 渠道风险排行 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+  check:  # 检查点
+     - errCode: 0
+     - errMsg: success

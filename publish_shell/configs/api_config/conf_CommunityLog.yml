@@ -1,0 +1,9 @@
+version: "2"
+services:
+  mysql:
+    user: puppy 
+    password: "123456"
+    host: mysql:3306
+    database: xgface
+  logFile:
+    path: "/usr/local/openresty/nginx/logs/nginx-syslog.log"

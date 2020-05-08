@@ -1,0 +1,344 @@
+-
+  url : ws://10.58.122.108:8000
+  detail : 1.获取默认用户列表 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: UserManage
+  check:  # 检查点
+     - GetConfig
+     - UserManage
+     - admin
+-
+  url : ws://10.58.122.108:8000
+  detail : 2.用户管理-创建新用户-合法用户名密码 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserAdd
+    Message:
+      UserAdd-Properties:
+        UserName: operator01
+        Password: B9IA3kkFfbG1jjWVyDjCLw==
+        UserType: operator
+  check:  # 检查点
+     - UserAdd
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.205:8000
+  detail : 3.用户管理-验证用户列表查看新增用户 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: UserManage
+  check:  # 检查点
+     - GetConfig
+     - UserManage
+     - operator01
+-
+  url : ws://10.58.122.108:8000
+  detail : 4.用户管理-创建新用户后登陆验证 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: Login
+    Page: Login
+    Message:
+      Login-Properties:
+        UserName: operator01
+        Passwd: B9IA3kkFfbG1jjWVyDjCLw==
+  check:  # 检查点
+     - Login
+-
+  url : ws://10.58.122.205:8000
+  detail : 5.用户管理-添加操作员用户-已有用户名重复添加 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserAdd
+    Message:
+      UserAdd-Properties:
+        UserName: operator01
+        Password: B9IA3kkFfbG1jjWVyDjCLw==
+        UserType: operator
+  check:  # 检查点
+     - UserAdd
+     - SetConfig
+     - Error!
+-
+  url : ws://10.58.122.205:8000
+  detail : 6.用户管理-修改用户名 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserModify
+    Message:
+      UserModify-Properties:
+        OldName: operator01
+        NewName: operator02
+        OldPasswd: B9IA3kkFfbG1jjWVyDjCLw==
+        NewPasswd: B9IA3kkFfbG1jjWVyDjCLw==
+        OldUserType: operator
+        NewUserType: operator
+  check:  # 检查点
+     - SetConfig
+     - UserModify
+     - OK!
+-
+  url : ws://10.58.122.215:8000
+  detail : 7.用户管理-验证用户名修改后更新
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: UserManage
+  check:  # 检查点
+     - operator02
+     - UserManage
+     - GetConfig
+-
+  url : ws://10.58.122.205:8000
+  detail : 8.用户管理-修改用户类型-操作员修改为管理员 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserModify
+    Message:
+      UserModify-Properties:
+        OldName: operator02
+        NewName: operator02
+        OldPasswd: B9IA3kkFfbG1jjWVyDjCLw==
+        NewPasswd: B9IA3kkFfbG1jjWVyDjCLw==
+        OldUserType: operator
+        NewUserType: admin
+  check:  # 检查点
+     - SetConfig
+     - UserModify
+     - OK!
+-
+  url : ws://10.58.122.215:8000
+  detail : 9.用户管理-验证修改用户类型后更新
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: UserManage
+  check:  # 检查点
+     - operator02
+     - UserManage
+     - GetConfig
+     - admin
+-
+  url : ws://10.58.122.205:8000
+  detail : 10.用户管理-删除刚新建用户 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserDelete
+    Message:
+      UserDelete-Properties:
+        UserName: operator02
+  check:  # 检查点
+     - UserDelete
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.108:8000
+  detail : 11.用户管理-创建新用户-用户名边界值验证（超出24字符） # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserAdd
+    Message:
+      UserAdd-Properties:
+        UserName: 1234567890123456789012345
+        Password: B9IA3kkFfbG1jjWVyDjCLw==
+        UserType: operator
+  check:  # 检查点
+     - UserAdd
+     - SetConfig
+     - Error!
+-
+  url : ws://10.58.122.108:8000
+  detail : 12.用户管理-创建新用户-用户名边界值验证（24字符） # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserAdd
+    Message:
+      UserAdd-Properties:
+        UserName: '123456789012345678901234'
+        Password: B9IA3kkFfbG1jjWVyDjCLw==
+        UserType: operator
+  check:  # 检查点
+     - UserAdd
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.205:8000
+  detail : 13.用户管理-删除用户数据 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserDelete
+    Message:
+      UserDelete-Properties:
+        UserName:  '123456789012345678901234'
+  check:  # 检查点
+     - UserDelete
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.108:8000
+  detail : 14.用户管理-创建新用户-用户名为空输入 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserAdd
+    Message:
+      UserAdd-Properties:
+        UserName:
+        Password: B9IA3kkFfbG1jjWVyDjCLw==
+        UserType: operator
+  check:  # 检查点
+     - UserAdd
+     - SetConfig
+     - Error!
+-
+  url : ws://10.58.122.108:8000
+  detail : 15.用户管理-创建新用户-用户密码为空 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserAdd
+    Message:
+      UserAdd-Properties:
+        UserName: Nopassword
+        Password:
+        UserType: operator
+  check:  # 检查点
+     - UserAdd
+     - SetConfig
+     - Invalid argument
+-
+  url : ws://10.58.122.108:8000
+  detail : 16.用户管理-创建新用户-用户名密码均为空 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserAdd
+    Message:
+      UserAdd-Properties:
+        UserName:
+        Password:
+        UserType: operator
+  check:  # 检查点
+     - UserAdd
+     - SetConfig
+     - Invalid argument
+-
+  url : ws://10.58.122.108:8000
+  detail : 17.用户管理-创建新用户-用户类型为空 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserAdd
+    Message:
+      UserAdd-Properties:
+        UserName: user
+        Password: B9IA3kkFfbG1jjWVyDjCLw==
+        UserType:
+  check:  # 检查点
+     - UserAdd
+     - SetConfig
+     - Invalid argument
+-
+  url : ws://10.58.122.108:8000
+  detail : 18.用户管理-创建新用户-管理员 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserAdd
+    Message:
+      UserAdd-Properties:
+        UserName: admin1
+        Password: B9IA3kkFfbG1jjWVyDjCLw==
+        UserType: admin
+  check:  # 检查点
+     - UserAdd
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.205:8000
+  detail : 19.用户管理-验证用户列表新增管理员 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: UserManage
+  check:  # 检查点
+     - GetConfig
+     - UserManage
+     - admin1
+-
+  url : ws://10.58.122.108:8000
+  detail : 20.用户管理-创建管理员后登陆验证 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: Login
+    Page: Login
+    Message:
+      Login-Properties:
+        UserName: admin1
+        Passwd: B9IA3kkFfbG1jjWVyDjCLw==
+  check:  # 检查点
+     - Login
+-
+  url : ws://10.58.122.108:8000
+  detail : 21.用户管理-创建与管理员用户名同名操作员用户 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserAdd
+    Message:
+      UserAdd-Properties:
+        UserName: admin1
+        Password: B9IA3kkFfbG1jjWVyDjCLw==
+        UserType: operator
+  check:  # 检查点
+     - UserAdd
+     - SetConfig
+     - Error!
+-
+  url : ws://10.58.122.205:8000
+  detail : 22.用户管理-删除管理员 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserDelete
+    Message:
+      UserDelete-Properties:
+        UserName: admin1
+  check:  # 检查点
+     - UserDelete
+     - SetConfig
+     - OK!

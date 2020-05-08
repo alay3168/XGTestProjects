@@ -1,0 +1,28 @@
+base:
+  name: imagesvr
+  addr: 0.0.0.0
+  port: 9008
+  version: 0.0.1
+logfilter: 5
+imgbasepath: /home/root/image
+img_server: http://10.58.122.61/cameraimages
+dependencies:
+  mysql:
+    base:
+      user: puppy
+      pass: 123456
+      addr: mysql 
+      port: 3306
+    database: xgface
+  xgface:
+    base:
+      addr: xgface 
+      port: 50000
+  index:
+    base:
+      addr: xgindex_1 
+      port: 50001
+  staff:
+    base:
+      addr: StaffRepository
+      port: 9003

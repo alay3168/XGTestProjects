@@ -1,0 +1,11 @@
+-
+  url : https://feidan.puppyrobot.com/feidan/api/adminself/logout
+  method : post  # 请求方式
+  detail : 登出 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+  check:  # 检查点
+    - ok

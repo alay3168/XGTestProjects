@@ -1,0 +1,3 @@
+data/res/00000012.txt data/gt/00000012.xml
+data/res/00000033.txt data/gt/00000033.xml
+data/res/00000097.txt data/gt/00000097.xml

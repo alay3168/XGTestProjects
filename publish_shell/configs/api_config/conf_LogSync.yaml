@@ -1,0 +1,51 @@
+base:
+  name: LogSync
+  user: admin
+  pass: logsync
+  addr: 0.0.0.0
+  port: 9010
+  version: 0.1
+filter:
+  box-score: 0.8
+  global-is-face: 0.5
+  local-is-face: 0.5
+  global-front-face: 0.5
+  pitch: 0.83
+  yaw: 0.83
+  roll: 0.83
+extent:
+  case-id: case2
+  cloud-img: http://oss-cn-beijing.aliyuncs.com
+  cloud-bucket: new-sys-test1
+  faceimgpath: /camera/face/
+  imgbasepath: /home/root/image
+  img_server: http://10.58.122.238/cameraimages
+  forward: 10
+  backward: 5
+  adjust: 600
+  frequency: 60
+  enable: false
+  ccl: 1
+dependencies:
+  nsq1:
+    base:
+      addr: nsqd:4150
+  nsq2:
+    base:
+      addr: nsqd2:4150
+  rmq:
+    base:
+      addr:
+  redis:
+      base:
+        addr: redis:6379
+      max-idle: 1
+      idle-timeout: 60
+      max-active: 10
+      timeout: 10
+      db: 2
+  case-field:
+    base:
+      user: puppy
+      pass: test123
+      addr: 47.93.25.226

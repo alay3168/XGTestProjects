@@ -1,0 +1,43 @@
+base:
+  name: CaseField
+  user: puppy
+  pass: test123
+  addr: 0.0.0.0
+  port: 9011
+extent:
+  imageServer: http://oss-cn-hangzhou.aliyuncs.com/xgrobotics/
+  year: 2
+dependencies:
+  redis:
+    base:
+      addr: 172.17.225.58
+      port: 6379
+    max-idle: 1
+    idle-timeout: 60
+    max-active: 10
+    timeout: 10
+  nsq:
+    base:
+      addr: 172.17.225.58
+      port: 4151
+  xgface:
+    base:
+      addr: 39.106.71.99
+      port: 59000
+  index:
+    base:
+      addr: 172.17.225.58
+      port: 50001
+  secure:
+    base:
+      addr: 172.17.225.58
+      port: 9999
+cases:
+  id: case1
+  name: test1
+  mysql:
+    base:
+      addr: rm-2ze8mnixq7cs96viv.mysql.rds.aliyuncs.com
+      user: xgface
+      pass: 1QAZ3edc
+    database: xgface

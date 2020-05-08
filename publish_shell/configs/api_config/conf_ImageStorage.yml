@@ -1,0 +1,9 @@
+version: "2"
+services:
+  web:
+    basepath: /home/root/image
+    nsqdtcpaddr: nsqd:4150
+    baseip: localhost
+    masterport: 9333
+    volumeport: 9991
+    filerport: 8888

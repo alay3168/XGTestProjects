@@ -1,0 +1,28 @@
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-Puppy设置-输入错误的服务器地址 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: Trans
+    Message:
+      profile-version: '1.0'
+      Trans-Properties:
+        FtpParam:
+          Server :
+          User:
+          Port:
+          Password:
+          PathPolicy: 1
+          ArchiveDuration: 1
+        PuppyParam:
+          Server: 10.58.122.159
+          State: 1
+          Port: 1883
+        Policy : ftp
+  check:  # 检查点
+     -
+     - Trans
+     - SetConfig
+     - OK!

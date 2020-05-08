@@ -1,0 +1,45 @@
+version: "2"
+services:
+  web:
+    websocetaddr: 0.0.0.0:8887
+    nsqdtcpaddr: nsqd:4150
+    baseip: 0.0.0.0
+    xgfaceadd: xgface:50000
+    staffdd: StaffRepository:9003
+    searchadd: ImageRetrieve:9008
+  image:
+    imgurl: http://10.58.122.61/cameraimages
+    imgurl2: http://10.58.122.61/
+  redis:
+    user: root
+    password: ""
+    host: redis:6379
+  configues:
+    indexPageRightTime: 1000
+    checking: 10000
+    faceClusterTime: 5000
+    indexPageAttributeTime: 2000
+    maxSimilarity: 70
+    minSimilarity: 60
+    indexPageAttributeTime: 2000
+    maxUserNumbers: 100000
+Face:
+  Width: 60
+  Height: 60
+  Angle: 20
+  BoxScore: 0.9
+  LocalIsFace: 0.9
+  GlobalFrontFace: 0.9
+  LocalIsFace: 0.9
+  Same: 0.68
+Stream:
+  Open: false
+  DeviceID: 0
+  FaceFrequency: 3000
+  ShowRectangle: true
+Ssdfacedetect:
+    protofile: ./ssd-facedetect/deploy.prototxt.txt
+    modelfile: ./ssd-facedetect/res10_300x300_ssd_iter_140000_fp16.caffemodel
+Dnnfacedetect:
+    protofile: ./dnn-facedetect/deploy.prototxt
+    modelfile: ./dnn-facedetect/res10_300x300_ssd_iter_140000.caffemodel

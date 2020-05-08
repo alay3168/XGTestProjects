@@ -1,0 +1,18 @@
+-
+  url : http://10.58.150.5:180/api/v1/1/alarms/lists
+  method : get  # 请求方式
+  detail : 报警记录 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    startTime: 1568908800
+    endTime: 1571500800
+    category: 全部
+    orderby: alarmtime
+    direction: desc
+    currentPage: 1
+    pageSize: 10
+  check:  # 检查点
+     - errCode: '0'

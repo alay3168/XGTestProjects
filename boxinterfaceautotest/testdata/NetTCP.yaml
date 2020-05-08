@@ -1,0 +1,441 @@
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-TCP/IP-手动配置IP-ipv4地址输入为空 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: NetworkLAN
+    Message:
+      profile-version: 1.0
+      LAN-Properties:
+        DeviceType: auto
+        Dhcp: false
+        Address :
+        Mask: 255.255.255.0
+        Gateway : 10.58.122.1
+        MainDns : 8.8.8.8
+        SubDns : 114.114.114.114
+  check:  # 检查点
+     - SetConfig
+     - NetworkLAN
+     - Error!
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-TCP/IP-手动配置IP-ipv4地址输入非法字符 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: NetworkLAN
+    Message:
+      profile-version: 1.0
+      LAN-Properties:
+        DeviceType: auto
+        Dhcp: false
+        Address: abc￥%@#
+        Mask: 255.255.255.0
+        Gateway : 10.58.122.1
+        MainDns : 8.8.8.8
+        SubDns : 114.114.114.114
+  check:  # 检查点
+     - SetConfig
+     - NetworkLAN
+     - Error!
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-TCP/IP-手动配置IP-ipv4地址输入数字 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: NetworkLAN
+    Message:
+      profile-version: 1.0
+      LAN-Properties:
+        DeviceType: auto
+        Dhcp: false
+        Address: 123456
+        Mask: 255.255.255.0
+        Gateway: 10.58.122.1
+        MainDns: 8.8.8.8
+        SubDns: 114.114.114.114
+  check:  # 检查点
+     - SetConfig
+     - NetworkLAN
+     - Error!
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-TCP/IP-手动配置IP-ipv4地址输入网段格式有误 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: NetworkLAN
+    Message:
+      profile-version: 1.0
+      LAN-Properties:
+        DeviceType: auto
+        Dhcp: false
+        Address: 10.58.123.208.10
+        Mask: 255.255.255.0
+        Gateway: 10.58.122.1
+        MainDns: 8.8.8.8
+        SubDns: 114.114.114.114
+  check:  # 检查点
+     - SetConfig
+     - NetworkLAN
+     - Error!
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-TCP/IP-手动配置IP-输入子网掩码为空 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: NetworkLAN
+    Message:
+      profile-version: 1.0
+      LAN-Properties:
+        DeviceType: auto
+        Dhcp: false
+        Address: 10.58.122.108
+        Mask:
+        Gateway: 10.58.122.1
+        MainDns: 8.8.8.8
+        SubDns: 114.114.114.114
+  check:  # 检查点
+     - SetConfig
+     - NetworkLAN
+     - Error!
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-TCP/IP-手动配置IP-输入子网掩码非法 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: NetworkLAN
+    Message:
+      profile-version: 1.0
+      LAN-Properties:
+        DeviceType: auto
+        Dhcp: false
+        Address: 10.58.122.108
+        Mask: abc&*（）
+        Gateway: 10.58.122.1
+        MainDns: 8.8.8.8
+        SubDns: 114.114.114.114
+  check:  # 检查点
+     - SetConfig
+     - NetworkLAN
+     - Error!
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-TCP/IP-手动配置IP-输入子网掩码为数字 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: NetworkLAN
+    Message:
+      profile-version: 1.0
+      LAN-Properties:
+        DeviceType: auto
+        Dhcp: false
+        Address: 10.58.122.108
+        Mask: 13243423
+        Gateway: 10.58.122.1
+        MainDns: 8.8.8.8
+        SubDns: 114.114.114.114
+  check:  # 检查点
+     - SetConfig
+     - NetworkLAN
+     - Error!
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-TCP/IP-手动配置IP-输入子网掩码格式有误 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: NetworkLAN
+    Message:
+      profile-version: 1.0
+      LAN-Properties:
+        DeviceType: auto
+        Dhcp: false
+        Address: 10.58.122.108
+        Mask: 255.256.256.255
+        Gateway: 10.58.122.1
+        MainDns: 8.8.8.8
+        SubDns: 114.114.114.114
+  check:  # 检查点
+     - SetConfig
+     - NetworkLAN
+     - Error!
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-TCP/IP-手动配置IP-输入网关非法 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: NetworkLAN
+    Message:
+      profile-version: 1.0
+      LAN-Properties:
+        DeviceType: auto
+        Dhcp: false
+        Address: 10.58.122.108
+        Mask: 255.256.255.0
+        Gateway: abc@#￥
+        MainDns: 8.8.8.8
+        SubDns: 114.114.114.114
+  check:  # 检查点
+     - SetConfig
+     - NetworkLAN
+     - Error!
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-TCP/IP-手动配置IP-输入网关为数字 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: NetworkLAN
+    Message:
+      profile-version: 1.0
+      LAN-Properties:
+        DeviceType: auto
+        Dhcp: false
+        Address: 10.58.122.108
+        Mask: 255.256.255.0
+        Gateway: 133334343
+        MainDns: 8.8.8.8
+        SubDns: 114.114.114.114
+  check:  # 检查点
+     - SetConfig
+     - NetworkLAN
+     - Error!
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-TCP/IP-手动配置IP-输入网关为空 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: NetworkLAN
+    Message:
+      profile-version: 1.0
+      LAN-Properties:
+        DeviceType: auto
+        Dhcp: false
+        Address: 10.58.122.108
+        Mask: 255.255.255.0
+        Gateway:
+        MainDns: 8.8.8.8
+        SubDns: 114.114.114.114
+  check:  # 检查点
+     - SetConfig
+     - NetworkLAN
+     - Error!
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-TCP/IP-手动配置IP-输入网关格式错误 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: NetworkLAN
+    Message:
+      profile-version: 1.0
+      LAN-Properties:
+        DeviceType: auto
+        Dhcp: false
+        Address: 10.58.122.108
+        Mask: 255.255.255.0
+        Gateway: 256.256.256.256
+        MainDns: 8.8.8.8
+        SubDns: 114.114.114.114
+  check:  # 检查点
+     - SetConfig
+     - NetworkLAN
+     - Error!
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-TCP/IP-手动配置IP-首选DNS输入非法字符 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: NetworkLAN
+    Message:
+      profile-version: 1.0
+      LAN-Properties:
+        DeviceType: auto
+        Dhcp: false
+        Address: 10.58.122.108
+        Mask: 255.255.255.0
+        Gateway: 10.58.122.1
+        MainDns: abc!@#
+        SubDns: 114.114.114.114
+  check:  # 检查点
+     - SetConfig
+     - NetworkLAN
+     - Error!
+-
+   url: ws://10.58.122.205:8000
+   detail: 网络协议-TCP/IP-手动配置IP-首选DNS输入为空 # 用例描述
+   header:
+     content-type: application/json
+   data:  # 请求数据
+     Method: SetConfig
+     Page: NetworkLAN
+     Message:
+       profile-version: 1.0
+       LAN-Properties:
+         DeviceType: auto
+         Dhcp: false
+         Address: 10.58.122.108
+         Mask: 255.255.255.0
+         Gateway: 10.58.122.1
+         MainDns:
+         SubDns: 114.114.114.114
+   check:  # 检查点
+   - SetConfig
+   - NetworkLAN
+   - Error!
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-TCP/IP-手动配置IP-首选DNS输入为数字 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: NetworkLAN
+    Message:
+      profile-version: 1.0
+      LAN-Properties:
+        DeviceType: auto
+        Dhcp: false
+        Address: 10.58.122.108
+        Mask: 255.255.255.0
+        Gateway: 10.58.122.1
+        MainDns: 23434141
+        SubDns: 114.114.114.114
+  check:  # 检查点
+     - SetConfig
+     - NetworkLAN
+     - Error!
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-TCP/IP-手动配置IP-首选DNS输入网段格式有误 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: NetworkLAN
+    Message:
+      profile-version: 1.0
+      LAN-Properties:
+        DeviceType: auto
+        Dhcp: false
+        Address: 10.58.122.108
+        Mask: 255.255.255.0
+        Gateway: 10.58.122.1
+        MainDns: 8.8.8.8.8
+        SubDns: 114.114.114.114
+  check:  # 检查点
+     - SetConfig
+     - NetworkLAN
+     - Error!
+-
+   url: ws://10.58.122.205:8000
+   detail: 网络协议-TCP/IP-手动配置IP-备选DNS输入为空 # 用例描述
+   header:
+     content-type: application/json
+   data:  # 请求数据
+     Method: SetConfig
+     Page: NetworkLAN
+     Message:
+       profile-version: 1.0
+       LAN-Properties:
+         DeviceType: auto
+         Dhcp: false
+         Address: 10.58.122.108
+         Mask: 255.255.255.0
+         Gateway: 10.58.122.1
+         MainDns: 8.8.8.8
+         SubDns:
+   check:  # 检查点
+   - SetConfig
+   - NetworkLAN
+   - OK!
+   - !!str 0
+-
+   url: ws://10.58.122.205:8000
+   detail: 网络协议-TCP/IP-手动配置IP-备选DNS输入非法字符 # 用例描述
+   header:
+     content-type: application/json
+   data:  # 请求数据
+     Method: SetConfig
+     Page: NetworkLAN
+     Message:
+       profile-version: 1.0
+       LAN-Properties:
+         DeviceType: auto
+         Dhcp: false
+         Address: 10.58.122.108
+         Mask: 255.255.255.0
+         Gateway: 10.58.122.1
+         MainDns: 8.8.8.8
+         SubDns: abc！@#￥
+   check:  # 检查点
+     - SetConfig
+     - NetworkLAN
+     - Error!
+-
+   url: ws://10.58.122.205:8000
+   detail: 网络协议-TCP/IP-手动配置IP-备选DNS输入数字 # 用例描述
+   header:
+     content-type: application/json
+   data:  # 请求数据
+     Method: SetConfig
+     Page: NetworkLAN
+     Message:
+       profile-version: 1.0
+       LAN-Properties:
+         DeviceType: auto
+         Dhcp: false
+         Address: 10.58.122.108
+         Mask: 255.255.255.0
+         Gateway: 10.58.122.1
+         MainDns: 8.8.8.8
+         SubDns: 1233445
+   check:  # 检查点
+     - SetConfig
+     - NetworkLAN
+     - OK!
+-
+   url: ws://10.58.122.205:8000
+   detail: 网络协议-TCP/IP-手动配置IP-备选DNS输入格式错误 # 用例描述
+   header:
+     content-type: application/json
+   data:  # 请求数据
+     Method: SetConfig
+     Page: NetworkLAN
+     Message:
+       profile-version: 1.0
+       LAN-Properties:
+         DeviceType: auto
+         Dhcp: false
+         Address: 10.58.122.108
+         Mask: 255.255.255.0
+         Gateway: 10.58.122.1
+         MainDns: 8.8.8.8
+         SubDns: 114.114.114.113.114
+   check:  # 检查点
+     - SetConfig
+     - NetworkLAN
+     - Error!

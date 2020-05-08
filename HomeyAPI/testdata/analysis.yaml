@@ -1,0 +1,65 @@
+-
+  url : http://10.58.150.5:180/api/v1/1/alarms/alarmtype
+  method : get  # 请求方式
+  detail : 报警趋势 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    startTime : 1568908800
+    endTime: 1571500800
+  check:  # 检查点
+     - errCode: '0'
+-
+  url : http://10.58.150.5:180/api/v1/1/alarms/logstranger
+  method : get  # 请求方式
+  detail : 通行趋势 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    startTime: 1568908800
+    endTime: 1571500800
+  check:  # 检查点
+     - errCode: '0'
+-
+  url : http://10.58.150.5:180/api/v1/1/alarms/alarmtime
+  method : get  # 请求方式
+  detail : 报警时间 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    startTime: 1568908800
+    endTime: 1571500800
+  check:  # 检查点
+     - errCode: '0'
+-
+  url : http://10.58.150.5:180/api/v1/1/alarms/alarmcamera
+  method : get  # 请求方式
+  detail : 报警设备 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    startTime: 1568908800
+    endTime: 1571500800
+  check:  # 检查点
+     - errCode: '0'
+-
+  url : http://10.58.150.5:180/api/v1/1/alarms/logage
+  method : get  # 请求方式
+  detail : 通行人员比例 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    startTime: 1568908800
+    endTime: 1571500800
+  check:  # 检查点
+     - errCode: '0'

@@ -1,0 +1,13 @@
+{
+"MySql":{
+	"User":"puppy",
+	"PassWord":"123456",
+	"DataBase":"xgface",
+	"Host":"mysql"
+	},
+"Ip":"10.58.150.5",
+"Port":"8099",
+"BasePath":"/var/tmp/RTSP/",
+"AuthIp":"authentication",
+"AuthPort":"8181"
+}

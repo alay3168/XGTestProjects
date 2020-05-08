@@ -1,0 +1,36 @@
+-
+  url : ws://10.58.122.215:8000
+  detail : 系统维护-重启 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: Maintain
+    Page: Reboot
+  check:  # 检查点
+     - RetCode: 0
+     - Page : Page
+     - Message: OK
+-
+  url : ws://10.58.122.215:8000
+  detail : 参数导出 # 用例描述
+ header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: Maintain
+    Page: Exportparams
+  check:  # 检查点
+     - RetCode: 0
+     - Page : Exportparams
+     - Message: OK
+-
+  url : ws://10.58.122.215:8000
+  detail : 恢复出厂 # 用例描述
+ header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: Maintain
+    Page: Restore
+  check:  # 检查点
+     - RetCode: 0
+     - Page : Restore
+     - Message: OK

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+user=$(grep 1000 /etc/passwd | awk -F: '{print $1}')
+
+if [[ -e /usr/share/applications/puppy.desktop ]];then
+sudo rm -rf /usr/share/applications/puppy.desktop
+fi
+sudo cp puppy.png /usr/share/icons/
+sudo touch /usr/share/applications/puppy.desktop
+sudo echo "[Desktop Entry]" >> /usr/share/applications/puppy.desktop
+sudo echo "Exec=/opt/videoanalyse/start.sh" >> /usr/share/applications/puppy.desktop
+sudo echo "Icon=puppy" >> /usr/share/applications/puppy.desktop
+sudo echo "Terminal=false" >> /usr/share/applications/puppy.desktop
+sudo echo "Type=Application" >> /usr/share/applications/puppy.desktop
+sudo echo "MimeType=application/x-abiword;text/x-abiword;text/x-xml-abiword;text/plain;application/msword;application/rtf;application/vnd.plain;application/xhtml+xml;text/html;application/x-crossmark;application/docbook+xml;application/x-t602;application/vnd.oasis.opendocument.text;application/vnd.oasis.opendocument.text-template;application/vnd.oasis.opendocument.text-web;application/vnd.sun.xml.writer;application/vnd.stardivision.writer;text/vnd.wap.wml;application/wordperfect6;application/wordperfect5.1;application/vnd.wordperfect;application/x-abicollab;application/vnd.palm;application/x-applix-word;application/x-kword;application/x-mif;application/x-mswrite;application/x-palm-database;text/abiword;text/richtext;text/rtf;" >> /usr/share/applications/puppy.desktop
+sudo echo "Categories=Application" >> /usr/share/applications/puppy.desktop
+sudo echo "Name=puppy" >> /usr/share/applications/puppy.desktop
+sudo cp /usr/share/applications/puppy.desktop /home/$user/Desktop/
+sudo chown $user:$user /home/$user/Desktop/puppy.desktop
+sudo chmod +x /home/$user/Desktop/puppy.desktop

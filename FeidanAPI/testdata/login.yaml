@@ -1,0 +1,14 @@
+-
+  url : https://feidan.puppyrobot.com/feidan/api/common/login
+  method : post  # 请求方式
+  detail : 登陆 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    username: admin
+    password: 'Abc123'
+  check:  # 检查点
+     - errCode: 0
+

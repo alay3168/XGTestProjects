@@ -1,0 +1,136 @@
+-
+  url : ws://10.58.122.205:8000
+  detail : 时间设置-手动校时 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: TimeSet
+    Message:
+      profile-version: '1.0'
+      Time-Properties:
+        Timezone: 27
+        TimeCheck:
+          TimeCheckType: manual
+          ManualCheck:
+            SyncPC: true
+            TimeDevice:
+          NtpCheck:
+            ServerIp: time.windows.com
+            ServerPort: 123
+            CheckInterval: 1440
+  check:  # 检查点
+     - RetCode: 0
+     - Page: TimeSet
+     - Method: SetConfig
+     - Message: OK!
+-
+  url : ws://10.58.122.205:8000
+  detail : 获取手动校时保存后验证 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: TimeSet
+  check:  # 检查点
+     - RetCode: 0
+     - Page: TimeSet
+     - Method: GetConfig
+#  validation：
+-
+  url : ws://10.58.122.205:8000
+  detail : 时间设置-ntp校时-测试端口 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: TestConfig
+    Page: TimeSet
+    Message:
+      profile-version: '1.0'
+      Time-Properties:
+        Timezone: 27
+        TimeCheck:
+          TimeCheckType: ntp
+          ManualCheck:
+            SyncPC: true
+            TimeDevice:
+          NtpCheck:
+            ServerIp: 10.58.150.6
+            ServerPort: 123
+            CheckInterval: 1440
+  check:  # 检查点
+     - RetCode: 0
+     - Page: TimeSet
+     - Method: TestConfig
+     - Message: OK!
+-
+  url : ws://10.58.122.205:8000
+  detail : 时间设置-ntp校时-保存设置 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: TimeSet
+    Message:
+      profile-version: '1.0'
+      Time-Properties:
+        Timezone: 27
+        TimeCheck:
+          TimeCheckType: ntp
+          ManualCheck:
+            SyncPC: true
+            TimeDevice:
+          NtpCheck:
+            ServerIp: 10.58.150.6
+            ServerPort: 123
+            CheckInterval: 1440
+  check:  # 检查点
+     - RetCode: 0
+     - Page: TimeSet
+     - Method: SetConfig
+     - Message: OK!
+-
+  url : ws://10.58.122.205:8000
+  detail : 获取NTP校时保存后验证 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: TimeSet
+  check:  # 检查点
+     - RetCode: 0
+     - Page: TimeSet
+     - Method: GetConfig
+#Message:
+         ##         Time-Properties:
+         ##           TimeCheck:
+       ##             NtpCheck:
+       ##              - ServerIp: 10.58.122.150
+-
+  url : ws://10.58.122.205:8000
+  detail : 时间设置-修改NTP校时为手动校时 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: TimeSet
+    Message:
+      profile-version: '1.0'
+      Time-Properties:
+        Timezone: 27
+        TimeCheck:
+          TimeCheckType: manual
+          ManualCheck:
+            SyncPC: true
+            TimeDevice:
+          NtpCheck:
+            ServerIp: 10.58.122.150
+            ServerPort: 123
+            CheckInterval: 1440
+  check:  # 检查点
+     - RetCode: 0
+     - Page: TimeSet
+     - Method: SetConfig
+     - Message: OK!
+
+

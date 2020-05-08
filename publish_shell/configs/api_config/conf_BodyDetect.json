@@ -1,0 +1,17 @@
+{
+"BasePath":"/home/root",
+"HttpPath":"http://10.58.150.5/cameraimages",
+"CamPath":"/camera/body/",
+"Rate":25,
+"Threshold":0.7,
+"RedisIP":"10.58.150.5",
+"RedisPort":6379,
+"NsqIPPort":"10.58.150.5:4152",
+"GPUIndex":0,
+"Log":true,
+"MysqlUser":"puppy",
+"MysqlPassWD":"123456",
+"MysqlIP":"10.58.150.5",
+"MysqlPort":3306,
+"Database":"xgface"
+}

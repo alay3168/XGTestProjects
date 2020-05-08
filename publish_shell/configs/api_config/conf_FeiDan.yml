@@ -1,0 +1,112 @@
+version: "2"
+services:
+  web:
+    casename:
+    baseip: 0.0.0.0
+    port: 8888
+    enablehttps: false  #true/fasle 是否使用https登录
+    tokenexp: 30  #分钟
+    firstCaptRefresh : 10 #分钟  首次抓拍定时更新间隔
+    deadline: 5
+    hachisign: "03c20d5e28b241eb5fd2156af6f2f232"
+    devicesn_case: {
+      "100101180821WN0007": "case1",
+      "device1": "case1",
+      "device2": "case2",
+    }
+
+    thirdlogin: "http://172.17.124.233:9107/api/v2/auth/introspect/token"  #临时没用到，这个应该放在casefiledurl中
+    errurl: "https://10.58.122.66:8181/public/static/thirdlogin.html"  #临时没用到，这个应该放在casefiledurl中
+    authrpcaddr: authentication:8181
+  mysql:
+    user: hachi
+    password: 1QAZ3edc
+    host: rm-2ze8mnixq7cs96viv.mysql.rds.aliyuncs.com:3306
+    database: feidan_production
+  redis:
+    user: root
+    password: ""
+    host: r-2zeibr2drazelu7840.redis.rds.aliyuncs.com:6379
+    max-idle: 1
+    idle-timeout: 60
+    max-active: 10
+    timeout: 10
+  aliyun:
+    threshold: 0.6
+  xgface:
+    host: 39.97.197.203:50000
+  extent:
+    year: 2
+    user: admin
+    pass: logsync
+    similarity:
+      - 0.64
+      - 0.67
+      - 0.7
+  case:
+    - name: 太原紫藤公馆
+      id: case1
+      mysql: {user: hachi, password: '1QAZ3edc', host: 'rm-2ze8mnixq7cs96viv.mysql.rds.aliyuncs.com:3306', database: taiyuan_ziteng_case}
+      index:
+        host: 172.17.225.63:50001
+      imageServer: http://taiyuan-zitenggongguan.oss-cn-beijing.aliyuncs.com/
+    - name: 广州常春藤
+      id: case2
+      mysql: {user: hachi, password: '1QAZ3edc', host: 'rm-2ze8mnixq7cs96viv.mysql.rds.aliyuncs.com:3306', database: guangzhou_changchunteng}
+      index:
+        host: 172.17.225.63:50002
+      imageServer: http://guangzhou-changchunteng.oss-cn-beijing.aliyuncs.com/
+    - name: 广州蔷薇国际
+      id: case3
+      mysql: {user: hachi, password: '1QAZ3edc', host: 'rm-2ze8mnixq7cs96viv.mysql.rds.aliyuncs.com:3306', database: guangzhou_qiangwei_case}
+      index:
+        host: 172.17.225.63:50003
+      imageServer: http://guangzhou-qiangwei.oss-cn-beijing.aliyuncs.com/
+    - name: 惠州木槿雅著
+      id: case4
+      mysql: {user: hachi, password: '1QAZ3edc', host: 'rm-2ze8mnixq7cs96viv.mysql.rds.aliyuncs.com:3306', database: huizhou_mujin_case}
+      index:
+        host: 172.17.225.63:50004
+      imageServer: http://huizhou-mujin.oss-cn-beijing.aliyuncs.com/
+    - name: 惠州常春藤
+      id: case5
+      mysql: {user: hachi, password: '1QAZ3edc', host: 'rm-2ze8mnixq7cs96viv.mysql.rds.aliyuncs.com:3306', database: huizhouchangchunteng_case}
+      index:
+        host: 172.17.225.63:50005
+      imageServer: http://huizhou-changchunteng.oss-cn-beijing.aliyuncs.com/
+    - name: 天津海棠雅著
+      id: case6
+      mysql: {user: hachi, password: '1QAZ3edc', host: 'rm-2ze8mnixq7cs96viv.mysql.rds.aliyuncs.com:3306', database: tianjinhaitangyazhu_case}
+      index:
+        host: 172.17.225.63:50006
+      imageServer: http://tianjin-haitangyazhu.oss-cn-beijing.aliyuncs.com/
+    - name: 重庆永川
+      id: case7
+      mysql: {user: hachi, password: '1QAZ3edc', host: 'rm-2ze8mnixq7cs96viv.mysql.rds.aliyuncs.com:3306', database: chongqingyongchuan_case}
+      index:
+        host: 172.17.225.63:50007
+      imageServer: http://chongqing-yongchuan.oss-cn-beijing.aliyuncs.com/
+    - name: 昆明花鹤翎
+      id: case8
+      mysql: {user: hachi, password: '1QAZ3edc', host: 'rm-2ze8mnixq7cs96viv.mysql.rds.aliyuncs.com:3306', database: kunminghuaheling_case}
+      index:
+        host: 172.17.225.63:50008
+      imageServer: http://kunming-huaheling.oss-cn-beijing.aliyuncs.com/
+    - name: 三亚海棠华著
+      id: case9
+      mysql: {user: hachi, password: '1QAZ3edc', host: 'rm-2ze8mnixq7cs96viv.mysql.rds.aliyuncs.com:3306', database: sanyahaitanghuazhu_case}
+      index:
+        host: 172.17.225.63:50009
+      imageServer: http://sanya-haitanghuazhu.oss-cn-beijing.aliyuncs.com/
+    - name: 成都海棠名著
+      id: case10
+      mysql: {user: hachi, password: '1QAZ3edc', host: 'rm-2ze8mnixq7cs96viv.mysql.rds.aliyuncs.com:3306', database: chengduhaitangmingzhu_case}
+      index:
+        host: 172.17.225.63:50010
+      imageServer: http://chengdu-haitangmingzhu.oss-cn-beijing.aliyuncs.com/
+    - name: 遵义蔷薇国际
+      id: case11
+      mysql: {user: hachi, password: '1QAZ3edc', host: 'rm-2ze8mnixq7cs96viv.mysql.rds.aliyuncs.com:3306', database: zunyiqiangweiguoji_case}
+      index:
+        host: 172.17.225.63:50011
+      imageServer: http://zunyi-qiangweiguoji.oss-cn-beijing.aliyuncs.com/

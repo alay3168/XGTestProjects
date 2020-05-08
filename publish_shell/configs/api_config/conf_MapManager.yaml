@@ -1,0 +1,12 @@
+base:
+  addr: 0.0.0.0:9001
+extent:
+  map-dir: /home/image/map/
+  map-num: 3
+dependencies:
+  mysql:
+    base:
+      user: puppy
+      pass: 123456
+      addr: mysql:3306
+    database: xgface

@@ -1,0 +1,204 @@
+-
+  url : ws://10.58.122.215:8000
+  detail : 查看默认用户列表-默认admin # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: UserManage
+  check:  # 检查点
+     - RetCode: 0
+     - Page: UserManage
+     - Method: GetConfig
+-
+  url : ws://10.58.122.205:8000
+  detail : 用户管理-创建新用户-添加操作员用户 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserAdd
+    Message:
+      UserAdd-Properties:
+        UserName: operator01
+        Password: B9IA3kkFfbG1jjWVyDjCLw==
+        UserType: operator
+  check:  # 检查点
+     - RetCode: 0
+     - Page: UserAdd
+     - Method : SetConfig
+     - Message : OK!
+-
+  url : ws://10.58.122.215:8000
+  detail : 用户管理-验证添加用户后更新
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: UserManage
+  check:  # 检查点
+     - RetCode: 0
+     - Page: UserManage
+     - Method: GetConfig
+     - Message: '{"profile-version":"1.0","UsersInfo-Properties":{"Users":[{"UserName":"admin","UserType":"super","Password":"154vDmYO2qCYwP5+gusOiA==","Current":true},{"UserName":"operator01","UserType":"operator","Password":"B9IA3kkFfbG1jjWVyDjCLw=="}]}}'
+-
+  url : ws://10.58.122.108:8000
+  detail : 用户管理-创建新用户后登陆验证 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: Login
+    Page: Login
+    Message:
+      Login-Properties:
+        UserName: operator01
+        Passwd: B9IA3kkFfbG1jjWVyDjCLw==
+  check:  # 检查点
+     - RetCode: 0
+     - Method : Login
+     - Page: Login
+-
+  url : ws://10.58.122.205:8000
+  detail : 用户管理-添加操作员用户-用户名重复添加 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserAdd
+    Message:
+      UserAdd-Properties:
+        UserName: operator01
+        Password: B9IA3kkFfbG1jjWVyDjCLw==
+        UserType: operator
+  check:  # 检查点
+     - RetCode: -1
+     - Page: UserAdd
+     - Method : SetConfig
+     - Message : Error!
+-
+  url : ws://10.58.122.205:8000
+  detail : 用户管理-修改用户名 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserModify
+    Message:
+      UserModify-Properties:
+        OldName: operator01
+        NewName: operator02
+        OldPasswd: B9IA3kkFfbG1jjWVyDjCLw==
+        NewPasswd: B9IA3kkFfbG1jjWVyDjCLw==
+        OldUserType: operator
+        NewUserType: operator
+  check:  # 检查点
+     - RetCode: 0
+     - Page: UserModify
+-
+  url : ws://10.58.122.215:8000
+  detail : 用户管理-验证用户名修改后更新
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: UserManage
+  check:  # 检查点
+     - RetCode: 0
+     - Page: UserManage
+     - Method: GetConfig
+     - Message: '{"profile-version":"1.0","UsersInfo-Properties":{"Users":[{"UserName":"admin","UserType":"super","Password":"154vDmYO2qCYwP5+gusOiA==","Current":true},{"UserName":"operator02","UserType":"operator","Password":"B9IA3kkFfbG1jjWVyDjCLw=="}]}}'
+-
+  url : ws://10.58.122.205:8000
+  detail : 用户管理-修改用户类型-操作员修改为管理员 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserModify
+    Message:
+      UserModify-Properties:
+        OldName: operator02
+        NewName: operator02
+        OldPasswd: B9IA3kkFfbG1jjWVyDjCLw==
+        NewPasswd: B9IA3kkFfbG1jjWVyDjCLw==
+        OldUserType: operator
+        NewUserType: admin
+  check:  # 检查点
+     - RetCode: 0
+     - Page: UserModify
+-
+  url : ws://10.58.122.215:8000
+  detail : 用户管理-验证用户类型修改后更新
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: UserManage
+  check:  # 检查点
+     - RetCode: 0
+     - Page: UserManage
+     - Method: GetConfig
+     - Message: '{"profile-version":"1.0","UsersInfo-Properties":{"Users":[{"UserName":"admin","UserType":"super","Password":"154vDmYO2qCYwP5+gusOiA==","Current":true},{"UserName":"operator02","UserType":"admin","Password":"B9IA3kkFfbG1jjWVyDjCLw=="}]}}'
+-
+  url : ws://10.58.122.205:8000
+  detail : 用户管理-添加管理员用户 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserAdd
+    Message:
+      UserAdd-Properties:
+        UserName: admin01
+        Password: B9IA3kkFfbG1jjWVyDjCLw==
+        UserType: admin
+  check:  # 检查点
+     - RetCode: 0
+     - Page: UserAdd
+     - Method : SetConfig
+     - Message : OK!
+-
+  url : ws://10.58.122.205:8000
+  detail : 用户管理-删除用户-管理员 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserDelete
+    Message:
+      UserDelete-Properties:
+        UserName: admin01
+  check:  # 检查点
+     - RetCode: 0
+     - Page: UserDelete
+     - Method : SetConfig
+     - Message : OK!
+-
+  url : ws://10.58.122.205:8000
+  detail : 用户管理-删除用户-操作员 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserDelete
+    Message:
+      UserDelete-Properties:
+        UserName: operator02
+  check:  # 检查点
+     - RetCode: 0
+     - Page: UserDelete
+     - Method : SetConfig
+     - Message : OK!
+-
+  url : ws://10.58.122.215:8000
+  detail : 用户管理-验证删除用户后更新 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: UserManage
+  check:  # 检查点
+     - RetCode: 0
+     - Page: UserManage
+     - Method: GetConfig
+     - Message: '{"profile-version":"1.0","UsersInfo-Properties":{"Users":[{"UserName":"admin","UserType":"super","Password":"154vDmYO2qCYwP5+gusOiA==","Current":true}]}}'

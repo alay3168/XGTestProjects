@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+-
+  caseDescription : 'home首页-点击预览菜单其页面显示是否正常'
+  expected_re1: '监控画面'
+  expected_re2: '摄像机列表'
+  expected_re3: 'seemart抓拍机(1)'
+  expected_re4: '普通摄像机(1)'
+  expected_re5: '实时抓拍'
+  expected_re6: '详情'
+  expected_re7: '立即添加'
+  msg: '点击预览菜单断言失败'

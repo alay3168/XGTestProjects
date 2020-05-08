@@ -1,0 +1,50 @@
+-
+  url :  https://feidan.puppyrobot.com/feidan/api/caseread/listID/case/case1
+  method : get  # 请求方式
+  detail : 获取刷证记录-全部 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    orderBy: 1
+    source:
+    pageSize: 10
+    currentPage: 1
+  check:  # 检查点
+     - errCode: 0
+     - errMsg: success
+
+-
+    url :  https://feidan.puppyrobot.com/feidan/api/caseread/listID/case/case1
+    method : get  # 请求方式
+    detail : 获取刷证记录-人证一体机 # 用例描述
+    header:
+      content-type: application/json
+    cookie:
+    is_json : True
+    data:  # 请求数据
+      orderBy: 1
+      source: 0
+      pageSize: 10
+      currentPage: 1
+    check:  # 检查点
+       - errCode: 0
+       - errMsg: success
+
+-
+    url :  https://feidan.puppyrobot.com/feidan/api/caseread/listID/case/case1
+    method : get  # 请求方式
+    detail : 获取刷证记录-人证核验小程序 # 用例描述
+    header:
+      content-type: application/json
+    cookie:
+    is_json : True
+    data:  # 请求数据
+      orderBy: 1
+      source: 1
+      pageSize: 10
+      currentPage: 1
+    check:  # 检查点
+       - errCode: 0
+       - errMsg: success

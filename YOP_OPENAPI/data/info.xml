@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<info>
+    <explain>私有云自动化测试脚本配置信息：</explain>
+    <browser>chrome</browser>
+	<url>http://passport.kuaibo.com/login/?referrer=http%3A%2F%2Fwebcloud.kuaibo.com%2F</url>
+	<login username="pysetest" passwd='123456'></login>
+	<openpage>
+		<openurl>http://passport.kuaibo.com/login/?referrer=http%3A%2F%2Fwebcloud.kuaibo.com%2Fp%2FWUQAWUZOB0M%253D%2F</openurl>
+		<openlogin username = 'pysetest2' passwd= '123456'></openlogin>
+	</openpage>
+    <webcloud_url>http://webcloud.kuaibo.com</webcloud_url>
+</info>

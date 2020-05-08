@@ -1,0 +1,25 @@
+  1 version: "2"
+  2 services:
+  3   web:
+  4     baseip: 0.0.0.0
+  5     port: 8181
+  6     enablehttps: false  #true/fasle 是否使用https登录
+  7     tokenexp: 30  #分钟
+  8     deadline: 5
+  9     hachisign: "03c20d5e28b241eb5fd2156af6f2f232"
+ 10     #授权码登录页面，进行授权码登录（此时已经是内部域名了
+ 11     casefiledurl: {
+ 12       "case1":"https://10.58.122.238:8181/public/static/thirdlogin.html",
+ 13       "case2":"https://47.111.178.139/Intelligentvision/authentication",
+ 14     }
+ 15     thirdlogin: "https://10.58.122.238:8181/public/static/thirdlogin.html"  #临时没用到，这个应该放在casefiledurl中
+ 16     errurl: "https://10.58.122.238:8181/public/static/thirdlogin.html"  #临时没用到，这个应该放在casefiledurl中
+ 17   mysql:
+ 18     user: puppy
+ 19     password: "123456"
+ 20     host: mysql:3306
+ 21     database: xgface
+ 22   redis:
+ 23     user: root
+ 24     password: ""
+ 25     host: redis:6379

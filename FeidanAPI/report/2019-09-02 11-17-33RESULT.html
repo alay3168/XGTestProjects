@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>防飞单-接口自动化测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>防飞单-接口自动化测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2019-09-02 11:17:33</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:00.824000</p>
+<p class='attribute'><strong>Status:</strong> Pass 11</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>test_CaseRead_Online.CaseListCase</td>
+    <td>7</td>
+    <td>7</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',7)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_caseread_case_00001: test_caseread_case_00001</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: ------------开始执行用例-----------
+获取全部渠道成交记录
+{"errCode":0,"errMsg":"success","data":{"currentPage":1,"pageSize":10,"total":14,"list":{"data":[{"id":113,"tradeRoomName":"万科-山西省太原市紫藤公馆-2期-9号楼-0501","name":"郭天新","phone":"","customerIdNo":"000001198310315324","firstCapturedAtEx":0,"firstCapturedAt":1563102245,"recommendedAt":1565000606,"validatedAtEx":0,"validatedAt":1563419612,"tradedAt":1565667550,"referrerName":"天籁","referrerMobile":"","referrerChannelName":"58同城","propertyConsultant":"","riskTag":2,"decideRiskTag":0,"comment":"","CreatedAt":"2019-08-13T10:33:16+08:00","UpdatedAt":"2019-08-15T15:46:48+08:00","DeletedAt":null},{"id":108,"tradeRoomName":"万科-山西省太原市紫藤公馆-2期-8号楼-1201","name":"王春旭","phone":"","customerIdNo":"110108198202043438","firstCapturedAtEx":0,"firstCapturedAt":1562953608,"recommendedAt":1564198215,"validatedAtEx":0,"validatedAt":1565580788,"tradedAt":1565659815,"referrerName":"张婷婷","referrerMobile":"","referrerChannelName":"安居客","propertyConsultant":"王瑞","riskTag":2,"decideRiskTag":0,"comment":"","CreatedAt":"2019-08-13T10:31:26+08:00","UpdatedAt":"2019-08-13T10:31:26+08:00","DeletedAt":null},{"id":109,"tradeRoomName":"万科-山西省太原市紫藤公馆-2期-13号楼-0901","name":"小甜","phone":"","customerIdNo":"000001200301314624","firstCapturedAtEx":0,"firstCapturedAt":1563422897,"recommendedAt":1564319899,"validatedAtEx":0,"validatedAt":1563528899,"tradedAt":1565595795,"referrerName":"程春华","referrerMobile":"","referrerChannelName":"我爱我家","propertyConsultant":"李弘毅","riskTag":2,"decideRiskTag":2,"comment":"硕大的撒大圣埃蒂安","CreatedAt":"2019-08-13T10:31:26+08:00","UpdatedAt":"2019-08-13T11:43:29+08:00","DeletedAt":null},{"id":111,"tradeRoomName":"万科-山西省太原市紫藤公馆-2期-12号楼-0301","name":"巍巍","phone":"","customerIdNo":"000001197010035171","firstCapturedAtEx":0,"firstCapturedAt":1565344754,"recommendedAt":1565590148,"validatedAtEx":0,"validatedAt":1565250182,"tradedAt":1565590148,"referrerName":"苏蒙","referrerMobile":"","referrerChannelName":"万科","propertyConsultant":"万嘉明","riskTag":2,"decideRiskTag":0,"comment":"","CreatedAt":"2019-08-13T10:31:26+08:00","UpdatedAt":"2019-08-13T10:31:26+08:00","DeletedAt":null},{"id":112,"tradeRoomName":"万科-山西省太原市紫藤公馆-2期-12号楼-0301","name":"张海芳","phone":"","customerIdNo":"000001197610013352","firstCapturedAtEx":0,"firstCapturedAt":1562947688,"recommendedAt":1562390476,"validatedAtEx":0,"validatedAt":1563439076,"tradedAt":1565590148,"referrerName":"苏蒙","referrerMobile":"","referrerChannelName":"万科","propertyConsultant":"万嘉明","riskTag":1,"decideRiskTag":0,"comment":"","CreatedAt":"2019-08-13T10:31:26+08:00","UpdatedAt":"2019-08-13T10:31:26+08:00","DeletedAt":null},{"id":110,"tradeRoomName":"万科-山西省太原市紫藤公馆-2期-10号楼-1702","name":"美丽","phone":"","customerIdNo":"000001199911305621","firstCapturedAtEx":0,"firstCapturedAt":1563604812,"recommendedAt":1564108545,"validatedAtEx":0,"validatedAt":1564716476,"tradedAt":1565582618,"referrerName":"曾婷","referrerMobile":"","referrerChannelName":"链家","propertyConsultant":"李丽","riskTag":2,"decideRiskTag":2,"comment":"此人为风险交易","CreatedAt":"2019-08-13T10:31:26+08:00","UpdatedAt":"2019-08-13T11:42:39+08:00","DeletedAt":null},{"id":107,"tradeRoomName":"万科-山西省太原市紫藤公馆-2期-12号楼-0301","name":"ccc","phone":"","customerIdNo":"430981198401023549","firstCapturedAtEx":0,"firstCapturedAt":1562953231,"recommendedAt":1563154223,"validatedAtEx":0,"validatedAt":1565600827,"tradedAt":1565320815,"referrerName":"苏蒙","referrerMobile":"","referrerChannelName":"房江湖","propertyConsultant":"万嘉明","riskTag":2,"decideRiskTag":0,"comment":"","CreatedAt":"2019-08-12T18:11:11+08:00","UpdatedAt":"2019-08-12T18:51:10+08:00","DeletedAt":null},{"id":85,"tradeRoomName":"碧桂园-北京市朝阳区单身公寓15号楼-1单元1208室","name":"王红军","phone":"","customerIdNo":"000001458998951038","firstCapturedAtEx":0,"firstCapturedAt":0,"recommendedAt":1563606324,"validatedAtEx":0,"validatedAt":0,"tradedAt":1564708061,"referrerName":"李兴","referrerMobile":"","referrerChannelName":"链家","propertyConsultant":"李舒敏","riskTag":0,"decideRiskTag":0,"comment":"","CreatedAt":"2019-08-08T16:16:36+08:00","UpdatedAt":"2019-09-02T11:16:45+08:00","DeletedAt":null},{"id":83,"tradeRoomName":"碧桂园-河北省石家庄市裕华公馆-8期-1号楼-0511","name":"孟小新","phone":"","customerIdNo":"000001458998955288","firstCapturedAtEx":0,"firstCapturedAt":1565595625,"recommendedAt":1563333909,"validatedAtEx":0,"validatedAt":1565587915,"tradedAt":1563872321,"referrerName":"高顺","referrerMobile":"","referrerChannelName":"乐有家","propertyConsultant":"李大海","riskTag":1,"decideRiskTag":0,"comment":"","CreatedAt":"2019-08-08T15:29:32+08:00","UpdatedAt":"2019-08-12T18:51:09+08:00","DeletedAt":null},{"id":100,"tradeRoomName":"万科-山西省太原市紫藤公馆-2期-8号楼-0103","name":"孙丽丽","phone":"","customerIdNo":"000001199905051121","firstCapturedAtEx":0,"firstCapturedAt":1562949484,"recommendedAt":1563075203,"validatedAtEx":0,"validatedAt":1563519857,"tradedAt":1563531615,"referrerName":"曾婷","referrerMobile":"","referrerChannelName":"链家","propertyConsultant":"李丽","riskTag":2,"decideRiskTag":2,"comment":"123","CreatedAt":"2019-08-09T16:48:47+08:00","UpdatedAt":"2019-08-12T18:51:08+08:00","DeletedAt":null}]}}}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_caseread_case_00002: test_caseread_case_00002</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: ------------开始执行用例-----------
+获取疑似风险交易记录
+{"errCode":0,"errMsg":"success","data":{"currentPage":1,"pageSize":10,"total":5,"list":{"data":[{"id":113,"tradeRoomName":"万科-山西省太原市紫藤公馆-2期-9号楼-0501","name":"郭天新","phone":"","customerIdNo":"000001198310315324","firstCapturedAtEx":0,"firstCapturedAt":1563102245,"recommendedAt":1565000606,"validatedAtEx":0,"validatedAt":1563419612,"tradedAt":1565667550,"referrerName":"天籁","referrerMobile":"","referrerChannelName":"58同城","propertyConsultant":"","riskTag":2,"decideRiskTag":0,"comment":"","CreatedAt":"2019-08-13T10:33:16+08:00","UpdatedAt":"2019-08-15T15:46:48+08:00","DeletedAt":null},{"id":108,"tradeRoomName":"万科-山西省太原市紫藤公馆-2期-8号楼-1201","name":"王春旭","phone":"","customerIdNo":"110108198202043438","firstCapturedAtEx":0,"firstCapturedAt":1562953608,"recommendedAt":1564198215,"validatedAtEx":0,"validatedAt":1565580788,"tradedAt":1565659815,"referrerName":"张婷婷","referrerMobile":"","referrerChannelName":"安居客","propertyConsultant":"王瑞","riskTag":2,"decideRiskTag":0,"comment":"","CreatedAt":"2019-08-13T10:31:26+08:00","UpdatedAt":"2019-08-13T10:31:26+08:00","DeletedAt":null},{"id":111,"tradeRoomName":"万科-山西省太原市紫藤公馆-2期-12号楼-0301","name":"巍巍","phone":"","customerIdNo":"000001197010035171","firstCapturedAtEx":0,"firstCapturedAt":1565344754,"recommendedAt":1565590148,"validatedAtEx":0,"validatedAt":1565250182,"tradedAt":1565590148,"referrerName":"苏蒙","referrerMobile":"","referrerChannelName":"万科","propertyConsultant":"万嘉明","riskTag":2,"decideRiskTag":0,"comment":"","CreatedAt":"2019-08-13T10:31:26+08:00","UpdatedAt":"2019-08-13T10:31:26+08:00","DeletedAt":null},{"id":107,"tradeRoomName":"万科-山西省太原市紫藤公馆-2期-12号楼-0301","name":"ccc","phone":"","customerIdNo":"430981198401023549","firstCapturedAtEx":0,"firstCapturedAt":1562953231,"recommendedAt":1563154223,"validatedAtEx":0,"validatedAt":1565600827,"tradedAt":1565320815,"referrerName":"苏蒙","referrerMobile":"","referrerChannelName":"房江湖","propertyConsultant":"万嘉明","riskTag":2,"decideRiskTag":0,"comment":"","CreatedAt":"2019-08-12T18:11:11+08:00","UpdatedAt":"2019-08-12T18:51:10+08:00","DeletedAt":null},{"id":105,"tradeRoomName":"万科-山西省太原市紫藤公馆-2期-12号楼-0301","name":"张娜拉","phone":"","customerIdNo":"000001197010015149","firstCapturedAtEx":0,"firstCapturedAt":1563105103,"recommendedAt":1563107423,"validatedAtEx":0,"validatedAt":1565247557,"tradedAt":1563247215,"referrerName":"苏蒙","referrerMobile":"","referrerChannelName":"房江湖","propertyConsultant":"万嘉明","riskTag":2,"decideRiskTag":0,"comment":"","CreatedAt":"2019-08-12T17:57:02+08:00","UpdatedAt":"2019-08-12T18:51:04+08:00","DeletedAt":null}]}}}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_caseread_case_00003: test_caseread_case_00003</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        pass</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: ------------开始执行用例-----------
+获取已处理交易记录-已判定有风险
+{"errCode":0,"errMsg":"success","data":{"currentPage":1,"pageSize":10,"total":3,"list":{"data":[{"id":109,"tradeRoomName":"万科-山西省太原市紫藤公馆-2期-13号楼-0901","name":"小甜","phone":"","customerIdNo":"000001200301314624","firstCapturedAtEx":0,"firstCapturedAt":1563422897,"recommendedAt":1564319899,"validatedAtEx":0,"validatedAt":1563528899,"tradedAt":1565595795,"referrerName":"程春华","referrerMobile":"","referrerChannelName":"我爱我家","propertyConsultant":"李弘毅","riskTag":2,"decideRiskTag":2,"comment":"硕大的撒大圣埃蒂安","CreatedAt":"2019-08-13T10:31:26+08:00","UpdatedAt":"2019-08-13T11:43:29+08:00","DeletedAt":null},{"id":110,"tradeRoomName":"万科-山西省太原市紫藤公馆-2期-10号楼-1702","name":"美丽","phone":"","customerIdNo":"000001199911305621","firstCapturedAtEx":0,"firstCapturedAt":1563604812,"recommendedAt":1564108545,"validatedAtEx":0,"validatedAt":1564716476,"tradedAt":1565582618,"referrerName":"曾婷","referrerMobile":"","referrerChannelName":"链家","propertyConsultant":"李丽","riskTag":2,"decideRiskTag":2,"comment":"此人为风险交易","CreatedAt":"2019-08-13T10:31:26+08:00","UpdatedAt":"2019-08-13T11:42:39+08:00","DeletedAt":null},{"id":100,"tradeRoomName":"万科-山西省太原市紫藤公馆-2期-8号楼-0103","name":"孙丽丽","phone":"","customerIdNo":"000001199905051121","firstCapturedAtEx":0,"firstCapturedAt":1562949484,"recommendedAt":1563075203,"validatedAtEx":0,"validatedAt":1563519857,"tradedAt":1563531615,"referrerName":"曾婷","referrerMobile":"","referrerChannelName":"链家","propertyConsultant":"李丽","riskTag":2,"decideRiskTag":2,"comment":"123","CreatedAt":"2019-08-09T16:48:47+08:00","UpdatedAt":"2019-08-12T18:51:08+08:00","DeletedAt":null}]}}}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_caseread_case_00004: test_caseread_case_00004</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.4')" >
+        pass</a>
+
+    <div id='div_pt1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.4: ------------开始执行用例-----------
+获取已处理交易记录-已判定无风险
+{"errCode":0,"errMsg":"success","data":{"currentPage":1,"pageSize":10,"total":1,"list":{"data":[{"id":99,"tradeRoomName":"3号楼-1101","name":"郑一浩","phone":"","customerIdNo":"000001199905057033","firstCapturedAtEx":0,"firstCapturedAt":1563100591,"recommendedAt":1563154811,"validatedAtEx":0,"validatedAt":1562985320,"tradedAt":1563187822,"referrerName":"李依依","referrerMobile":"","referrerChannelName":"我爱我家","propertyConsultant":"韩萌萌","riskTag":2,"decideRiskTag":1,"comment":"无","CreatedAt":"2019-08-09T16:48:46+08:00","UpdatedAt":"2019-08-12T18:51:08+08:00","DeletedAt":null}]}}}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_caseread_case_00005: test_caseread_case_00005</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.5')" >
+        pass</a>
+
+    <div id='div_pt1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.5: ------------开始执行用例-----------
+获取未识别客户-刷证后未匹配到访抓拍客户
+{"errCode":0,"errMsg":"success","data":{"currentPage":1,"pageSize":10,"total":10,"list":{"data":[{"id":120,"name":"策士","validatedAt":1567393773,"firstCaptureTime":0},{"id":115,"name":"特朗普","validatedAt":1565677200,"firstCaptureTime":0},{"id":108,"name":"特朗普","validatedAt":1565601964,"firstCaptureTime":0},{"id":107,"name":"特朗普","validatedAt":1565601734,"firstCaptureTime":0},{"id":103,"name":"张爱军","validatedAt":1565591359,"firstCaptureTime":0},{"id":100,"name":"孙琳琳","validatedAt":1565588265,"firstCaptureTime":0},{"id":86,"name":"特朗普","validatedAt":1565322610,"firstCaptureTime":0},{"id":74,"name":"奥巴马","validatedAt":1565086147,"firstCaptureTime":0},{"id":61,"name":"卡卡","validatedAt":1563761485,"firstCaptureTime":0},{"id":52,"name":"张田","validatedAt":1563528777,"firstCaptureTime":0}]}}}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_caseread_case_00006: test_caseread_case_00006</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.6')" >
+        pass</a>
+
+    <div id='div_pt1.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.6: ------------开始执行用例-----------
+获取未识别客户-已有交易信息但未刷证客户
+{"errCode":0,"errMsg":"success","data":{"currentPage":1,"pageSize":10,"total":2,"list":{"data":[{"id":85,"name":"王红军","firstCapturedAt":0,"validatedAt":0,"tradedAt":1564708061,"CreatedAt":"2019-08-08T16:16:36+08:00","UpdatedAt":"2019-09-02T11:16:45+08:00","DeletedAt":null},{"id":102,"name":"十五","firstCapturedAt":0,"validatedAt":0,"tradedAt":1563187822,"CreatedAt":"2019-08-12T11:55:33+08:00","UpdatedAt":"2019-09-02T11:16:45+08:00","DeletedAt":null}]}}}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_caseread_case_00007: test_caseread_case_00007</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.7')" >
+        pass</a>
+
+    <div id='div_pt1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.7: ------------开始执行用例-----------
+获取未识别客户-已刷证但未关联交易客户
+{"errCode":0,"errMsg":"success","data":{"currentPage":1,"pageSize":10,"total":94,"list":{"data":[{"id":154,"name":"策士","validatedAt":"2019-09-02T11:09:33+08:00","tradedAt":0},{"id":153,"name":"策士","validatedAt":"2019-09-02T10:38:50+08:00","tradedAt":0},{"id":152,"name":"策士","validatedAt":"2019-09-02T10:31:37+08:00","tradedAt":0},{"id":151,"name":"策士","validatedAt":"2019-08-30T19:14:26+08:00","tradedAt":0},{"id":150,"name":"策士","validatedAt":"2019-08-30T19:01:25+08:00","tradedAt":0},{"id":149,"name":"策士","validatedAt":"2019-08-30T18:39:06+08:00","tradedAt":0},{"id":148,"name":"策士","validatedAt":"2019-08-30T18:12:21+08:00","tradedAt":0},{"id":147,"name":"策士","validatedAt":"2019-08-30T18:07:50+08:00","tradedAt":0},{"id":146,"name":"策士","validatedAt":"2019-08-30T17:52:26+08:00","tradedAt":0},{"id":145,"name":"策士","validatedAt":"2019-08-30T17:51:30+08:00","tradedAt":0}]}}}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr class='passClass'>
+    <td>test_login_Online.LoginCase</td>
+    <td>4</td>
+    <td>4</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',4)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_caseinfo_case_00001: test_caseinfo_case_00001</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: ------------开始执行用例-----------
+获取自己的案场列表
+{"data":[{"Id":"case1","Name":"广州蔷薇"},{"Id":"case2","Name":"惠州木槿"}],"errCode":0,"errMessage":""}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_login_case_00001: test_login_case_00001</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.2')" >
+        pass</a>
+
+    <div id='div_pt2.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.2: ------------开始执行用例-----------
+登陆
+{"data":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlkIjo4MCwiYWRtaW5uYW1lIjoiQVBJVGVzdCIsImFkbWludHlwZSI6ImFkbWluIiwiaWF0IjoxNTY3Mzk0MjU0LCJyZXNldHB3ZCI6MH0.jpdJmQz97MArrKfTPcXQrz8i1WsKsGVMUKYE3BU9XcE","errCode":0,"errMessage":""}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt2.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_logout_case_00001: test_logout_case_00001</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.3')" >
+        pass</a>
+
+    <div id='div_pt2.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.3: ------------开始执行用例-----------
+登出
+{"data":"ok","errCode":0,"errMessage":""}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt2.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_userinfo_case_00001: test_userinfo_case_00001</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.4')" >
+        pass</a>
+
+    <div id='div_pt2.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.4: ------------开始执行用例-----------
+用户信息
+{"data":{"Id":1,"Username":"super","Type":"super","CreatedAt":1564457412,"UpdatedAt":1564457412},"errCode":0,"errMessage":""}
+------------执行用例结束-----------
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>11</td>
+    <td>11</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>YOP组自动化接口测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>YOP组自动化接口测试报告</h1>
+<p class='attribute'><strong>Start Time:</strong> 2016-04-14 19:43:47</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:19.125000</p>
+<p class='attribute'><strong>Status:</strong> Pass 24</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>YOP_Interface_case.YOPInterfaceTest</td>
+    <td>24</td>
+    <td>24</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',24)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_1createOrder_isamap: 1.创建订单—随叫随到</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_2createOrder_eservation: 2.创建订单—预约</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_3createOrder_afterpay: 3.创建订单-支付后置</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        pass</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_4packagefee: 4.创建携程套餐包</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.4')" >
+        pass</a>
+
+    <div id='div_pt1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.4: test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_5Drinr_info: 5.获取订单司机详细信息</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.5')" >
+        pass</a>
+
+    <div id='div_pt1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.5: test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_6del_order: 6.取消订单</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.6')" >
+        pass</a>
+
+    <div id='div_pt1.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.6: {"code":200,"msg":"OK","result":{"info":"\u53d6\u6d88\u8ba2\u5355\u6210\u529f","fee":2}}
+test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_7createOrder_payment: 7.支付后置</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.7')" >
+        pass</a>
+
+    <div id='div_pt1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.7: test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_8third_party_coupon: 8.支付宝</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.8')" >
+        pass</a>
+
+    <div id='div_pt1.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.8: 200
+{"code":200,"msg":"success"}
+test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_9_1b_createOrder_ordercalculate: 9.查询订单费用详情</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.9')" >
+        pass</a>
+
+    <div id='div_pt1.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.9: {"code":200,"msg":"OK","result":{"order_id":"2005763432","city":"\u5317\u4eac","time_length_minute":3,"extra_time_minute":3,"fee_per_minute":0.4,"fixed_fee":15,"actual_time_length":195,"kilo_length":3,"time_length":0.05,"fee_per_hour":24,"fee_per_kilo":2.6,"kilo_fee":8,"time_fee":1,"kongshi_distance_danjia":1.5,"kongshi_fee":0,"kongshi_distance":0,"origin_amount":24,"coupon_facevalue":0,"order_amount":24,"night_amount":0,"parking_amount":0,"highway_amount":0,"airport_service_amount":0,"adjust_fee":"0.00","other_fee":0,"other_fee_msg":0,"actual_board_time":"2016-03-25 12:33:04","actual_off_time":"2016-03-25 12:36:19","actual_car_type":"\u5965\u8feaA3"}}
+test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_9_1check_orderid: 10.获得单一订单信息</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.10')" >
+        pass</a>
+
+    <div id='div_pt1.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.10: test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_9_2order_cost_estimated: 11.费用预估</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.11')" >
+        pass</a>
+
+    <div id='div_pt1.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.11: {"code":200,"msg":"ok","result":{"car_type_id":"1","car_type":"","description":"","time_length":4237,"distance":23,"total_fee":115,"estimated_price_detail":{"fixed_fee":15,"fixed_fee_time":0,"fixed_fee_kilo":0,"time_fee":28,"kilo_fee":60,"extra_time_fee":28,"extra_distance_fee":60,"night_amount":0,"kongshi_fee":12,"airport_service_fee":0}}}
+test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_9_3driver_location: 12.获取司机位置</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.12')" >
+        pass</a>
+
+    <div id='div_pt1.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.12: test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.13' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_9_4service_get: 13.可用服务</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.13')" >
+        pass</a>
+
+    <div id='div_pt1.13' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.13').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.13: {"code":200,"msg":"OK","bj":{"short":"bj","en":"beijing","name":"\u5317\u4eac","support_face_pay":1,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"sh":{"short":"sh","en":"shanghai","name":"\u4e0a\u6d77","support_face_pay":1,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"gz":{"short":"gz","en":"guangzhou","name":"\u5e7f\u5dde","support_face_pay":1,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"sz":{"short":"sz","en":"shenzhen","name":"\u6df1\u5733","support_face_pay":1,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"tj":{"short":"tj","en":"tianjin","name":"\u5929\u6d25","support_face_pay":1,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"cq":{"short":"cq","en":"chongqing","name":"\u91cd\u5e86","support_face_pay":1,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"wh":{"short":"wh","en":"wuhan","name":"\u6b66\u6c49","support_face_pay":1,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"hz":{"short":"hz","en":"hangzhou","name":"\u676d\u5dde","support_face_pay":1,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"qd":{"short":"qd","en":"qingdao","name":"\u9752\u5c9b","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"xa":{"short":"xa","en":"xian","name":"\u897f\u5b89","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"cd":{"short":"cd","en":"chengdu","name":"\u6210\u90fd","support_face_pay":1,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"chs":{"short":"chs","en":"changsha","name":"\u957f\u6c99","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"haikou":{"short":"haikou","en":"haikou","name":"\u6d77\u53e3","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"sanya":{"short":"sanya","en":"sanya","name":"\u4e09\u4e9a","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"ty":{"short":"ty","en":"taiyuan","name":"\u592a\u539f","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"sy":{"short":"sy","en":"shenyang","name":"\u6c88\u9633","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"gl":{"short":"gl","en":"guilin","name":"\u6842\u6797","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"gy":{"short":"gy","en":"guiyang","name":"\u8d35\u9633","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"hk":{"short":"hk","en":"hongkong","name":"\u9999\u6e2f","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"zh":{"short":"zh","en":"zhuhai","name":"\u73e0\u6d77","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"jn":{"short":"jn","en":"jinan","name":"\u6d4e\u5357","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","12":"\u65e5\u79df"}},"nj":{"short":"nj","en":"nanjing","name":"\u5357\u4eac","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"cc":{"short":"cc","en":"changchun","name":"\u957f\u6625","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"zz":{"short":"zz","en":"zhengzhou","name":"\u90d1\u5dde","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"su":{"short":"su","en":"suzhou","name":"\u82cf\u5dde","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"xm":{"short":"xm","en":"xiamen","name":"\u53a6\u95e8","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"hf":{"short":"hf","en":"hefei","name":"\u5408\u80a5","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"km":{"short":"km","en":"kunming","name":"\u6606\u660e","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"dg":{"short":"dg","en":"dongguan","name":"\u4e1c\u839e","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a"}},"jz":{"short":"jz","en":"jinzhong","name":"\u664b\u4e2d","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"dl":{"short":"dl","en":"dalian","name":"\u5927\u8fde","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"nb":{"short":"nb","en":"ningbo","name":"\u5b81\u6ce2","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"wz":{"short":"wz","en":"wenzhou","name":"\u6e29\u5dde","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"fz":{"short":"fz","en":"fuzhou","name":"\u798f\u5dde","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"qz":{"short":"qz","en":"quanzhou","name":"\u6cc9\u5dde","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"weihai":{"short":"weihai","en":"weihai","name":"\u5a01\u6d77","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"luoyang":{"short":"luoyang","en":"luoyang","name":"\u6d1b\u9633","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"nn":{"short":"nn","en":"nanning","name":"\u5357\u5b81","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"lz":{"short":"lz","en":"lanzhou","name":"\u5170\u5dde","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"ts":{"short":"ts","en":"tangshan","name":"\u5510\u5c71","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"chengde":{"short":"chengde","en":"chengde","name":"\u627f\u5fb7","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"cangzhou":{"short":"cangzhou","en":"cangzhou","name":"\u6ca7\u5dde","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"sjz":{"short":"sjz","en":"shijiazhuang","name":"\u77f3\u5bb6\u5e84","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"hrb":{"short":"hrb","en":"haerbin","name":"\u54c8\u5c14\u6ee8","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"hu":{"short":"hu","en":"huhehaote","name":"\u547c\u548c\u6d69\u7279","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","12":"\u65e5\u79df"}},"bn":{"short":"bn","en":"xishuangbanna","name":"\u897f\u53cc\u7248\u7eb3","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"sanfrancisco":{"short":"sanfrancisco","en":"san francisco","name":"\u65e7\u91d1\u5c71","support_face_pay":0,"is_oversea":1,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"losangeles":{"short":"losangeles","en":"los angeles","name":"\u6d1b\u6749\u77f6","support_face_pay":0,"is_oversea":1,"product_list":{"1":"\u65f6\u79df"}},"newyork":{"short":"newyork","en":"new york","name":"\u7ebd\u7ea6","support_face_pay":0,"is_oversea":1,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"yl":{"short":"yl","en":"yulin","name":"\u6986\u6797","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"xianyang":{"short":"xianyang","en":"xianyang","name":"\u54b8\u9633","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"baoji":{"short":"baoji","en":"baoji","name":"\u5b9d\u9e21","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"xgll":{"short":"xgll","en":"xianggelila","name":"\u9999\u683c\u91cc\u62c9","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"diqing":{"short":"diqing","en":"diqing","name":"\u8fea\u5e86","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df"}},"lj":{"short":"lj","en":"lijiang","name":"\u4e3d\u6c5f","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"osaka":{"short":"osaka","en":"osaka","name":"\u5927\u962a","support_face_pay":1,"is_oversea":1,"product_list":{"1":"\u65f6\u79df"}},"tokyo":{"short":"tokyo","en":"tokyo","name":"\u4e1c\u4eac","support_face_pay":1,"is_oversea":1,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a"}},"moscow":{"short":"moscow","en":"moscow","name":"\u83ab\u65af\u79d1","support_face_pay":0,"is_oversea":1,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a"}},"wuhu":{"short":"wuhu","en":"wuhu","name":"\u829c\u6e56","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"yiwu":{"short":"yiwu","en":"yiwu","name":"\u4e49\u4e4c","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df"}},"sx":{"short":"sx","en":"shaoxing","name":"\u7ecd\u5174","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"xz":{"short":"xz","en":"xuzhou","name":"\u5f90\u5dde","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"wx":{"short":"wx","en":"wuxi","name":"\u65e0\u9521","support_face_pay":1,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"dq":{"short":"dq","en":"daqing","name":"\u5927\u5e86","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"qqhr":{"short":"qqhr","en":"qiqihaer","name":"\u9f50\u9f50\u54c8\u5c14","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"baishan":{"short":"baishan","en":"baishan","name":"\u767d\u5c71","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"jl":{"short":"jl","en":"jilin","name":"\u5409\u6797","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"dandong":{"short":"dandong","en":"dandong","name":"\u4e39\u4e1c","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"manzl":{"short":"manzl","en":"manzhouli","name":"\u6ee1\u6d32\u91cc","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"hlbe":{"short":"hlbe","en":"hulunbeier","name":"\u547c\u4f26\u8d1d\u5c14","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"erds":{"short":"erds","en":"eerduosi","name":"\u9102\u5c14\u591a\u65af","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"bt":{"short":"bt","en":"baotou","name":"\u5305\u5934","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"xinzhou":{"short":"xinzhou","en":"xinzhou","name":"\u5ffb\u5dde","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df"}},"baod":{"short":"baod","en":"baoding","name":"\u4fdd\u5b9a","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"qhd":{"short":"qhd","en":"qinhuangdao","name":"\u79e6\u7687\u5c9b","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"yangshuo":{"short":"yangshuo","en":"yangshuo","name":"\u9633\u6714","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"ez":{"short":"ez","en":"ezhou","name":"\u9102\u5dde","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df"}},"linyi":{"short":"linyi","en":"linyi","name":"\u4e34\u6c82","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"ta":{"short":"ta","en":"taian","name":"\u6cf0\u5b89","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a"}},"qf":{"short":"qf","en":"qufu","name":"\u66f2\u961c","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"jining":{"short":"jining","en":"jining","name":"\u6d4e\u5b81","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"nc":{"short":"nc","en":"nanchang","name":"\u5357\u660c","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df","7":"\u63a5\u673a","8":"\u9001\u673a","11":"\u534a\u65e5\u79df","12":"\u65e5\u79df"}},"huangshan":{"short":"huangshan","en":"huangshan","name":"\u9ec4\u5c71","support_face_pay":0,"is_oversea":0,"product_list":{"1":"\u65f6\u79df"}}}
+test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.14' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_9_5service_get_new: 14.新服务价格</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.14')" >
+        pass</a>
+
+    <div id='div_pt1.14' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.14').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.14: {"code":200,"msg":"OK","result":{"city":"bj","product":"\u65f6\u79df","carType":{"1":{"car_type_id":"1","name":"\u7ecf\u6d4e\u8f66\u578b","brand":"\u5954\u817eB70,\u5317\u4eac\u6c7d\u8f66BJ80,\u5b9d\u9a6c1\u7cfb(\u8fdb\u53e3),\u6d4b\u8bd5\u54c1\u724c-\u4e00\u7ea7test-1-1,\u4f0a\u62c9\u7279\u6d4b\u8bd5\u578b\u53f7,\u7231\u4e3d\u820d\u5e15\u8428\u7279,\u6d4b\u8bd5\u54c1\u724c-\u4e00\u7ea7test-1-2","person_number":"4","pic":"http:\/\/i2.testing.yongche.org\/media\/g1\/M00\/01\/20\/CgAL2VW-3I2AV-2hAACH27IdX-c306.jpg","min_time_length":"0","min_fee":"1000","fee_per_kilometer":"260","fee_per_minute":"40","night_service_fee":"50","kongshi_distance":"1000","kongshi_fee_per_kilometer":"150","airport_service_fee":0,"min_response_time":3600,"granularity":"60","starting_fee":"1500"},"2":{"car_type_id":"2","name":"\u8212\u9002\u8f66\u578b","brand":"\u672c\u7530CRV,\u5317\u4eac\u6c7d\u8f66BJ80","person_number":"4","pic":"http:\/\/i2.testing.yongche.org\/media\/g1\/M00\/01\/1E\/CgAL4VW-3VOATpFuAADbHMOlHMA462.jpg","min_time_length":"0","min_fee":"1500","fee_per_kilometer":"500","fee_per_minute":"50","night_service_fee":"50","kongshi_distance":"1000","kongshi_fee_per_kilometer":"250","airport_service_fee":0,"min_response_time":3600,"granularity":"60","starting_fee":"1500"},"3":{"car_type_id":"3","name":"\u8c6a\u534e\u8f66\u578b","brand":"\u5965\u8feaA3,\u5965\u8feaA4L,\u5965\u8feaA6,\u5965\u8feaQ3,\u5965\u8feaA6L,\u5b9d\u9a6c5\u7cfb\u5217,\u6c83\u5c14\u6c83S80,\u5954\u9a70E\u7cfb","person_number":"4","pic":"http:\/\/i2.testing.yongche.org\/media\/g1\/M00\/01\/20\/CgAL2VW-3XmACTfdAACH27IdX-c032.jpg","min_time_length":"600","min_fee":"6000","fee_per_kilometer":"1000","fee_per_minute":"80","night_service_fee":"50","kongshi_distance":"1000","kongshi_fee_per_kilometer":"700","airport_service_fee":0,"min_response_time":3600,"granularity":"60","starting_fee":"6000"},"4":{"car_type_id":"4","name":"\u5962\u534e\u8f66\u578b","brand":"\u5965\u8feaA6L","person_number":"4","pic":"http:\/\/i3.testing.yongche.org\/media\/g1\/M00\/01\/20\/CgAL2VW-3rWAf6b6AATC0BJrihI573.jpg","min_time_length":"240","min_fee":"8500","fee_per_kilometer":"1000","fee_per_minute":"350","night_service_fee":"25","kongshi_distance":"1000","kongshi_fee_per_kilometer":"500","airport_service_fee":0,"min_response_time":3600,"granularity":"60","starting_fee":"3000"},"5":{"car_type_id":"5","name":"\u5546\u52a1\u8f66\u578b","brand":"\u5954\u9a70\u51cc\u7279","person_number":"6","pic":"http:\/\/i3.testing.yongche.org\/media\/g1\/M00\/01\/1E\/CgAL4VW-3qOAHtqzAAQ52Suf0Rg206.jpg","min_time_length":"0","min_fee":"2000","fee_per_kilometer":"550","fee_per_minute":"60","night_service_fee":"50","kongshi_distance":"1000","kongshi_fee_per_kilometer":"275","airport_service_fee":0,"min_response_time":3600,"granularity":"120","starting_fee":"2000"},"28":{"car_type_id":"28","name":"Ecar\u8f66\u578b","brand":"\u5317\u6c7d\u5236\u9020\u5317\u6c7dev200,\u5317\u6c7d\u5236\u9020\u5317\u6c7d150ev","person_number":"4","pic":"http:\/\/i3.testing.yongche.org\/media\/g1\/M00\/01\/20\/CgAL2VW-3OyACdxsAALsoNekbFA067.jpg","min_time_length":"0","min_fee":"0","fee_per_kilometer":"0","fee_per_minute":"0","night_service_fee":"0","kongshi_distance":"1000","kongshi_fee_per_kilometer":"0","airport_service_fee":0,"min_response_time":3600,"granularity":"60","starting_fee":"0"},"37":{"car_type_id":"37","name":"Young\u8f66\u578b","brand":"\u5b9d\u9a6c1\u7cfb(\u8fdb\u53e3),\u6bd4\u4e9a\u8feaS7,\u5b9d\u9a6c5\u7cfbGT(\u8fdb\u53e3),\u5965\u8feaA6L","person_number":"4","pic":"http:\/\/i1.testing.yongche.org\/media\/","min_time_length":"0","min_fee":"1000","fee_per_kilometer":"200","fee_per_minute":"40","night_service_fee":"50","kongshi_distance":"1000","kongshi_fee_per_kilometer":"100","airport_service_fee":0,"min_response_time":3600,"granularity":"60","starting_fee":"1000"},"43":{"car_type_id":"43","name":"Tesla\u8f66\u578b","brand":"\u7279\u65af\u62c9MODELX,\u7279\u65af\u62c9MODELS,\u7279\u65af\u62c9Roadster","person_number":"4","pic":"http:\/\/i2.testing.yongche.org\/media\/g1\/M00\/00\/00\/CgAL4VRqtF2IRBFyAACvoYfQllwAAAAEwAboDQAAK-5363.jpg","min_time_length":"0","min_fee":"3000","fee_per_kilometer":"550","fee_per_minute":"100","night_service_fee":"50","kongshi_distance":"1000","kongshi_fee_per_kilometer":"275","airport_service_fee":0,"min_response_time":3600,"granularity":"60","starting_fee":"3000"}}}}
+test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.15' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_9_6service_get_old: 15.老服务价格</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.15')" >
+        pass</a>
+
+    <div id='div_pt1.15' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.15').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.15: {"code":200,"msg":"OK","city":"bj","product":"\u65f6\u79df","carType":{"1":{"car_type_id":"1","name":"\u7ecf\u6d4e\u8f66\u578b","brand":"\u5954\u817eB70,\u5317\u4eac\u6c7d\u8f66BJ80,\u5b9d\u9a6c1\u7cfb(\u8fdb\u53e3),\u6d4b\u8bd5\u54c1\u724c-\u4e00\u7ea7test-1-1,\u4f0a\u62c9\u7279\u6d4b\u8bd5\u578b\u53f7,\u7231\u4e3d\u820d\u5e15\u8428\u7279,\u6d4b\u8bd5\u54c1\u724c-\u4e00\u7ea7test-1-2","person_number":"4","pic":"http:\/\/i2.testing.yongche.org\/media\/g1\/M00\/01\/20\/CgAL2VW-3I2AV-2hAACH27IdX-c306.jpg","min_time_length":"1\u5c0f\u65f6\u8d77\u79df","min_fee":10,"fee_per_kilometer":2.6,"fee_per_hour":24,"night_service_fee":0.5,"kongshi_distance":1,"airport_service_fee":0,"min_response_time":1},"2":{"car_type_id":"2","name":"\u8212\u9002\u8f66\u578b","brand":"\u672c\u7530CRV,\u5317\u4eac\u6c7d\u8f66BJ80","person_number":"4","pic":"http:\/\/i2.testing.yongche.org\/media\/g1\/M00\/01\/1E\/CgAL4VW-3VOATpFuAADbHMOlHMA462.jpg","min_time_length":"1\u5c0f\u65f6\u8d77\u79df","min_fee":15,"fee_per_kilometer":5,"fee_per_hour":30,"night_service_fee":0.5,"kongshi_distance":1,"airport_service_fee":0,"min_response_time":1},"3":{"car_type_id":"3","name":"\u8c6a\u534e\u8f66\u578b","brand":"\u5965\u8feaA3,\u5965\u8feaA4L,\u5965\u8feaA6,\u5965\u8feaQ3,\u5965\u8feaA6L,\u5b9d\u9a6c5\u7cfb\u5217,\u6c83\u5c14\u6c83S80,\u5954\u9a70E\u7cfb","person_number":"4","pic":"http:\/\/i2.testing.yongche.org\/media\/g1\/M00\/01\/20\/CgAL2VW-3XmACTfdAACH27IdX-c032.jpg","min_time_length":"60\u5143\u8d77\u79df","min_fee":60,"fee_per_kilometer":10,"fee_per_hour":48,"night_service_fee":0.5,"kongshi_distance":1,"airport_service_fee":0,"min_response_time":1},"4":{"car_type_id":"4","name":"\u5962\u534e\u8f66\u578b","brand":"\u5965\u8feaA6L","person_number":"4","pic":"http:\/\/i3.testing.yongche.org\/media\/g1\/M00\/01\/20\/CgAL2VW-3rWAf6b6AATC0BJrihI573.jpg","min_time_length":"1\u5c0f\u65f6\u8d77\u79df","min_fee":85,"fee_per_kilometer":10,"fee_per_hour":210,"night_service_fee":0.25,"kongshi_distance":1,"airport_service_fee":0,"min_response_time":1},"5":{"car_type_id":"5","name":"\u5546\u52a1\u8f66\u578b","brand":"\u5954\u9a70\u51cc\u7279","person_number":"6","pic":"http:\/\/i3.testing.yongche.org\/media\/g1\/M00\/01\/1E\/CgAL4VW-3qOAHtqzAAQ52Suf0Rg206.jpg","min_time_length":"1\u5c0f\u65f6\u8d77\u79df","min_fee":20,"fee_per_kilometer":5.5,"fee_per_hour":36,"night_service_fee":0.5,"kongshi_distance":1,"airport_service_fee":0,"min_response_time":1},"28":{"car_type_id":"28","name":"Ecar\u8f66\u578b","brand":"\u5317\u6c7d\u5236\u9020\u5317\u6c7dev200,\u5317\u6c7d\u5236\u9020\u5317\u6c7d150ev","person_number":"4","pic":"http:\/\/i3.testing.yongche.org\/media\/g1\/M00\/01\/20\/CgAL2VW-3OyACdxsAALsoNekbFA067.jpg","min_time_length":"1\u5c0f\u65f6\u8d77\u79df","min_fee":0,"fee_per_kilometer":0,"fee_per_hour":0,"night_service_fee":0,"kongshi_distance":1,"airport_service_fee":0,"min_response_time":1},"37":{"car_type_id":"37","name":"Young\u8f66\u578b","brand":"\u5b9d\u9a6c1\u7cfb(\u8fdb\u53e3),\u6bd4\u4e9a\u8feaS7,\u5b9d\u9a6c5\u7cfbGT(\u8fdb\u53e3),\u5965\u8feaA6L","person_number":"4","pic":"http:\/\/i1.testing.yongche.org\/media\/","min_time_length":"1\u5c0f\u65f6\u8d77\u79df","min_fee":10,"fee_per_kilometer":2,"fee_per_hour":24,"night_service_fee":0.5,"kongshi_distance":1,"airport_service_fee":0,"min_response_time":1},"43":{"car_type_id":"43","name":"Tesla\u8f66\u578b","brand":"\u7279\u65af\u62c9MODELX,\u7279\u65af\u62c9MODELS,\u7279\u65af\u62c9Roadster","person_number":"4","pic":"http:\/\/i2.testing.yongche.org\/media\/g1\/M00\/00\/00\/CgAL4VRqtF2IRBFyAACvoYfQllwAAAAEwAboDQAAK-5363.jpg","min_time_length":"1\u5c0f\u65f6\u8d77\u79df","min_fee":30,"fee_per_kilometer":5.5,"fee_per_hour":60,"night_service_fee":0.5,"kongshi_distance":1,"airport_service_fee":0,"min_response_time":1}}}
+test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.16' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_9_7nearbyCarCount: 16.获得附近车辆</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.16')" >
+        pass</a>
+
+    <div id='div_pt1.16' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.16').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.16: test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.17' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_9_8service_nightfee: 17.夜间服务费</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.17')" >
+        pass</a>
+
+    <div id='div_pt1.17' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.17').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.17: {"code":200,"msg":"OK","result":{"night_fee":0.5,"night_fee_max":40}}
+test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.18' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_9_9info_airport: 18.获得机场信息</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.18')" >
+        pass</a>
+
+    <div id='div_pt1.18' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.18').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.18: {"code":200,"msg":"OK","result":{"bj":{"short":"bj","name":"\u5317\u4eac","en":"beijing","airport":{"PEK":{"lat":40.08029,"lng":116.58797,"name":"\u5317\u4eac\u9996\u90fd\u56fd\u9645\u673a\u573a","terminal_list":"[{\"code\":\"T1\",\"lat\":40.070321,\"lng\":116.58848,\"name\":\"\\u5317\\u4eac\\u9996\\u90fd\\u673a\\u573a1\\u53f7\\u822a\\u7ad9\\u697c\"},{\"code\":\"T2\",\"lat\":40.070321,\"lng\":116.58848,\"name\":\"\\u5317\\u4eac\\u9996\\u90fd\\u673a\\u573a2\\u53f7\\u822a\\u7ad9\\u697c\"},{\"code\":\"T3\",\"lat\":40.04622,\"lng\":116.604735,\"name\":\"\\u5317\\u4eac\\u9996\\u90fd\\u673a\\u573a3\\u53f7\\u822a\\u7ad9\\u697c\"}]"},"NAY":{"lat":39.797623,"lng":116.399127,"name":"\u5317\u4eac\u5357\u82d1\u673a\u573a","terminal_list":"[]"},"TSN":{"lat":39.130409,"lng":117.359204,"name":"\u5929\u6d25\u6ee8\u6d77\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"sh":{"short":"sh","name":"\u4e0a\u6d77","en":"shanghai","airport":{"SHA":{"lat":31.19522,"lng":121.347038,"name":"\u4e0a\u6d77\u8679\u6865\u56fd\u9645\u673a\u573a","terminal_list":"[{\"code\":\"T1\",\"lat\":31.19522,\"lng\":121.347038,\"name\":\"\\u4e0a\\u6d77\\u8679\\u6865\\u56fd\\u9645\\u673a\\u573a1\\u53f7\\u822a\\u7ad9\\u697c\"},{\"code\":\"T2\",\"lat\":31.194704,\"lng\":121.326202,\"name\":\"\\u4e0a\\u6d77\\u8679\\u6865\\u56fd\\u9645\\u673a\\u573a2\\u53f7\\u822a\\u7ad9\\u697c\"}]"},"PVG":{"lat":31.149839,"lng":121.802932,"name":"\u4e0a\u6d77\u6d66\u4e1c\u56fd\u9645\u673a\u573a","terminal_list":"[{\"code\":\"T1\",\"lat\":31.149839,\"lng\":121.802932,\"name\":\"\\u4e0a\\u6d77\\u6d66\\u4e1c\\u56fd\\u9645\\u673a\\u573a1\\u53f7\\u822a\\u7ad9\\u697c\"},{\"code\":\"T2\",\"lat\":31.150407,\"lng\":121.80901,\"name\":\"\\u4e0a\\u6d77\\u6d66\\u4e1c\\u56fd\\u9645\\u673a\\u573a2\\u53f7\\u822a\\u7ad9\\u697c\"}]"}}},"gz":{"short":"gz","name":"\u5e7f\u5dde","en":"guangzhou","airport":{"CAN":{"lat":23.385802,"lng":113.303423,"name":"\u5e7f\u5dde\u767d\u4e91\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"sz":{"short":"sz","name":"\u6df1\u5733","en":"shenzhen","airport":{"SZX":{"lat":22.625679,"lng":113.813593,"name":"\u6df1\u5733\u5b9d\u5b89\u56fd\u9645\u673a\u573a","terminal_list":"[{\"code\":\"T3\",\"lat\":22.625679,\"lng\":113.813593,\"name\":\"\\u6df1\\u5733\\u5b9d\\u5b89\\u56fd\\u9645\\u673a\\u573a\\u65b0\\u822a\\u7ad9\\u697c\"}]"}}},"tj":{"short":"tj","name":"\u5929\u6d25","en":"tianjin","airport":{"TSN":{"lat":39.130409,"lng":117.359204,"name":"\u5929\u6d25\u6ee8\u6d77\u56fd\u9645\u673a\u573a","terminal_list":"[]"},"NAY":{"lat":39.797623,"lng":116.399127,"name":"\u5317\u4eac\u5357\u82d1\u673a\u573a","terminal_list":"[]"}}},"cq":{"short":"cq","name":"\u91cd\u5e86","en":"chongqing","airport":{"CKG":{"lat":29.72207,"lng":106.641134,"name":"\u91cd\u5e86\u6c5f\u5317\u56fd\u9645\u673a\u573a","terminal_list":"[{\"code\":\"T1\",\"lat\":29.72228,\"lng\":106.641076,\"name\":\"\\u91cd\\u5e86\\u6c5f\\u5317\\u56fd\\u9645\\u673a\\u573aT1\\u822a\\u7ad9\\u697c\"},{\"code\":\"T2\",\"lat\":29.714232,\"lng\":106.637075,\"name\":\"\\u91cd\\u5e86\\u6c5f\\u5317\\u56fd\\u9645\\u673a\\u573aT2A\\u822a\\u7ad9\\u697c\"},{\"code\":\"T2B\",\"lat\":29.717256,\"lng\":106.638109,\"name\":\"\\u91cd\\u5e86\\u6c5f\\u5317\\u56fd\\u9645\\u673a\\u573aT2B\\u822a\\u7ad9\\u697c\"}]"}}},"wh":{"short":"wh","name":"\u6b66\u6c49","en":"wuhan","airport":{"WUH":{"lat":30.770707,"lng":114.212042,"name":"\u6b66\u6c49\u5929\u6cb3\u56fd\u9645\u673a\u573a","terminal_list":"[{\"code\":\"T1\",\"lat\":30.77403,\"lng\":114.215239,\"name\":\"\\u6b66\\u6c49\\u5929\\u6cb3\\u56fd\\u9645\\u673a\\u573aT1\\u822a\\u7ad9\\u697c\"},{\"code\":\"T2\",\"lat\":30.770423,\"lng\":114.21244,\"name\":\"\\u6b66\\u6c49\\u5929\\u6cb3\\u56fd\\u9645\\u673a\\u573aT2\\u822a\\u7ad9\\u697c\"}]"}}},"hz":{"short":"hz","name":"\u676d\u5dde","en":"hangzhou","airport":{"HGH":{"lat":30.235453,"lng":120.437431,"name":"\u676d\u5dde\u8427\u5c71\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"qd":{"short":"qd","name":"\u9752\u5c9b","en":"qingdao","airport":{"TAO":{"lat":36.267751,"lng":120.38592,"name":"\u9752\u5c9b\u6d41\u4ead\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"xa":{"short":"xa","name":"\u897f\u5b89","en":"xian","airport":{"XIY":{"lat":34.440044,"lng":108.786621,"name":"\u897f\u5b89\u54b8\u9633\u673a\u573a","terminal_list":"[]"}}},"cd":{"short":"cd","name":"\u6210\u90fd","en":"chengdu","airport":{"CTU":{"lat":30.579174,"lng":103.958526,"name":"\u6210\u90fd\u53cc\u6d41\u56fd\u9645\u673a\u573a","terminal_list":"[{\"code\":\"T1\",\"lat\":30.579047,\"lng\":103.958842,\"name\":\"\\u6210\\u90fd\\u53cc\\u6d41\\u56fd\\u9645\\u673a\\u573aT1\\u822a\\u7ad9\\u697c\"},{\"code\":\"T2\",\"lat\":30.57136,\"lng\":103.956946,\"name\":\"\\u6210\\u90fd\\u53cc\\u6d41\\u56fd\\u9645\\u673a\\u573aT2\\u822a\\u7ad9\\u697c\"}]"}}},"chs":{"short":"chs","name":"\u957f\u6c99","en":"changsha","airport":{"CSX":{"lat":28.192864,"lng":113.219752,"name":"\u957f\u6c99\u9ec4\u82b1\u56fd\u9645\u673a\u573a","terminal_list":"[{\"code\":\"T1\",\"lat\":28.192864,\"lng\":113.219752,\"name\":\"\\u957f\\u6c99\\u9ec4\\u82b1\\u56fd\\u9645\\u673a\\u573aT1\\u822a\\u7ad9\\u697c\"},{\"code\":\"T2\",\"lat\":28.191648,\"lng\":113.219926,\"name\":\"\\u957f\\u6c99\\u9ec4\\u82b1\\u56fd\\u9645\\u673a\\u573aT2\\u822a\\u7ad9\\u697c\"},{\"code\":\"T3\",\"lat\":28.191018,\"lng\":113.219961,\"name\":\"\\u957f\\u6c99\\u9ec4\\u82b1\\u56fd\\u9645\\u673a\\u573aT3\\u822a\\u7ad9\\u697c\"}]"}}},"haikou":{"short":"haikou","name":"\u6d77\u53e3","en":"haikou","airport":{"HAK":{"lat":19.938472,"lng":110.462038,"name":"\u6d77\u53e3\u7f8e\u5170\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"sanya":{"short":"sanya","name":"\u4e09\u4e9a","en":"sanya","airport":{"SYX":{"lat":18.307753,"lng":109.412161,"name":"\u4e09\u4e9a\u51e4\u51f0\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"ty":{"short":"ty","name":"\u592a\u539f","en":"taiyuan","airport":{"TYN":{"lat":37.755165,"lng":112.632245,"name":"\u592a\u539f\u6b66\u5bbf\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"sy":{"short":"sy","name":"\u6c88\u9633","en":"shenyang","airport":{"SHE":{"lat":41.639868,"lng":123.496998,"name":"\u6c88\u9633\u6843\u4ed9\u56fd\u9645\u673a\u573a","terminal_list":"[{\"code\":\"T1\",\"lat\":41.639868,\"lng\":123.496998,\"name\":\"\\u6c88\\u9633\\u6843\\u4ed9\\u56fd\\u9645\\u673a\\u573aT1\\u822a\\u7ad9\\u697c\"},{\"code\":\"T2\",\"lat\":41.637314,\"lng\":123.494205,\"name\":\"\\u6c88\\u9633\\u6843\\u4ed9\\u56fd\\u9645\\u673a\\u573aT2\\u822a\\u7ad9\\u697c\"},{\"code\":\"T3\",\"lat\":41.633968,\"lng\":123.493409,\"name\":\"\\u6c88\\u9633\\u6843\\u4ed9\\u56fd\\u9645\\u673a\\u573aT3\\u822a\\u7ad9\\u697c\"}]"}}},"gl":{"short":"gl","name":"\u6842\u6797","en":"guilin","airport":{"KWL":{"lat":25.223733,"lng":110.053139,"name":"\u4e24\u6c5f\u673a\u573a","terminal_list":"[]"}}},"gy":{"short":"gy","name":"\u8d35\u9633","en":"guiyang","airport":{"KWE":{"lat":26.540728,"lng":106.799716,"name":"\u8d35\u9633\u9f99\u6d1e\u5821\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"hk":{"short":"hk","name":"\u9999\u6e2f","en":"hongkong","airport":{"HKG":{"lat":22.312602,"lng":113.938522,"name":"\u9999\u6e2f\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"zh":{"short":"zh","name":"\u73e0\u6d77","en":"zhuhai","airport":{"ZUH":{"lat":22.011894,"lng":113.376074,"name":"\u73e0\u6d77\u91d1\u6e7e\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"jn":{"short":"jn","name":"\u6d4e\u5357","en":"jinan","airport":{"TNA":{"lat":36.850756,"lng":117.213251,"name":"\u6d4e\u5357\u9065\u5899\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"nj":{"short":"nj","name":"\u5357\u4eac","en":"nanjing","airport":{"NKG":{"lat":31.733893,"lng":118.871144,"name":"\u5357\u4eac\u7984\u53e3\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"cc":{"short":"cc","name":"\u957f\u6625","en":"changchun","airport":{"CGQ":{"lat":43.994543,"lng":125.69767,"name":"\u957f\u6625\u9f99\u5609\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"zz":{"short":"zz","name":"\u90d1\u5dde","en":"zhengzhou","airport":{"CGO":{"lat":34.522399,"lng":113.841705,"name":"\u90d1\u5dde\u65b0\u90d1\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"xm":{"short":"xm","name":"\u53a6\u95e8","en":"xiamen","airport":{"XMN":{"lat":24.53424,"lng":118.132038,"name":"\u53a6\u95e8\u9ad8\u5d0e\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"hf":{"short":"hf","name":"\u5408\u80a5","en":"hefei","airport":{"HFE":{"lat":31.963086,"lng":117.010059,"name":"\u5408\u80a5\u65b0\u6865\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"km":{"short":"km","name":"\u6606\u660e","en":"kunming","airport":{"KMG":{"lat":25.095859,"lng":102.927818,"name":"\u6606\u660e\u957f\u6c34\u673a\u573a","terminal_list":"[]"}}},"dg":{"short":"dg","name":"\u4e1c\u839e","en":"dongguan","airport":{"CAN":{"lat":23.385802,"lng":113.303423,"name":"\u5e7f\u5dde\u767d\u4e91\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"dl":{"short":"dl","name":"\u5927\u8fde","en":"dalian","airport":{"DLC":{"lat":38.962512,"lng":121.544237,"name":"\u5927\u8fde\u5468\u6c34\u5b50\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"nb":{"short":"nb","name":"\u5b81\u6ce2","en":"ningbo","airport":{"NGB":{"lat":29.819051,"lng":121.46656,"name":"\u5b81\u6ce2\u680e\u793e\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"wz":{"short":"wz","name":"\u6e29\u5dde","en":"wenzhou","airport":{"WNZ":{"lat":27.911913,"lng":120.853729,"name":"\u6e29\u5dde\u6c38\u5f3a\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"fz":{"short":"fz","name":"\u798f\u5dde","en":"fuzhou","airport":{"FOC":{"lat":25.928561,"lng":119.672356,"name":"\u798f\u5dde\u957f\u4e50\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"qz":{"short":"qz","name":"\u6cc9\u5dde","en":"quanzhou","airport":{"JJN":{"lat":24.800137,"lng":118.59252,"name":"\u6cc9\u5dde\u664b\u6c5f\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"weihai":{"short":"weihai","name":"\u5a01\u6d77","en":"weihai","airport":{"WEH":{"lat":37.188493,"lng":122.240753,"name":"\u5a01\u6d77\u5927\u6c34\u6cca\u673a\u573a","terminal_list":"[]"}}},"luoyang":{"short":"luoyang","name":"\u6d1b\u9633","en":"luoyang","airport":{"LYA":{"lat":34.735688,"lng":112.393398,"name":"\u6d1b\u9633\u5317\u90ca\u673a\u573a","terminal_list":"[]"}}},"nn":{"short":"nn","name":"\u5357\u5b81","en":"nanning","airport":{"NNG":{"lat":22.609574,"lng":108.17173,"name":"\u5357\u5b81\u5434\u5729\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"lz":{"short":"lz","name":"\u5170\u5dde","en":"lanzhou","airport":{"LHW":{"lat":36.50798,"lng":103.61721,"name":"\u5170\u5dde\u4e2d\u5ddd\u673a\u573a","terminal_list":"[]"}}},"sjz":{"short":"sjz","name":"\u77f3\u5bb6\u5e84","en":"shijiazhuang","airport":{"SJW":{"lat":38.278483,"lng":114.698768,"name":"\u77f3\u5bb6\u5e84\u6b63\u5b9a\u673a\u573a","terminal_list":"[]"},"NAY":{"lat":39.797623,"lng":116.399127,"name":"\u5317\u4eac\u5357\u82d1\u673a\u573a","terminal_list":"[]"}}},"hrb":{"short":"hrb","name":"\u54c8\u5c14\u6ee8","en":"haerbin","airport":{"HRB":{"lat":45.622682,"lng":126.242523,"name":"\u54c8\u5c14\u6ee8\u592a\u5e73\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"hu":{"short":"hu","name":"\u547c\u548c\u6d69\u7279","en":"huhehaote","airport":{"HET":{"lat":40.855403,"lng":111.821299,"name":"\u547c\u548c\u6d69\u7279\u767d\u5854\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"bn":{"short":"bn","name":"\u897f\u53cc\u7248\u7eb3","en":"xishuangbanna","airport":{"JHG":{"lat":21.970529,"lng":100.766451,"name":"\u897f\u53cc\u7248\u7eb3\u560e\u6d12\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"sanfrancisco":{"short":"sanfrancisco","name":"\u65e7\u91d1\u5c71","en":"san francisco","airport":{"OAK":{"lat":37.721389,"lng":-122.220833,"name":"\u65e7\u91d1\u5c71\u5965\u514b\u5170\u673a\u573a","terminal_list":"[]"},"SFO":{"lat":37.616169,"lng":-122.387073,"name":"\u65e7\u91d1\u5c71\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"losangeles":{"short":"losangeles","name":"\u6d1b\u6749\u77f6","en":"los angeles","airport":{"LAX":{"lat":33.94201,"lng":-118.4085,"name":"\u6d1b\u6749\u77f6\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"newyork":{"short":"newyork","name":"\u7ebd\u7ea6","en":"new york","airport":{"EWR":{"lat":40.691181,"lng":-74.178872,"name":"\u7ebd\u74e6\u514b\u81ea\u7531\u56fd\u9645\u673a\u573a","terminal_list":"[]"},"JFK":{"lat":40.641521,"lng":-73.778081,"name":"\u7ea6\u7ff0\u80af\u5c3c\u8fea\u56fd\u9645\u673a\u573a","terminal_list":"[]"},"LGA":{"lat":40.777241,"lng":-73.874001,"name":"\u7ebd\u7ea6\u62c9\u74dc\u5730\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"yl":{"short":"yl","name":"\u6986\u6797","en":"yulin","airport":{"UYN":{"lat":38.368934,"lng":109.609625,"name":"\u6986\u6797\u6986\u9633\u673a\u573a","terminal_list":"[]"}}},"xgll":{"short":"xgll","name":"\u9999\u683c\u91cc\u62c9","en":"xianggelila","airport":{"DIG":{"lat":27.792921,"lng":99.713974,"name":"\u9999\u683c\u91cc\u62c9\u673a\u573a","terminal_list":"[]"}}},"lj":{"short":"lj","name":"\u4e3d\u6c5f","en":"lijiang","airport":{"LJG":{"lat":26.666175,"lng":100.247583,"name":"\u4e3d\u6c5f\u4e09\u4e49\u673a\u573a","terminal_list":"[]"}}},"osaka":{"short":"osaka","name":"\u5927\u962a","en":"osaka","airport":{"ITM":{"lat":34.78958,"lng":135.43809,"name":"\u5927\u962a\u4f0a\u4e39\u56fd\u9645\u673a\u573a","terminal_list":"[]"},"KIX":{"lat":34.432002,"lng":135.230394,"name":"\u5927\u962a\u5173\u897f\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"tokyo":{"short":"tokyo","name":"\u4e1c\u4eac","en":"tokyo","airport":{"HND":{"lat":35.5502,"lng":139.7802,"name":"\u7fbd\u7530\u673a\u573a","terminal_list":"[]"},"IBR":{"lat":36.1778,"lng":140.4078,"name":"\u8328\u57ce\u673a\u573a","terminal_list":"[]"},"NRT":{"lat":35.77225,"lng":140.39287,"name":"\u6210\u7530\u673a\u573a","terminal_list":"[]"}}},"moscow":{"short":"moscow","name":"\u83ab\u65af\u79d1","en":"moscow","airport":{"DME":{"lat":55.413525,"lng":37.89536,"name":"\u83ab\u65af\u79d1\u591a\u83ab\u6770\u591a\u6c83\u56fd\u9645\u673a\u573a","terminal_list":"[]"},"SVO":{"lat":55.966727,"lng":37.416488,"name":"\u83ab\u65af\u79d1\u8c22\u5217\u6885\u6377\u6c83\u56fd\u9645\u673a\u573a","terminal_list":"[]"},"VKO":{"lat":55.604026,"lng":37.275755,"name":"\u83ab\u65af\u79d1\u4f0f\u52aa\u79d1\u6c83\u673a\u573a","terminal_list":"[]"}}},"xz":{"short":"xz","name":"\u5f90\u5dde","en":"xuzhou","airport":{"XUZ":{"lat":34.053797,"lng":117.561951,"name":"\u5f90\u5dde\u89c2\u97f3\u673a\u573a","terminal_list":"[]"}}},"wx":{"short":"wx","name":"\u65e0\u9521","en":"wuxi","airport":{"WUX":{"lat":31.49862,"lng":120.435263,"name":"\u82cf\u5357\u7855\u653e\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"dq":{"short":"dq","name":"\u5927\u5e86","en":"daqing","airport":{"DQA":{"lat":46.749036,"lng":125.143204,"name":"\u5927\u5e86\u8428\u5c14\u56fe\u673a\u573a","terminal_list":"[]"}}},"qqhr":{"short":"qqhr","name":"\u9f50\u9f50\u54c8\u5c14","en":"qiqihaer","airport":{"NDG":{"lat":47.253922,"lng":123.923925,"name":"\u9f50\u9f50\u54c8\u5c14\u4e09\u5bb6\u5b50\u673a\u573a","terminal_list":"[]"}}},"baishan":{"short":"baishan","name":"\u767d\u5c71","en":"baishan","airport":{"NBS":{"lat":42.069939,"lng":127.617359,"name":"\u957f\u767d\u5c71\u673a\u573a","terminal_list":"[]"}}},"jl":{"short":"jl","name":"\u5409\u6797","en":"jilin","airport":{"JIL":{"lat":43.998736,"lng":126.386454,"name":"\u5409\u6797\u4e8c\u53f0\u5b50\u673a\u573a","terminal_list":"[]"}}},"dandong":{"short":"dandong","name":"\u4e39\u4e1c","en":"dandong","airport":{"DDG":{"lat":40.033743,"lng":124.286726,"name":"\u4e39\u4e1c\u6d6a\u5934\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}},"manzl":{"short":"manzl","name":"\u6ee1\u6d32\u91cc","en":"manzhouli","airport":{"NZH":{"lat":49.57065,"lng":117.364197,"name":"\u547c\u4f26\u8d1d\u5c14\u6ee1\u6d32\u91cc\u897f\u90ca\u673a\u573a","terminal_list":"[]"}}},"hlbe":{"short":"hlbe","name":"\u547c\u4f26\u8d1d\u5c14","en":"hulunbeier","airport":{"HLD":{"lat":49.209523,"lng":119.855347,"name":"\u6d77\u62c9\u5c14\u4e1c\u5c71\u673a\u573a","terminal_list":"[]"}}},"erds":{"short":"erds","name":"\u9102\u5c14\u591a\u65af","en":"eerduosi","airport":{"DSN":{"lat":39.500299,"lng":109.866672,"name":"\u9102\u5c14\u591a\u65af\u4f0a\u91d1\u970d\u6d1b\u673a\u573a","terminal_list":"[]"}}},"bt":{"short":"bt","name":"\u5305\u5934","en":"baotou","airport":{"BAV":{"lat":40.565072,"lng":110.004387,"name":"\u5305\u5934\u4e8c\u91cc\u534a\u673a\u573a","terminal_list":"[]"}}},"qhd":{"short":"qhd","name":"\u79e6\u7687\u5c9b","en":"qinhuangdao","airport":{"SHP":{"lat":39.965543,"lng":119.75235,"name":"\u79e6\u7687\u5c9b\u673a\u573a","terminal_list":"[]"}}},"linyi":{"short":"linyi","name":"\u4e34\u6c82","en":"linyi","airport":{"LYI":{"lat":35.044052,"lng":118.451157,"name":"\u4e34\u6c82\u6cad\u57e0\u5cad\u673a\u573a","terminal_list":"[]"}}},"qf":{"short":"qf","name":"\u66f2\u961c","en":"qufu","airport":{"JNG":{"lat":35.297457,"lng":116.356459,"name":"\u6d4e\u5b81\u673a\u573a","terminal_list":"[]"}}},"nc":{"short":"nc","name":"\u5357\u660c","en":"nanchang","airport":{"KHN":{"lat":28.85868,"lng":115.912699,"name":"\u5357\u660c\u660c\u5317\u56fd\u9645\u673a\u573a","terminal_list":"[]"}}}}}
+test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.19' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_a_info_train: 19.获得火车站信息</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.19')" >
+        pass</a>
+
+    <div id='div_pt1.19' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.19').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.19: {"code":200,"msg":"OK","result":{"bj":{"short":"bj","name":"\u5317\u4eac","en":"beijing","train":{"_VNP":{"lat":39.865042,"lng":116.379028,"name":"\u5317\u4eac\u5357\u706b\u8f66\u7ad9","terminal_list":"[]"},"_BXP":{"lat":39.896071,"lng":116.32116,"name":"\u5317\u4eac\u897f\u706b\u8f66\u7ad9","terminal_list":"[]"},"_BJP":{"lat":39.905066,"lng":116.427174,"name":"\u5317\u4eac\u706b\u8f66\u7ad9","terminal_list":"[]"},"_VAP":{"lat":39.942785,"lng":116.353809,"name":"\u5317\u4eac\u5317\u706b\u8f66\u7ad9","terminal_list":"[]"},"_TBP":{"lat":39.166266,"lng":117.209509,"name":"\u5929\u6d25\u5317\u706b\u8f66\u7ad9","terminal_list":"[]"}}},"sh":{"short":"sh","name":"\u4e0a\u6d77","en":"shanghai","train":{"_AOH":{"lat":31.194245,"lng":121.320895,"name":"\u4e0a\u6d77\u8679\u6865\u706b\u8f66\u7ad9","terminal_list":"[]"},"_SHH":{"lat":31.24868,"lng":121.455222,"name":"\u4e0a\u6d77\u706b\u8f66\u7ad9","terminal_list":"[]"},"_SNH":{"lat":31.153312,"lng":121.429483,"name":"\u4e0a\u6d77\u5357\u706b\u8f66\u7ad9","terminal_list":"[]"},"_SXH":{"lat":31.26251,"lng":121.402952,"name":"\u4e0a\u6d77\u897f\u706b\u8f66\u7ad9","terminal_list":"[]"}}},"gz":{"short":"gz","name":"\u5e7f\u5dde","en":"guangzhou","train":{"_IZQ":{"lat":22.988878,"lng":113.269456,"name":"\u5e7f\u5dde\u5357\u706b\u8f66\u7ad9","terminal_list":"[]"},"_GZQ":{"lat":23.147884,"lng":113.258222,"name":"\u5e7f\u5dde\u706b\u8f66\u7ad9","terminal_list":"[]"},"_GGQ":{"lat":23.149503,"lng":113.324815,"name":"\u5e7f\u5dde\u4e1c\u706b\u8f66\u7ad9","terminal_list":"[]"},"_GBQ":{"lat":23.376959,"lng":113.204554,"name":"\u5e7f\u5dde\u5317\u706b\u8f66\u7ad9","terminal_list":"[]"}}},"sz":{"short":"sz","name":"\u6df1\u5733","en":"shenzhen","train":{"_IOQ":{"lat":22.609271,"lng":114.028912,"name":"\u6df1\u5733\u5317\u706b\u8f66\u7ad9","terminal_list":"[]"},"_SZQ":{"lat":22.532325,"lng":114.118402,"name":"\u6df1\u5733\u706b\u8f66\u7ad9","terminal_list":"[]"},"_BJQ":{"lat":22.601268,"lng":114.120324,"name":"\u6df1\u5733\u4e1c\u706b\u8f66\u7ad9","terminal_list":"[]"},"_OSQ":{"lat":22.528442,"lng":113.907589,"name":"\u6df1\u5733\u897f\u706b\u8f66\u7ad9","terminal_list":"[]"}}},"tj":{"short":"tj","name":"\u5929\u6d25","en":"tianjin","train":{"_TBP":{"lat":39.166266,"lng":117.209509,"name":"\u5929\u6d25\u5317\u706b\u8f66\u7ad9","terminal_list":"[]"}}},"hz":{"short":"hz","name":"\u676d\u5dde","en":"hangzhou","train":{"_HGH":{"lat":30.296015,"lng":120.217853,"name":"\u676d\u5dde\u4e1c\u706b\u8f66\u7ad9","terminal_list":"[]"},"_HZH":{"lat":30.24371,"lng":120.182465,"name":"\u676d\u5dde\u706b\u8f66\u7ad9","terminal_list":"[]"}}},"cd":{"short":"cd","name":"\u6210\u90fd","en":"chengdu","train":{"_ICW":{"lat":30.628882,"lng":104.141673,"name":"\u6210\u90fd\u4e1c\u706b\u8f66\u7ad9","terminal_list":"[]"},"_CDW":{"lat":30.696643,"lng":104.072294,"name":"\u6210\u90fd\u5317\u706b\u8f66\u7ad9","terminal_list":"[]"}}},"cc":{"short":"cc","name":"\u957f\u6625","en":"changchun","train":{"_CCT":{"lat":43.909904,"lng":125.324087,"name":"\u957f\u6625\u706b\u8f66\u7ad9","terminal_list":"[]"},"_CRT":{"lat":43.877532,"lng":125.20077,"name":"\u957f\u6625\u897f\u706b\u8f66\u7ad9","terminal_list":"[]"}}},"su":{"short":"su","name":"\u82cf\u5dde","en":"suzhou","train":{"_SZH":{"lat":31.330426,"lng":120.610638,"name":"\u82cf\u5dde\u706b\u8f66\u7ad9","terminal_list":"[]"}}},"fz":{"short":"fz","name":"\u798f\u5dde","en":"fuzhou","train":{"_FYS":{"lat":25.985948,"lng":119.389959,"name":"\u798f\u5dde\u5357\u706b\u8f66\u7ad9","terminal_list":"[]"},"_FZS":{"lat":26.11295,"lng":119.319625,"name":"\u798f\u5dde\u706b\u8f66\u7ad9","terminal_list":"[]"}}},"xz":{"short":"xz","name":"\u5f90\u5dde","en":"xuzhou","train":{"_UUH":{"lat":34.267718,"lng":117.304495,"name":"\u5f90\u5dde\u4e1c\u706b\u8f66\u7ad9","terminal_list":"[]"},"_XCH":{"lat":34.265343,"lng":117.206623,"name":"\u5f90\u5dde\u706b\u8f66\u7ad9","terminal_list":"[]"}}},"wx":{"short":"wx","name":"\u65e0\u9521","en":"wuxi","train":{"_IFH":{"lat":31.498156,"lng":120.391323,"name":"\u65e0\u9521\u65b0\u533a\u706b\u8f66\u7ad9","terminal_list":"[]"},"_WGH":{"lat":31.596905,"lng":120.46009,"name":"\u65e0\u9521\u4e1c\u706b\u8f66\u7ad9","terminal_list":"[]"},"_WXH":{"lat":31.587945,"lng":120.305793,"name":"\u65e0\u9521\u706b\u8f66\u7ad9","terminal_list":"[]"}}},"ta":{"short":"ta","name":"\u6cf0\u5b89","en":"taian","train":{"_TMK":{"lat":36.193538,"lng":117.117176,"name":"\u6cf0\u5b89\u706b\u8f66\u7ad9","terminal_list":"[]"}}}}}
+test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.20' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_b_createOrder_receipt: 20.开发票</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.20')" >
+        pass</a>
+
+    <div id='div_pt1.20' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.20').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.20: {"code":200,"msg":"success"}
+test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.21' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_c_put_order: 21.修改订单</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.21')" >
+        pass</a>
+
+    <div id='div_pt1.21' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.21').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.21: test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.22' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_d_post_comment: 22.提交评价</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.22')" >
+        pass</a>
+
+    <div id='div_pt1.22' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.22').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.22: {"code":400,"msg":"\u60a8\u8fd8\u4e0d\u80fd\u8bc4\u4ef7\u8be5\u8ba2\u5355"}
+test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.23' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_e_createOrder_newprice_halfday_check: 23.新一口价-半日租-校验预估阈值</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.23')" >
+        pass</a>
+
+    <div id='div_pt1.23' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.23').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.23: 200
+{"code":530,"msg":"\u4ef7\u683c\u6821\u9a8c\u5931\u8d25\uff01"}
+test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='pt1.24' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_f_createOrder_newprice_Oneday_check: 24.新一口价-日租-校验预估阈值</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.24')" >
+        pass</a>
+
+    <div id='div_pt1.24' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.24').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.24: test success
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>24</td>
+    <td>24</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

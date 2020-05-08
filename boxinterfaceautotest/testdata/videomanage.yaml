@@ -1,0 +1,937 @@
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加seemart抓拍机 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 0
+        Addr : rtsp://10.58.123.233:554/MainStream
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+     - !!str 0
+-
+  url : ws://10.58.122.215:8000
+  detail : 视频接入-添加后验证摄像机列表 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: ChnInfo
+  check:  # 检查点
+     - ChnInfo
+     - GetConfig
+     - !!str 0
+     - 10.58.123.233
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-编辑已添加seemart抓拍机 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        DevState : 0
+        OpType: 2
+        DevType: 0
+        Enable: true
+        DevName: 门口
+        Addr : rtsp://10.58.123.233:554/MainStream
+        ChnIdx : 0
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+     - !!str 0
+-
+  url : ws://10.58.122.215:8000
+  detail : 视频接入-编辑后验证摄像机更新 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: ChnInfo
+  check:  # 检查点
+     - !!str 0
+     - ChnInfo
+     - GetConfig
+     - 门口
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-删除刚添加抓怕机 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 1
+        ChnIdx: [0]
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+     - !!str 0
+-
+  url : ws://10.58.122.215:8000
+  detail : 视频接入-删除后返回查看摄像机列表 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: ChnInfo
+  check:  # 检查点
+     - ChnInfo
+     - GetConfig
+     - !!str 0
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加seemart抓拍机-输入正常IP # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 0
+        Addr : 10.58.123.233
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - Error!
+     - !!str -1
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加seemart抓拍机-IP地址为空 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 0
+        Addr :
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - Error!
+     - !!str -1
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加seemart抓拍机-输入错误IP格式-字母 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 0
+        Addr : abc
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - Error!
+     - !!str -1
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加seemart抓拍机-输入错误IP格式-数字 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 0
+        Addr : 123456
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - Error!
+     - !!str -1
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加seemart抓拍机-输入错误IP格式-非法字符 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 0
+        Addr : ￥%%……@&@+
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - Error!
+     - !!str -1
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加seemart抓拍机-输入错误IP格式-IP段错误 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 0
+        Addr : 10.58.123.233.0
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - Error!
+     - !!str -1
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加seemart抓拍机-输入错误IP格式-IP段无效 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 0
+        Addr : 10.58.123.256
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - Error!
+     - !!str -1
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加seemart抓拍机-用户名错误 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 0
+        Addr : rtsp://10.58.123.233:554/MainStream
+        UserName : root
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+     - !!str 0
+-
+  url : ws://10.58.122.215:8000
+  detail : 视频接入-验证用户名错误摄像机状态 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: ChnInfo
+  check:  # 检查点
+     - ChnInfo
+     - GetConfig
+     - !!str 1
+     - 10.58.123.233
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加seemart抓拍机-密码错误 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 0
+        Addr : rtsp://10.58.123.233:554/MainStream
+        UserName : admin
+        Passwd : 123456
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+     - !!str 0
+-
+  url : ws://10.58.122.215:8000
+  detail : 视频接入-验证密码错误摄像机状态 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: ChnInfo
+  check:  # 检查点
+     - ChnInfo
+     - GetConfig
+     - !!str 1
+     - 10.58.123.233
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加seemart抓拍机-用户名为空 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 0
+        Addr : rtsp://10.58.123.233:554/MainStream
+        UserName :
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+     - !!str 0
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加seemart抓拍机-密码为空 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 0
+        Addr : rtsp://10.58.123.233:554/MainStream
+        UserName : admin
+        Passwd :
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+     - !!str 0
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加seemart抓拍机-用户名密码都为空 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 0
+        Addr : rtsp://10.58.123.233:554/MainStream
+        UserName :
+        Passwd :
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+     - !!str 0
+-
+  url : ws://10.58.122.215:8000
+  detail : 视频接入-验证用户名密码为空摄像机状态 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: ChnInfo
+  check:  # 检查点
+     - ChnInfo
+     - GetConfig
+     - !!str 1
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加seemart抓拍机-错误用户名密码 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 0
+        Addr : rtsp://10.58.123.215:554/MainStream
+        UserName : puppy
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加seemart抓拍机离线 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 0
+        Addr : rtsp://10.58.123.217:554/MainStream
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+     - !!str 0
+-
+  url : ws://10.58.122.215:8000
+  detail : 视频接入-验证离线摄像机状态 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: ChnInfo
+  check:  # 检查点
+     - ChnInfo
+     - GetConfig
+     - !!str 1
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加ping不同的IP地址 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 0
+        Addr : rtsp://223.225.255.255:554/MainStream
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - Error!
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-批量删除已添加摄像机 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 1
+        ChnIdx: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+  check:  # 检查点
+     - !!str 0
+     - ChnInfo
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加普通摄像机 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 1
+        Addr : rtsp://10.58.122.88:554/MainStream
+        UserName : admin
+        Passwd : bxlevQZmOi7MTq5gy1TWJA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+-
+  url : ws://10.58.122.215:8000
+  detail : 视频接入-添加后验证摄像机列表 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: ChnInfo
+  check:  # 检查点
+     - ChnInfo
+     - GetConfig
+     - !!str 0
+     - 10.58.122.88
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-编辑已添加普通抓拍机 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        DevState : 0
+        OpType: 2
+        DevType: 1
+        Enable: true
+        DevName: 机房
+        Addr : rtsp://10.58.122.88:554/MainStream
+        ChnIdx : 0
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+     - !!str 0
+-
+  url : ws://10.58.122.215:8000
+  detail : 视频接入-编辑后验证摄像机更新 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: ChnInfo
+  check:  # 检查点
+     - !!str 0
+     - ChnInfo
+     - GetConfig
+     - 机房
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加普通摄像机-流地址输入ip # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 1
+        Addr : 10.58.122.88
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - Error!
+     - !!str -1
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加普通摄像机-流地址输入为空 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 1
+        Addr :
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - Error!
+     - !!str -1
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加普通摄像机-流地址错误 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 1
+        Addr : http://10.58.122.88
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - Error!
+     - !!str -1
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加普通摄像机-输入错误流格式-字母 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 1
+        Addr : abc
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - Error!
+     - !!str -1
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加普通摄像机-输入错误流格式-数字 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 1
+        Addr : 123456
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - Error!
+     - !!str -1
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加普通摄像机-输入错误流格式-非法字符 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 1
+        Addr : ￥%%……@&@+
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - Error!
+     - !!str -1
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加普通摄像机-输入错误流格式-非有效ip流地址 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 1
+        Addr : 10.58.122.111:554/SubStream
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - Error!
+     - !!str -1
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加普通摄像机-用户名错误 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 1
+        Addr : rtsp://10.58.122.88:554/MainStream
+        UserName : root
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+     - !!str 0
+-
+  url : ws://10.58.122.215:8000
+  detail : 视频接入-验证用户名错误摄像机状态 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: ChnInfo
+  check:  # 检查点
+     - ChnInfo
+     - GetConfig
+     - !!str 1
+     - 10.58.122.88
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加seemart抓拍机-密码错误 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 1
+        Addr : rtsp://10.58.122.88:554/MainStream
+        UserName : admin
+        Passwd : 123456
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+     - !!str 0
+-
+  url : ws://10.58.122.215:8000
+  detail : 视频接入-验证密码错误摄像机状态 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: ChnInfo
+  check:  # 检查点
+     - ChnInfo
+     - GetConfig
+     - !!str 1
+     - 10.58.122.88
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加普通摄像机-用户名为空 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 0
+        Addr : rtsp://10.58.122.88:554/MainStream
+        UserName :
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+     - !!str 0
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加普通摄像机-密码为空 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 1
+        Addr : rtsp://10.58.122.88:554/MainStream
+        UserName : admin
+        Passwd :
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+     - !!str 0
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加普通摄像机-用户名密码都为空 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 1
+        Addr : rtsp://10.58.122.88:554/MainStream
+        UserName :
+        Passwd :
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+     - !!str 0
+-
+  url : ws://10.58.122.215:8000
+  detail : 视频接入-验证用户名密码为空摄像机状态 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: ChnInfo
+  check:  # 检查点
+     - ChnInfo
+     - GetConfig
+     - !!str 1
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加普通摄像机-错误用户名密码 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 1
+        Addr : rtsp://10.58.122.88:554/MainStream
+        UserName : puppy
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-添加普通摄像机离线 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 1
+        Addr : rtsp://10.58.122.88:554/MainStream
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+     - !!str 0
+-
+  url : ws://10.58.122.215:8000
+  detail : 视频接入-验证离线摄像机状态 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: ChnInfo
+  check:  # 检查点
+     - ChnInfo
+     - GetConfig
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-编辑摄像机抓拍设置-最快 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        DevState : 0
+        OpType: 2
+        DevType: 1
+        Enable: true
+        Addr : rtsp://10.58.122.88:554/MainStream
+        ChnIdx : 0
+        Strategy : 0
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+     - !!str 0
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-编辑摄像机抓拍设置-最优 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        DevState : 0
+        OpType: 2
+        DevType: 1
+        Enable: true
+        Addr : rtsp://10.58.122.88:554/MainStream
+        ChnIdx : 0
+        Strategy : 1
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - SetConfig
+     - ChnInfo
+     - OK!
+     - !!str 0
+-
+  url : ws://10.58.122.201:8000
+  detail : 视频接入-删除普通摄像机 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 1
+        ChnIdx: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+  check:  # 检查点
+     - !!str 0
+     - ChnInfo
+     - OK!
+-
+  url : ws://10.58.122.215:8000
+  detail : 视频接入-删除后验证视频流列表 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: ChnInfo
+  check:  # 检查点
+     - ChnInfo
+     - GetConfig
+     - '[]'

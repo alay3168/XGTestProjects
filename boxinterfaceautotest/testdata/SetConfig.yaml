@@ -1,0 +1,90 @@
+-
+  url : ws://10.58.122.215:8000
+  detail : 用户管理-添加用户 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserAdd
+    Message:
+      UserAdd-Properties:
+        UserName: test
+        Password: 154vDmYO2qCYwP5+gusOiA==
+        UserType: operator
+  check:  # 检查点
+     - RetCode: 0
+     - Page: UserAdd
+-
+  url : ws://10.58.122.215:8000
+  detail : 用户管理-修改用户 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserModify
+    Message:
+      UserModify-Properties:
+        OldName: test
+        NewName: testchange
+        OldPasswd: 154vDmYO2qCYwP5+gusOiA==
+        NewPasswd: 154vDmYO2qCYwP5+gusOiA==
+        OldUserType: operator
+        NewUserType: operator
+  check:  # 检查点
+     - RetCode: 0
+     - Page: UserModify
+-
+  url : ws://10.58.122.215:8000
+  detail : 用户管理-删除用户 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: UserDelete
+    Message:
+      UserDelete-Properties:
+        UserName: testchange
+  check:  # 检查点
+     - RetCode: 0
+     - Page: UserDelete
+-
+  url : ws://10.58.122.215:8000
+  detail : 视频接入-添加视频流 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: ChnInfo
+    Message:
+      ChnInfo-Properties:
+        OpType: 0
+        DevType: 0
+        Addr : rtsp://10.58.122.126/554/MainStream
+        UserName : admin
+        Passwd : 154vDmYO2qCYwP5+gusOiA==
+  check:  # 检查点
+     - RetCode: 0
+     - Page: ChnInfo
+     - Message : OK!
+-
+  url : ws://10.58.122.215:8000
+  detail : 网络协议-TCP/IP设置 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: NetworkLAN
+    Message:
+      profile-version: 1.0
+      LAN-Properties:
+        DeviceType: auto
+        Dhcp: false
+        Address : 10.58.122.205
+        Mask: 255.255.255.0
+        Gateway : 10.58.122.1
+        MainDns : 8.8.8.8
+        SubDns : 114.114.114.114
+  check:  # 检查点
+     - RetCode: 0
+     - Page: NetworkLAN
+

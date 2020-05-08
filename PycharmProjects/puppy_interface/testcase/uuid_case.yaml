@@ -1,0 +1,83 @@
+-
+  url : http://10.58.122.61:84/api/v1/1/alarms/events/id/cameras
+  method : post  # 请求方式
+  detail : 事件ID与UUID  # 用例描述
+  header:
+  cookie:
+  is_json : True
+  ids : 1
+  data:  # 请求数据
+    uuids : ["22CDE2D0-475B-4C76-BB27-79F6021CC9BC"]
+  check:  # 检查点
+      - data
+      - ok
+
+-
+  url : http://10.58.122.61:84/api/v1/1/alarms/events/id/cameras
+  method : post  # 请求方式
+  detail : 事件ID与UUID  # 用例描述
+  header:
+  cookie:
+  is_json : True
+  ids : 2
+  data:  # 请求数据
+    uuids : ["22CDE2D0-475B-4C76-BB27-79F6021CC9BC"]
+  check:  # 检查点
+      - data
+      - ok
+
+-
+  url : http://10.58.122.61:84/api/v1/1/alarms/events/id/cameras
+  method : post  # 请求方式
+  detail : 事件ID与UUID  # 用例描述
+  header:
+  cookie:
+  is_json : True
+  ids : 3
+  data:  # 请求数据
+    uuids : ["22CDE2D0-475B-4C76-BB27-79F6021CC9BC"]
+  check:  # 检查点
+      - data
+      - ok
+
+-
+  url : http://10.58.122.61:84/api/v1/1/alarms/events/id/cameras
+  method : post  # 请求方式
+  detail : 事件ID与UUID  # 用例描述
+  header:
+  cookie:
+  is_json : True
+  ids : 4
+  data:  # 请求数据
+    uuids : ["22CDE2D0-475B-4C76-BB27-79F6021CC9BC"]
+  check:  # 检查点
+      - data
+      - ok
+
+-
+  url : http://10.58.122.61:84/api/v1/1/alarms/events/id/cameras
+  method : post  # 请求方式
+  detail : 事件ID与UUID  # 用例描述
+  header:
+  cookie:
+  is_json : True
+  ids : 5
+  data:  # 请求数据
+    uuids : ["22CDE2D0-475B-4C76-BB27-79F6021CC9BC"]
+  check:  # 检查点
+      - data
+      - ok
+
+-
+  url : http://10.58.122.61:84/api/v1/1/alarms/events/id/cameras
+  method : post  # 请求方式
+  detail : 事件ID与UUID  # 用例描述
+  header:
+  cookie:
+  is_json : True
+  ids : 6
+  data:  # 请求数据
+    uuids : ["22CDE2D0-475B-4C76-BB27-79F6021CC9BC"]
+  check:  # 检查点
+      - data
+      - ok

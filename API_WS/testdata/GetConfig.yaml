@@ -1,0 +1,88 @@
+-
+  url : ws://10.58.122.215:8000
+  detail : 查看用户列表 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: UserManage
+  check:  # 检查点
+     - RetCode: 0
+     - Page: UserManage
+-
+  url : ws://10.58.122.215:8000
+  detail : 视频接入-视频流列表 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: ChnInfo
+  check:  # 检查点
+     - RetCode: 0
+     - Page: ChnInfo
+-
+  url : ws://10.58.122.215:8000
+  detail : 网络协议-获取参数 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: NetworkLAN
+  check:  # 检查点
+     - RetCode: 0
+     - Page: NetworkLAN
+-
+  url : ws://10.58.122.215:8000
+  detail : 抓拍协议-PUPPY # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: TransPuppy
+  check:  # 检查点
+     - RetCode: 0
+     - Page: TransPuppy
+-
+  url : ws://10.58.122.215:8000
+  detail : 抓拍协议-FTP # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: TransFtp
+  check:  # 检查点
+     - RetCode: 0
+     - Page: TransFtp
+-
+  url : ws://10.58.122.215:8000
+  detail : 获取设备信息 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: DevInfo
+  check:  # 检查点
+     - RetCode: 0
+     - Page: DevInfo
+-
+  url : ws://10.58.122.215:8000
+  detail : 获取人脸参数信息 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - RetCode: 0
+     - Page: FaceDetect
+-
+  url : ws://10.58.122.215:8000
+  detail : 时间设置-获取参数 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: TimeSet
+  check:  # 检查点
+     - RetCode: 0
+     - Page: TimeSet

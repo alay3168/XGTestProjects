@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/venv" />
+    </content>
+    <orderEntry type="jdk" jdkName="Python 3.7 (OpenCV) (2)" jdkType="Python SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="XGTest" />
+    <orderEntry type="module" module-name="eval-master" />
+    <orderEntry type="module" module-name="HttpTest" />
+    <orderEntry type="module" module-name="PythonStudy_API" />
+    <orderEntry type="module" module-name="Image Search Engine" />
+    <orderEntry type="module" module-name="algorithm-master" />
+  </component>
+  <component name="PyDocumentationSettings">
+    <option name="renderExternalDocumentation" value="true" />
+  </component>
+</module>

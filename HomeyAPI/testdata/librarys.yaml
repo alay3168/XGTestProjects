@@ -1,0 +1,26 @@
+-
+  url : http://10.58.150.5:180/api/v1/1/staffs/librarys
+  method : get  # 请求方式
+  detail : 查看人员库列表  # 用例描述
+  header:
+       content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+      direction: desc
+  check:  # 检查点
+       - errCode: '0'
+-
+  url : http://10.58.150.5:180/api/v1/1/staffs/peoples
+  method : get  # 请求方式
+  detail : 查看人员库人员-黑名单  # 用例描述
+  header:
+       content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+      librayId: 1
+      orderby: updatedat
+      direction: desc
+  check:  # 检查点
+       - errCode: '0'

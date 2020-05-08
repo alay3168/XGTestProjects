@@ -1,0 +1,199 @@
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-TCP/IP设置-手动配置IP地址 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: NetworkLAN
+    Message:
+      profile-version: 1.0
+      LAN-Properties:
+        DeviceType: auto
+        Dhcp: false
+        Address : 10.58.122.108
+        Mask: 255.255.255.0
+        Gateway : 10.58.122.1
+        MainDns : 8.8.8.8
+        SubDns : 114.114.114.114
+  check:  # 检查点
+     - RetCode: 0
+     - Page: NetworkLAN
+-
+  url : ws://10.58.122.215:8000
+  detail : 网络协议-手动设置IP后验证信息 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: NetworkLAN
+  check:  # 检查点
+     - RetCode: 0
+     - Page: NetworkLAN
+     - Method: GetConfig
+     - Message: '{"profile-version":"1.0","LAN-Properties":{"DeviceType":"auto","Dhcp":false,"Address":"10.58.122.108","Mask":"255.255.255.0","Gateway":"10.58.122.1","MainDns":"8.8.8.8","SubDns":"114.114.114.114"}}'
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-FTP设置-上传图片测试 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: TestConfig
+    Page: TransFtp
+    Message:
+      profile-version: '1.0'
+      Trans-Properties:
+        FtpParam:
+          Server : 10.58.122.65
+          User: ftp-puppy
+          Port: 21
+          Password: '123456'
+          PathPolicy: 0
+          ArchiveDuration: 1
+        PuppyParam:
+          Server: 10.58.122.159
+          State: 0
+          Port: 1883
+        Policy : ftp
+      TransFtp-Properties:
+        Server: 10.58.122.65
+        User: ftp-puppy
+        Port: 21
+        Password: '123456'
+        PathPolicy: 0
+        ArchiveDuration: 1
+  check:  # 检查点
+     - RetCode: 0
+     - Page: TransFtp
+     - Method: TestConfig
+     - Message: OK!
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-FTP设置-保存设置 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: Trans
+    Message:
+      profile-version: '1.0'
+      Trans-Properties:
+        FtpParam:
+          Server : 10.58.122.65
+          User: ftp-puppy
+          Port: 21
+          Password: '123456'
+          PathPolicy: 1
+          ArchiveDuration: 1
+        PuppyParam:
+          Server: 10.58.122.159
+          State: 0
+          Port: 1883
+        Policy : ftp
+      TransFtp-Properties:
+        Server: 10.58.122.65
+        User: ftp-puppy
+        Port: 21
+        Password: '123456'
+        PathPolicy: 1
+        ArchiveDuration: 1
+  check:  # 检查点
+     - RetCode: 0
+     - Page: Trans
+     - Method: SetConfig
+     - Message: OK!
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-Puppy设置-保存-连接正常 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: Trans
+    Message:
+      profile-version: '1.0'
+      Trans-Properties:
+        FtpParam:
+          Server : 10.58.122.65
+          User: ftp-puppy
+          Port: 21
+          Password: '123456'
+          PathPolicy: 1
+          ArchiveDuration: 1
+        PuppyParam:
+          Server: 10.58.122.159
+          State: 1
+          Port: 1883
+        Policy : ftp
+  check:  # 检查点
+     - RetCode: 0
+     - Page: Trans
+     - Method: SetConfig
+     - Message: OK!
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-Puppy设置-保存-连接异常 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: Trans
+    Message:
+      profile-version: '1.0'
+      Trans-Properties:
+        FtpParam:
+          Server : 10.58.122.65
+          User: ftp-puppy
+          Port: 21
+          Password: '123456'
+          PathPolicy: 1
+          ArchiveDuration: 1
+        PuppyParam:
+          Server: 10.58.122.15
+          State: 0
+          Port: 1883
+        Policy : ftp
+  check:  # 检查点
+     - RetCode: 0
+     - Page: Trans
+     - Method: SetConfig
+     - Message: OK!
+-
+  url : ws://10.58.122.205:8000
+  detail : 网络协议-Puppy设置-修改目录结构（保存在根目录） # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Method: SetConfig
+    Page: Trans
+    Message:
+      profile-version: '1.0'
+      Trans-Properties:
+        FtpParam:
+          Server : 10.58.122.65
+          User: ftp-puppy
+          Port: 21
+          Password: '123456'
+          PathPolicy: 0
+          ArchiveDuration: 1
+        PuppyParam:
+          Server: 10.58.122.159
+          State: 1
+          Port: 1883
+        Policy : ftp
+  check:  # 检查点
+     - RetCode: 0
+     - Page: Trans
+     - Method: SetConfig
+     - Message: OK!
+-
+  url : ws://10.58.122.215:8000
+  detail : 抓拍协议-获取保存后设置信息 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: Trans
+  check:  # 检查点
+     - RetCode: 0
+     - Page: Trans

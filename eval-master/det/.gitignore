@@ -1,0 +1,4 @@
+./__pycache__
+*.pyc
+./res_det
+./pr_cruve

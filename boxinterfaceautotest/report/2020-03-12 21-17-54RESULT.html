@@ -1,0 +1,1096 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>抓拍盒-接口自动化测试报告</title>
+    <meta name="generator" content="HTMLTestReportCN 0.8.3"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: Microsoft YaHei,Tahoma,arial,helvetica,sans-serif;padding: 20px; font-size: 100%; }
+table       { font-size: 100%; }
+
+/* -- heading ---------------------------------------------------------------------- */
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- report ------------------------------------------------------------------------ */
+#total_row  { font-weight: bold; }
+.passCase   { color: #5cb85c; }
+.failCase   { color: #d9534f; font-weight: bold; }
+.errorCase  { color: #f0ad4e; font-weight: bold; }
+.testcase   { margin-left: 2em; }
+</style>
+
+</head>
+<body >
+<div class='heading'>
+<h1 style="font-family: Microsoft YaHei">抓拍盒-接口自动化测试报告</h1>
+<p class='attribute'><strong>测试人员 : </strong> QA</p>
+<p class='attribute'><strong>开始时间 : </strong> 2020-03-12 21:17:54</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:00:01.366000</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 42，通过 42，通过率= 100.00%</p>
+
+<p class='description'>用例执行情况：</p>
+</div>
+
+
+
+<p id='show_detail_line'>
+<a class="btn btn-primary" href='javascript:showCase(4)'>概要{ 100.00% }</a>
+<a class="btn btn-success" href='javascript:showCase(0)'>通过{ 42 }</a>
+<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
+<a class="btn btn-warning" href='javascript:showCase(2)'>错误{ 0 }</a>
+<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 42 }</a>
+</p>
+<table id='result_table' class="table table-condensed table-bordered table-hover">
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row' class="text-center active" style="font-weight: bold;font-size: 14px;">
+    <td>用例集/测试用例</td>
+    <td>总计</td>
+    <td>通过</td>
+    <td>失败</td>
+    <td>错误</td>
+    <td>详细</td>
+</tr>
+
+<tr class='success'>
+    <td>test_login.APITestCase</td>
+    <td class="text-center">3</td>
+    <td class="text-center">3</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c1',3)" class="detail" id='c1'>详细</a></td>
+</tr>
+
+<tr id='pt1_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_Login_case_00001: test_Login_case_00001</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt1_1' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
+    <div id='div_pt1_1' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt1_1' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
+    <div id='div_pt1_1' class="collapse in">
+    <pre>
+    
+pt1_1: 登陆-正确用户名密码
+Received '{"Method":"Login","Page":"Login","RetCode":0,"Message":"b8b64b91-78b6-43c7-9d46-21bb52555531"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_Login_case_00002: test_Login_case_00002</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt1_2' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_2'>通过</button>
+    <div id='div_pt1_2' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt1_2' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt1_2'>通过</button>
+    <div id='div_pt1_2' class="collapse in">
+    <pre>
+    
+pt1_2: 登陆-密码错误
+Received '{"Method":"Login","Page":"Login","RetCode":-2000001,"Message":"Error!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_Login_case_00003: test_Login_case_00003</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt1_3' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_3'>通过</button>
+    <div id='div_pt1_3' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt1_3' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt1_3'>通过</button>
+    <div id='div_pt1_3' class="collapse in">
+    <pre>
+    
+pt1_3: 登陆-不存在的用户
+Received '{"Method":"Login","Page":"Login","RetCode":-2000001,"Message":"Error!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr class='success'>
+    <td>test_WSAPI.SocketAPI_Case</td>
+    <td class="text-center">39</td>
+    <td class="text-center">39</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c2',39)" class="detail" id='c2'>详细</a></td>
+</tr>
+
+<tr id='pt2_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_IntelManage_case_00001: test_IntelManage_case_00001</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_1' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_1'>通过</button>
+    <div id='div_pt2_1' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_1' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_1'>通过</button>
+    <div id='div_pt2_1' class="collapse in">
+    <pre>
+    
+pt2_1: 智能管理-人脸抓拍设置-最小抓拍人脸设置30*30
+Received '{"Method":"SetConfig","Page":"FaceDetect","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_IntelManage_case_00002: test_IntelManage_case_00002</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_2' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_2'>通过</button>
+    <div id='div_pt2_2' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_2' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_2'>通过</button>
+    <div id='div_pt2_2' class="collapse in">
+    <pre>
+    
+pt2_2: 智能管理-人脸抓拍设置-最小抓拍人脸设置60*60
+Received '{"Method":"SetConfig","Page":"FaceDetect","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_IntelManage_case_00003: test_IntelManage_case_00003</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_3' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_3'>通过</button>
+    <div id='div_pt2_3' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_3' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_3'>通过</button>
+    <div id='div_pt2_3' class="collapse in">
+    <pre>
+    
+pt2_3: 智能管理-人脸抓拍设置-最小抓拍人脸设置100*100
+Received '{"Method":"SetConfig","Page":"FaceDetect","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_UsersManage_case_00001: test_UsersManage_case_00001</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_4' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_4'>通过</button>
+    <div id='div_pt2_4' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_4' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_4'>通过</button>
+    <div id='div_pt2_4' class="collapse in">
+    <pre>
+    
+pt2_4: 查看默认用户列表-默认admin
+Received '{"Method":"GetConfig","Page":"UserManage","RetCode":0,"Message":"{\"profile-version\":\"1.0\",\"UsersInfo-Properties\":{\"Users\":[{\"UserName\":\"admin\",\"UserType\":\"super\",\"Password\":\"154vDmYO2qCYwP5+gusOiA==\",\"Current\":true}]}}"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_UsersManage_case_00002: test_UsersManage_case_00002</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_5' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_5'>通过</button>
+    <div id='div_pt2_5' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_5' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_5'>通过</button>
+    <div id='div_pt2_5' class="collapse in">
+    <pre>
+    
+pt2_5: 用户管理-创建新用户-添加操作员用户
+Received '{"Method":"SetConfig","Page":"UserAdd","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_6' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_UsersManage_case_00003: test_UsersManage_case_00003</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_6' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_6'>通过</button>
+    <div id='div_pt2_6' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_6' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_6'>通过</button>
+    <div id='div_pt2_6' class="collapse in">
+    <pre>
+    
+pt2_6: 用户管理-验证添加用户后更新
+Received '{"Method":"GetConfig","Page":"UserManage","RetCode":0,"Message":"{\"profile-version\":\"1.0\",\"UsersInfo-Properties\":{\"Users\":[{\"UserName\":\"admin\",\"UserType\":\"super\",\"Password\":\"154vDmYO2qCYwP5+gusOiA==\",\"Current\":true},{\"UserName\":\"operator01\",\"UserType\":\"operator\",\"Password\":\"B9IA3kkFfbG1jjWVyDjCLw==\"}]}}"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_7' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_UsersManage_case_00004: test_UsersManage_case_00004</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_7' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_7'>通过</button>
+    <div id='div_pt2_7' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_7' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_7'>通过</button>
+    <div id='div_pt2_7' class="collapse in">
+    <pre>
+    
+pt2_7: 用户管理-创建新用户后登陆验证
+Received '{"Method":"Login","Page":"Login","RetCode":0,"Message":"7248fde0-b4a7-429a-84f5-65f53114a290"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_8' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_UsersManage_case_00005: test_UsersManage_case_00005</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_8' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_8'>通过</button>
+    <div id='div_pt2_8' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_8' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_8'>通过</button>
+    <div id='div_pt2_8' class="collapse in">
+    <pre>
+    
+pt2_8: 用户管理-添加操作员用户-用户名重复添加
+Received '{"Method":"SetConfig","Page":"UserAdd","RetCode":-1,"Message":"Error!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_9' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_UsersManage_case_00006: test_UsersManage_case_00006</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_9' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_9'>通过</button>
+    <div id='div_pt2_9' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_9' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_9'>通过</button>
+    <div id='div_pt2_9' class="collapse in">
+    <pre>
+    
+pt2_9: 用户管理-修改用户名
+Received '{"Method":"SetConfig","Page":"UserModify","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_10' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_UsersManage_case_00007: test_UsersManage_case_00007</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_10' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_10'>通过</button>
+    <div id='div_pt2_10' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_10' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_10'>通过</button>
+    <div id='div_pt2_10' class="collapse in">
+    <pre>
+    
+pt2_10: 用户管理-验证用户名修改后更新
+Received '{"Method":"GetConfig","Page":"UserManage","RetCode":0,"Message":"{\"profile-version\":\"1.0\",\"UsersInfo-Properties\":{\"Users\":[{\"UserName\":\"admin\",\"UserType\":\"super\",\"Password\":\"154vDmYO2qCYwP5+gusOiA==\",\"Current\":true},{\"UserName\":\"operator02\",\"UserType\":\"operator\",\"Password\":\"B9IA3kkFfbG1jjWVyDjCLw==\"}]}}"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_11' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_UsersManage_case_00008: test_UsersManage_case_00008</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_11' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_11'>通过</button>
+    <div id='div_pt2_11' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_11' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_11'>通过</button>
+    <div id='div_pt2_11' class="collapse in">
+    <pre>
+    
+pt2_11: 用户管理-修改用户类型-操作员修改为管理员
+Received '{"Method":"SetConfig","Page":"UserModify","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_12' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_UsersManage_case_00009: test_UsersManage_case_00009</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_12' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_12'>通过</button>
+    <div id='div_pt2_12' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_12' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_12'>通过</button>
+    <div id='div_pt2_12' class="collapse in">
+    <pre>
+    
+pt2_12: 用户管理-验证用户类型修改后更新
+Received '{"Method":"GetConfig","Page":"UserManage","RetCode":0,"Message":"{\"profile-version\":\"1.0\",\"UsersInfo-Properties\":{\"Users\":[{\"UserName\":\"admin\",\"UserType\":\"super\",\"Password\":\"154vDmYO2qCYwP5+gusOiA==\",\"Current\":true},{\"UserName\":\"operator02\",\"UserType\":\"admin\",\"Password\":\"B9IA3kkFfbG1jjWVyDjCLw==\"}]}}"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_13' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_UsersManage_case_00010: test_UsersManage_case_00010</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_13' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_13'>通过</button>
+    <div id='div_pt2_13' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_13' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_13'>通过</button>
+    <div id='div_pt2_13' class="collapse in">
+    <pre>
+    
+pt2_13: 用户管理-添加管理员用户
+Received '{"Method":"SetConfig","Page":"UserAdd","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_14' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_UsersManage_case_00011: test_UsersManage_case_00011</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_14' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_14'>通过</button>
+    <div id='div_pt2_14' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_14' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_14'>通过</button>
+    <div id='div_pt2_14' class="collapse in">
+    <pre>
+    
+pt2_14: 用户管理-删除用户-管理员
+Received '{"Method":"SetConfig","Page":"UserDelete","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_15' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_UsersManage_case_00012: test_UsersManage_case_00012</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_15' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_15'>通过</button>
+    <div id='div_pt2_15' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_15' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_15'>通过</button>
+    <div id='div_pt2_15' class="collapse in">
+    <pre>
+    
+pt2_15: 用户管理-删除用户-操作员
+Received '{"Method":"SetConfig","Page":"UserDelete","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_16' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_UsersManage_case_00013: test_UsersManage_case_00013</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_16' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_16'>通过</button>
+    <div id='div_pt2_16' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_16' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_16'>通过</button>
+    <div id='div_pt2_16' class="collapse in">
+    <pre>
+    
+pt2_16: 用户管理-验证删除用户后更新
+Received '{"Method":"GetConfig","Page":"UserManage","RetCode":0,"Message":"{\"profile-version\":\"1.0\",\"UsersInfo-Properties\":{\"Users\":[{\"UserName\":\"admin\",\"UserType\":\"super\",\"Password\":\"154vDmYO2qCYwP5+gusOiA==\",\"Current\":true}]}}"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_17' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_VideoManage_case_00001: test_VideoManage_case_00001</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_17' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_17'>通过</button>
+    <div id='div_pt2_17' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_17' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_17'>通过</button>
+    <div id='div_pt2_17' class="collapse in">
+    <pre>
+    
+pt2_17: 视频接入-添加seemart抓拍机
+Received '{"Method":"SetConfig","Page":"ChnInfo","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_18' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_VideoManage_case_00002: test_VideoManage_case_00002</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_18' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_18'>通过</button>
+    <div id='div_pt2_18' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_18' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_18'>通过</button>
+    <div id='div_pt2_18' class="collapse in">
+    <pre>
+    
+pt2_18: 视频接入-添加后验证摄像机列表
+Received '{"Method":"GetConfig","Page":"ChnInfo","RetCode":0,"Message":"{\"profile-version\":\"1.0\",\"ChnInfo-Properties\":[{\"ChnIdx\":0,\"DevState\":3,\"Enable\":true,\"DevType\":0,\"DevName\":\"\",\"Remarks\":\"\",\"Strategy\":1,\"RegisterTime\":\"\",\"UserName\":\"admin\",\"Passwd\":\"154vDmYO2qCYwP5+gusOiA==\",\"Addr\":\"rtsp://10.58.123.233:554/MainStream\"}]}"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_19' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_VideoManage_case_00003: test_VideoManage_case_00003</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_19' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_19'>通过</button>
+    <div id='div_pt2_19' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_19' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_19'>通过</button>
+    <div id='div_pt2_19' class="collapse in">
+    <pre>
+    
+pt2_19: 视频接入-编辑已添加seemart抓拍机
+Received '{"Method":"SetConfig","Page":"ChnInfo","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_20' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_VideoManage_case_00004: test_VideoManage_case_00004</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_20' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_20'>通过</button>
+    <div id='div_pt2_20' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_20' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_20'>通过</button>
+    <div id='div_pt2_20' class="collapse in">
+    <pre>
+    
+pt2_20: 视频接入-编辑后验证摄像机更新
+Received '{"Method":"GetConfig","Page":"ChnInfo","RetCode":0,"Message":"{\"profile-version\":\"1.0\",\"ChnInfo-Properties\":[{\"ChnIdx\":0,\"DevState\":3,\"Enable\":true,\"DevType\":0,\"DevName\":\"门口\",\"Remarks\":\"\",\"Strategy\":0,\"RegisterTime\":\"\",\"UserName\":\"admin\",\"Passwd\":\"154vDmYO2qCYwP5+gusOiA==\",\"Addr\":\"rtsp://10.58.123.233:554/MainStream\"}]}"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_21' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_VideoManage_case_00005: test_VideoManage_case_00005</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_21' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_21'>通过</button>
+    <div id='div_pt2_21' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_21' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_21'>通过</button>
+    <div id='div_pt2_21' class="collapse in">
+    <pre>
+    
+pt2_21: 视频接入-添加seemart抓拍机-错误用户名密码
+Received '{"Method":"SetConfig","Page":"ChnInfo","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_22' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_VideoManage_case_00006: test_VideoManage_case_00006</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_22' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_22'>通过</button>
+    <div id='div_pt2_22' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_22' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_22'>通过</button>
+    <div id='div_pt2_22' class="collapse in">
+    <pre>
+    
+pt2_22: 视频接入-添加普通摄像机
+Received '{"Method":"SetConfig","Page":"ChnInfo","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_23' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_VideoManage_case_00007: test_VideoManage_case_00007</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_23' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_23'>通过</button>
+    <div id='div_pt2_23' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_23' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_23'>通过</button>
+    <div id='div_pt2_23' class="collapse in">
+    <pre>
+    
+pt2_23: 视频接入-删除摄像机
+Received '{"Method":"SetConfig","Page":"ChnInfo","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_24' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_VideoManage_case_00008: test_VideoManage_case_00008</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_24' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_24'>通过</button>
+    <div id='div_pt2_24' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_24' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_24'>通过</button>
+    <div id='div_pt2_24' class="collapse in">
+    <pre>
+    
+pt2_24: 视频接入-删除后验证视频流列表
+Received '{"Method":"GetConfig","Page":"ChnInfo","RetCode":0,"Message":"{\"profile-version\":\"1.0\",\"ChnInfo-Properties\":[]}"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_25' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_networkSet_case_00001: test_networkSet_case_00001</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_25' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_25'>通过</button>
+    <div id='div_pt2_25' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_25' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_25'>通过</button>
+    <div id='div_pt2_25' class="collapse in">
+    <pre>
+    
+pt2_25: 网络协议-TCP/IP设置-手动获取IP地址
+Received '{"Method":"SetConfig","Page":"NetworkLAN","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_26' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_networkSet_case_00002: test_networkSet_case_00002</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_26' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_26'>通过</button>
+    <div id='div_pt2_26' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_26' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_26'>通过</button>
+    <div id='div_pt2_26' class="collapse in">
+    <pre>
+    
+pt2_26: 网络协议-手动设置IP后验证信息
+Received '{"Method":"GetConfig","Page":"NetworkLAN","RetCode":0,"Message":"{\"profile-version\":\"1.0\",\"LAN-Properties\":{\"DeviceType\":\"auto\",\"Dhcp\":false,\"Address\":\"10.58.122.108\",\"Mask\":\"255.255.255.0\",\"Gateway\":\"10.58.122.1\",\"MainDns\":\"8.8.8.8\",\"SubDns\":\"114.114.114.114\"}}"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_27' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_networkSet_case_00003: test_networkSet_case_00003</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_27' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_27'>通过</button>
+    <div id='div_pt2_27' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_27' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_27'>通过</button>
+    <div id='div_pt2_27' class="collapse in">
+    <pre>
+    
+pt2_27: 网络协议-FTP设置-上传图片测试
+Received '{"Method":"TestConfig","Page":"TransFtp","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_28' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_networkSet_case_00004: test_networkSet_case_00004</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_28' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_28'>通过</button>
+    <div id='div_pt2_28' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_28' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_28'>通过</button>
+    <div id='div_pt2_28' class="collapse in">
+    <pre>
+    
+pt2_28: 网络协议-FTP设置-保存设置
+Received '{"Method":"SetConfig","Page":"Trans","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_29' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_networkSet_case_00005: test_networkSet_case_00005</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_29' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_29'>通过</button>
+    <div id='div_pt2_29' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_29' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_29'>通过</button>
+    <div id='div_pt2_29' class="collapse in">
+    <pre>
+    
+pt2_29: 网络协议-Puppy设置-保存-连接正常
+Received '{"Method":"SetConfig","Page":"Trans","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_30' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_networkSet_case_00006: test_networkSet_case_00006</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_30' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_30'>通过</button>
+    <div id='div_pt2_30' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_30' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_30'>通过</button>
+    <div id='div_pt2_30' class="collapse in">
+    <pre>
+    
+pt2_30: 网络协议-Puppy设置-保存-连接异常
+Received '{"Method":"SetConfig","Page":"Trans","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_31' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_networkSet_case_00007: test_networkSet_case_00007</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_31' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_31'>通过</button>
+    <div id='div_pt2_31' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_31' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_31'>通过</button>
+    <div id='div_pt2_31' class="collapse in">
+    <pre>
+    
+pt2_31: 网络协议-Puppy设置-修改目录结构（保存在根目录）
+Received '{"Method":"SetConfig","Page":"Trans","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_32' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_networkSet_case_00008: test_networkSet_case_00008</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_32' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_32'>通过</button>
+    <div id='div_pt2_32' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_32' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_32'>通过</button>
+    <div id='div_pt2_32' class="collapse in">
+    <pre>
+    
+pt2_32: 抓拍协议-获取保存后设置信息
+Received '{"Method":"GetConfig","Page":"Trans","RetCode":0,"Message":"{\"profile-version\":\"1.0\",\"Trans-Properties\":{\"FtpParam\":{\"Server\":\"10.58.122.65\",\"Port\":21,\"User\":\"ftp-puppy\",\"Password\":\"123456\",\"ArchiveDuration\":1,\"PathPolicy\":0},\"PuppyParam\":{\"Server\":\"10.58.122.159\",\"Port\":1883,\"State\":0},\"Policy\":\"ftp\"}}"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_33' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_systemManage_case_00001: test_systemManage_case_00001</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_33' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_33'>通过</button>
+    <div id='div_pt2_33' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_33' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_33'>通过</button>
+    <div id='div_pt2_33' class="collapse in">
+    <pre>
+    
+pt2_33: 获取设备信息
+Received '{"Method":"GetConfig","Page":"DevInfo","RetCode":0,"Message":"{\"profile-version\":\"1.0\",\"Device-Properties\":{\"DevName\":\"多目标智能抓拍盒\",\"DevModel\":\"PY-BC1H0-08\",\"DevHW\":\"0.0.1\",\"DevFW\":\"v1.0.0.20200117153200\",\"DevSN\":\"CM0220118091000X\",\"DevMAC\":\"00:01:05:07:AB:08\",\"DevUUID\":\"099913D0-9A2B-4799-86A5-772C287050C1\"}}"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_34' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_systemManage_case_00002: test_systemManage_case_00002</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_34' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_34'>通过</button>
+    <div id='div_pt2_34' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_34' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_34'>通过</button>
+    <div id='div_pt2_34' class="collapse in">
+    <pre>
+    
+pt2_34: 时间设置-手动校时
+Received '{"Method":"SetConfig","Page":"TimeSet","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_35' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_systemManage_case_00003: test_systemManage_case_00003</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_35' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_35'>通过</button>
+    <div id='div_pt2_35' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_35' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_35'>通过</button>
+    <div id='div_pt2_35' class="collapse in">
+    <pre>
+    
+pt2_35: 获取手动校时保存后验证
+Received '{"Method":"GetConfig","Page":"TimeSet","RetCode":0,"Message":"{\"profile-version\":\"1.0\",\"Time-Properties\":{\"Timezone\":27,\"TimeCheck\":{\"TimeCheckType\":\"manual\",\"ManualCheck\":{\"TimeDevice\":1584019076,\"SyncPC\":true},\"NtpCheck\":{\"ServerIp\":\"time.windows.com\",\"ServerPort\":123,\"CheckInterval\":1440}}}}"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_36' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_systemManage_case_00004: test_systemManage_case_00004</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_36' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_36'>通过</button>
+    <div id='div_pt2_36' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_36' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_36'>通过</button>
+    <div id='div_pt2_36' class="collapse in">
+    <pre>
+    
+pt2_36: 时间设置-ntp校时-测试端口
+Received '{"Method":"TestConfig","Page":"TimeSet","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_37' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_systemManage_case_00005: test_systemManage_case_00005</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_37' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_37'>通过</button>
+    <div id='div_pt2_37' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_37' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_37'>通过</button>
+    <div id='div_pt2_37' class="collapse in">
+    <pre>
+    
+pt2_37: 时间设置-ntp校时-保存设置
+Received '{"Method":"SetConfig","Page":"TimeSet","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_38' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_systemManage_case_00006: test_systemManage_case_00006</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_38' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_38'>通过</button>
+    <div id='div_pt2_38' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_38' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_38'>通过</button>
+    <div id='div_pt2_38' class="collapse in">
+    <pre>
+    
+pt2_38: 获取NTP校时保存后验证
+Received '{"Method":"GetConfig","Page":"TimeSet","RetCode":0,"Message":"{\"profile-version\":\"1.0\",\"Time-Properties\":{\"Timezone\":27,\"TimeCheck\":{\"TimeCheckType\":\"ntp\",\"ManualCheck\":{\"TimeDevice\":1584019077,\"SyncPC\":true},\"NtpCheck\":{\"ServerIp\":\"10.58.122.150\",\"ServerPort\":123,\"CheckInterval\":1440}}}}"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_39' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_systemManage_case_00007: test_systemManage_case_00007</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起output信息 -Findyou
+    <button id='btn_pt2_39' type="button"  class="btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_39'>通过</button>
+    <div id='div_pt2_39' class="collapse">  -->
+
+    <!-- 默认展开output信息 -Findyou -->
+    <button id='btn_pt2_39' type="button"  class="btn-xs" data-toggle="collapse" data-target='#div_pt2_39'>通过</button>
+    <div id='div_pt2_39' class="collapse in">
+    <pre>
+    
+pt2_39: 时间设置-修改NTP校时为手动校时
+Received '{"Method":"SetConfig","Page":"TimeSet","RetCode":0,"Message":"OK!"}'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='total_row' class="text-center info">
+    <td>总计</td>
+    <td>42</td>
+    <td>42</td>
+    <td>0</td>
+    <td>0</td>
+    <td>通过率：100.00%</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+    <div style=" position:fixed;right:50px; bottom:30px; width:20px; height:20px;cursor:pointer">
+    <a href="#"><span class="glyphicon glyphicon-eject" style = "font-size:30px;" aria-hidden="true">
+    </span></a></div>
+    
+<script language="javascript" type="text/javascript">
+output_list = Array();
+// 修改按钮颜色显示错误问题 --Findyou v0.8.2.3
+
+$("button[id^='btn_pt']").addClass("btn btn-success");
+$("button[id^='btn_ft']").addClass("btn btn-danger");
+$("button[id^='btn_et']").addClass("btn btn-warning");
+
+/*level
+增加分类并调整，增加error按钮事件 --Findyou v0.8.2.3
+0:Pass    //pt none, ft hiddenRow, et hiddenRow
+1:Failed  //pt hiddenRow, ft none, et hiddenRow
+2:Error    //pt hiddenRow, ft hiddenRow, et none
+3:All     //pt none, ft none, et none
+4:Summary //all hiddenRow
+*/
+
+//add Error button event --Findyou v0.8.2.3
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level == 0 || level == 2 || level == 4 ) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level == 1 || level == 2 || level == 4) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'et') {
+            if (level == 0 || level == 1 || level == 4) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+    }
+
+    //加入【详细】切换文字变化 --Findyou
+    detail_class=document.getElementsByClassName('detail');
+	//console.log(detail_class.length)
+	if (level == 3) {
+		for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="收起"
+		}
+	}
+	else{
+			for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="详细"
+		}
+	}
+}
+
+//add Error button event --Findyou v0.8.2.3
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '_' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        if (!tr) {
+            tid = 'e' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        //修改点击无法收起的BUG，加入【详细】切换文字变化 --Findyou
+        if (toHide) {
+            document.getElementById(tid).className = 'hiddenRow';
+            document.getElementById(cid).innerText = "详细"
+        }
+        else {
+            document.getElementById(tid).className = '';
+            document.getElementById(cid).innerText = "收起"
+        }
+    }
+}
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+</script>
+</body>
+</html>

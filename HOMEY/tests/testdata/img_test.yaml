@@ -1,0 +1,18 @@
+-
+  url : https://10.58.122.61:447/api/v1/1/staffs/librarys/
+  method : post  # 请求方式
+  detail :
+  header:
+  cookie:
+  is_json :
+  data:  # 请求数据
+    assess_token :
+    camera_uuid :
+    image :
+    image_name :
+    time :
+    day_night :
+    face_body :
+  check:  # 检查点
+      -
+      -

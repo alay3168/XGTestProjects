@@ -1,0 +1,109 @@
+-
+  url :  https://feidan.puppyrobot.com/feidan/api/caseread/list/case/case1
+  method : get  # 请求方式
+  detail : 获取全部渠道成交记录 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    orderBy: 1
+    class: all
+    pageSize: 10
+    currentPage: 1
+  check:  # 检查点
+     - errCode: 0
+     - errMsg: success
+-
+  url :  https://feidan.puppyrobot.com/feidan/api/caseread/list/case/case1
+  method : get  # 请求方式
+  detail : 获取疑似风险交易记录 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    orderBy: 1
+    class: risk
+    pageSize: 10
+    currentPage: 1
+  check:  # 检查点
+     - errCode: 0
+     - errMsg: success
+-
+  url :  https://feidan.puppyrobot.com/feidan/api/caseread/list/case/case1
+  method : get  # 请求方式
+  detail : 获取已处理交易记录-已判定有风险 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    orderBy: 1
+    class: confirm1
+    pageSize: 10
+    currentPage: 1
+  check:  # 检查点
+     - errCode: 0
+     - errMsg: success
+-
+  url :  https://feidan.puppyrobot.com/feidan/api/caseread/list/case/case1
+  method : get  # 请求方式
+  detail : 获取已处理交易记录-已判定无风险 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    orderBy: 1
+    class: confirm2
+    pageSize: 10
+    currentPage: 1
+  check:  # 检查点
+     - errCode: 0
+     - errMsg: success
+-
+  url :  https://feidan.puppyrobot.com/feidan/api/caseread/noCapture/case/case1
+  method : get  # 请求方式
+  detail : 获取未识别客户-刷证后未匹配到访抓拍客户 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    orderBy: 1
+    pageSize: 10
+    currentPage: 1
+  check:  # 检查点
+     - errCode: 0
+     - errMsg: success
+-
+  url :  https://feidan.puppyrobot.com/feidan/api/caseread/noIdentity/case/case1
+  method : get  # 请求方式
+  detail : 获取未识别客户-已有交易信息但未刷证客户 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    orderBy: 1
+    pageSize: 10
+    currentPage: 1
+  check:  # 检查点
+     - errCode: 0
+     - errMsg: success
+-
+  url :  https://feidan.puppyrobot.com/feidan/api/caseread/noTrade/case/case1
+  method : get  # 请求方式
+  detail : 获取未识别客户-已刷证但未关联交易客户 # 用例描述
+  header:
+    content-type: application/json
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    orderBy: 1
+    pageSize: 10
+    currentPage: 1
+  check:  # 检查点
+     - errCode: 0
+     - errMsg: success

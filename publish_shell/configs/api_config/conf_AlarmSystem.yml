@@ -1,0 +1,58 @@
+version: "2"
+services:
+  web:
+    baseip: 0.0.0.0
+    port: 9005
+    nsqdtcpaddr: nsqd2:4150
+    xgfaceaddr: xgface:50000
+    xgindexaddr: xgindex_2:50002   #staff用50002 alarm用50002
+    staffaddr: StaffRepository:9003
+    warningsaddr: AlarmSystem:9005
+    detectbodyaddr: BodyDetect:8999
+    deadline: 5
+    year: 5
+    alarmIntervalMinute: 5 #报警间隔几分钟出现一次
+  image:
+#    imgbasepath: ./
+    imgbasepath: /home/root/image
+    accessbasepath: /cameraimages
+    faceimgpath: /camera/face/
+    errimgpath: /camera/err/
+    mainimgpath: /camera/original/
+    facefilepath: /camera/facefile/
+    peopleimgpath: /staff/
+#    peopleimgpath: ./
+  mysql:
+    user: puppy
+    password: "123456"
+    host: mysql:3306
+    database: xgface
+  redis:
+    user: root
+    password: ""
+    host: redis:6379
+  facialSensitivity:
+    slack: #宽松
+#      pitch: 60
+#      yaw: 60
+#      roll: 60
+#      globalIsFace: 0.5
+#      globalFrontFace: 0.5
+#      localIsFace: 0.5
+      boxScore: 0.7
+    general:
+#      pitch: 30
+#      yaw: 30
+#      roll: 30
+#      globalIsFace: 0.6
+#      globalFrontFace: 0.6
+#      localIsFace: 0.6
+      boxScore: 0.8
+    strict: #严格
+#      pitch: 20
+#      yaw: 20
+#      roll: 20
+#      globalIsFace: 0.7
+#      globalFrontFace: 0.7
+#      localIsFace: 0.7
+      boxScore: 0.95

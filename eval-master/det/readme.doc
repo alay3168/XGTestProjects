@@ -1,0 +1,154 @@
+﻿1.语言：python3
+
+2.环境：需要安装的python库有
+(1) numpy
+(2) json
+(3) xmltodict
+(4) terminaltables
+(5) os
+(6) h5py
+(7) matplotlib
+
+3.数据准备：
+(1) 每张图片检测结果results与 groundtruth的对应关系（txt文件）
+         txt文件格式如下图所示：
+         
+         每行代表一张图片，内容分别是图片的检测结果的res与gt文档的相对路径
+
+(2) 图片的检测结果为txt格式，每张图片的检测结果单独存入一个txt文件中，txt文件格式如下图所示：
+          
+         txt格式说明： 每行表示一个检测框的信息，依次为x1,y1,x2,y2,category_id,score。各项之
+                                     间用空格隔开，含义如下：
+                                      x1:检测框左上角x坐标
+                                      y1:检测框左上角坐标
+                                      x2:检测框右下角x坐标
+                                      y2:检测框右下角坐标
+                                      category_id:检测框所检测物体的类别编号
+                                      score:检测得分（置信水平得分）
+
+(3) groundtruth标注信息格式：xml格式或者h5格式
+         a. xml格式的groundtruth信息,xml格式如下图所示
+         
+
+         b. h5格式的groundtruth信息
+         h5格式的标注信息，框的格式为(x1,y1,x2,y2)
+
+
+4.使用说明：
+使用时所有需要修改的参数均在config.py中：
+
+(1) txt_file:
+
+例如：txt_file = './data/res_gt-without_cas.txt'
+
+(2) root_path: 
+
+例如：root_path = '/media/clx/DATA/chelixuan/chelixuan_2019/eval_universal/'
+
+(3) _ind_to_cate:
+
+例如：_ind_to_cate = {0: 'person_normal', 1: 'visperson_normal', 2: 'person_cycling', 3: 'person_others', 4: 'visperson_cycling'}
+
+(4) all_iou_thr:
+
+例如：all_iou_thr = [0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9]
+
+(5) pr_curve:
+
+例如：pr_curve=True
+
+
+(6) pr_precision: 
+
+例如：pr_precision=[0.7,0.8,0.9,0.99]
+
+(7) image_file:
+
+例如：image_file = '/media/clx/DATA/chelixuan/ped/data/'
+
+(8) if_vil:
+
+例如：if_vil = True
+
+(9) vil_iou: 
+
+例如：vil_iou = [0.4,0.8]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+在使用该检测代码时，根据自己的数据在main.py中对以下参数进行修改：
+(1) txt_file 改为输入的检测结果与groundtruth对应关系的txt文档的地址。可以是相对于main.py的相对路径，也可以是输入的txt文档的绝对路径。
+例如：txt_file = './data/test.txt'
+
+(2) root_path 为数据根目录的地址。输入的txt_file中的内容为检测结果与groundtruth的相对路径，这个相对路径与根目录的地址合并起来要能够找到相应的检测结果文件/groundtruth标注文件。
+例如：
+root_path = '/media/clx/DATA/chelixuan/chelixuan_2019/eval_universial/'
+我的txt_file内容的一行为：
+data/res/00000012.txt  data/gt/00000012.xml
+那么要求可以在/media/clx/DATA/chelixuan/chelixuan_2019/eval_universial/data/res/00000012.txt的路径能够找到00000012.txt文档。
+
+(3) _ind_to_cate 为category种类与编号的对应关系，要求格式是字典。
+例如：我的数据所有的类别对应关系为
+{0: 'person_normal', 1: 'visperson_normal', 2: 'person_cycling', 3: 'person_others', 4: 'visperson_cycling'}
+如果我想检测所有类别的ap值，则可将这个字典直接赋给_ind_to_cate即可，如果我只关心'person_normal'这个类别，那么我的_ind_to_cate可以设置为：
+_ind_to_cate = {0: 'person_normal'}
+
+(4) all_iou_thr 为想要检测ap的iou阈值，格式为列表。
+例如：all_iou_thr = [0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.8,0.85,0.9]
+(5) 调用main(pr_curve=***)与pr_precision
+分两种情况：
+a.不需要画出pr曲线：这时只需要在调用main函数时将pr_curve的参数设置为False即可，即直接调用main(pr_curve=False)即可，无需考虑pr_precision参数的情况；
+b.需要画出pr曲线：这时调用main函数时，需要将pr_curve的参数设置为True，pr_precision为列表格式，列表的值表示的是画出的pr曲线上标注出准确率与召回率的点的准确率的数值。
+例如： 我设置pr_precision = [0.8,0.9,0.99]画出的pr曲线如下图所示：
+
+
+pr曲线图说明：
+	-1- 横坐标为presion—准确率，纵坐标为recall—召回率；
+	-2- 标示坐标值说明：如（0.99，0.57）表示在0.99的准确率即1%的误检时召回率为0.57；
+	-3- pr曲线的标题为该pr曲线的类别名与iou的阈值，如本图检测框与groundtruth的框的iou大
+                于0.4表示正确检测出person_normal这个类别，否则则认为没有检测出这个类别；
+	-4- 右上角为该类别在该阈值情况下的ap值 
+
+
+
+完成以上修改之后，直接运行main.py即可。
+

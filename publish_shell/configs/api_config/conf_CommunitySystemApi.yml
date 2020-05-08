@@ -1,0 +1,28 @@
+version: "2"
+services:
+  web:
+    host: 0.0.0.0:9000
+    baseip: 0.0.0.0 
+    nsqdtcpaddr: nsqd:4150
+    xgfaceaddr: xgface:50000
+    xgindexaddr: xgindex_1:50001
+    deadline: 5
+    logfilter: 5 
+  image:
+    imgbasepath: /home/root/image
+    faceimgpath: /camera/face/
+    errimgpath: /camera/err/
+    mainimgpath: /camera/original/
+    facefilepath: /camera/facefile/
+    peopleimgpath: /Community/
+  mysql:
+    user: puppy 
+    password: "123456"
+    host: mysql:3306
+    database: xgface 
+  redis:
+    user: root
+    password: ""
+    host: redis:6379
+  storage:
+    diskpath: /home/root/image

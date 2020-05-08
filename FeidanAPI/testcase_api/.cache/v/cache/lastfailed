@@ -1,0 +1,8 @@
+{
+  "login.py::LoginCase": true, 
+  "login.py::LoginCase::test_login_case": true, 
+  "test_Cardface.py::FeidanTestCase::test_cardface_case_00001_error": true, 
+  "test_CaseRead.py::CaseListCase::test_caseread_case_00001_error": true, 
+  "test_SearchFace.py::CaseListCase::test_FaceSearch_case_00001": true, 
+  "test_cardface.py::FeidanTestCase": true
+}

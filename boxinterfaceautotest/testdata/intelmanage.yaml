@@ -1,0 +1,771 @@
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-最小抓拍人脸设置30*30 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 1
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 30
+        Roll: 30
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.215:8000
+  detail : 智能管理-设置后获取设置信息 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - GetConfig
+     - FaceDetect
+     - !!str 30
+     - !!str 0
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-最小抓拍人脸设置60*60 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 1
+        Enable: true
+        Interval: 1000
+        PicSize: 1
+        Pitch: 30
+        Roll: 30
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.215:8000
+  detail : 智能管理-设置后获取设置信息 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - GetConfig
+     - FaceDetect
+     - !!str 30
+     - !!str 1
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-最小抓拍人脸设置100*100 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 1
+        Enable: true
+        Interval: 1000
+        PicSize: 2
+        Pitch: 30
+        Roll: 30
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+    - FaceDetect
+    - SetConfig
+    - OK!
+-
+  url : ws://10.58.122.215:8000
+  detail : 智能管理-设置后获取设置信息 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - GetConfig
+     - FaceDetect
+     - !!str 30
+     - !!str 2
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-图片推送间隔设置为0秒 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 1
+        Enable: true
+        Interval: 0
+        PicSize: 0
+        Pitch: 30
+        Roll: 30
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-图片推送间隔设置为1秒 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 1
+        Enable: true
+        Interval: 1
+        PicSize: 0
+        Pitch: 30
+        Roll: 30
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-图片推送间隔设置为2秒 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 1
+        Enable: true
+        Interval: 2
+        PicSize: 0
+        Pitch: 30
+        Roll: 30
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-图片推送间隔设置为999秒 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 1
+        Enable: true
+        Interval: 999
+        PicSize: 0
+        Pitch: 30
+        Roll: 30
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-图片推送间隔设置为1000秒 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 1
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 30
+        Roll: 30
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-图片推送间隔设置为1001秒 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 1
+        Enable: true
+        Interval: 1001
+        PicSize: 0
+        Pitch: 30
+        Roll: 30
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.215:8000
+  detail : 智能管理-设置后获取设置信息 # 用例描述
+  header:
+    content-type: application/json
+  data:  # 请求数据
+    Method: GetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - GetConfig
+     - FaceDetect
+     - !!str 1001
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-图片推送次数设置为0次 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 0
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 30
+        Roll: 30
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-图片推送次数设置为1次 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 1
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 30
+        Roll: 30
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-图片推送次数设置为2次 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 30
+        Roll: 30
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-水平偏转角度设置为-1 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 30
+        Roll: 30
+        Yaw: -1
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - Invalid argument
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-水平偏转角度设置为0 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 30
+        Roll: 30
+        Yaw: 0
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-水平偏转角度设置为1 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 30
+        Roll: 30
+        Yaw: 1
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-水平偏转角度设置为59 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 30
+        Roll: 30
+        Yaw: 59
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-水平偏转角度设置为60 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 30
+        Roll: 30
+        Yaw: 60
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-水平偏转角度设置为61 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 30
+        Roll: 30
+        Yaw: 61
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-俯仰偏转角度设置为-1 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: -1
+        Roll: 30
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - Invalid argument
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-俯仰偏转角度设置为0 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 0
+        Roll: 30
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-俯仰偏转角度设置为1 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 1
+        Roll: 30
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-俯仰偏转角度设置为59 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 59
+        Roll: 30
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-俯仰偏转角度设置为60 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 60
+        Roll: 30
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-俯仰偏转角度设置为61 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 61
+        Roll: 30
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置- 水平倾斜角度设置为-1 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 30
+        Roll: -1
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - Invalid argument
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置- 水平倾斜角度设置为0 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 30
+        Roll: 0
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-水平倾斜角度设置为1 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 30
+        Roll: 1
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-水平倾斜角度设置为59 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 30
+        Roll: 59
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-水平倾斜角度设置为60 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 30
+        Roll: 60
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!
+-
+  url : ws://10.58.122.201:8000
+  detail : 智能管理-人脸抓拍设置-水平倾斜角度设置为61 # 用例描述
+  header:
+      content-type: application/json
+  data:  # 请求数据
+    Message:
+      FaceDetect-Properties:
+        Chn: -1
+        Count: 2
+        Enable: true
+        Interval: 1000
+        PicSize: 0
+        Pitch: 30
+        Roll: 61
+        Yaw: 30
+        blur: 80
+      profile-version: 1.0
+    Method: SetConfig
+    Page: FaceDetect
+  check:  # 检查点
+     - FaceDetect
+     - SetConfig
+     - OK!

@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0916.py", line 167, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=30)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+Traceback (most recent call last):
+  File "E:/PycharmProjects/XGTest/camera_nfs_upgrade0916.py", line 167, in cmd_res
+    tn = telnetlib.Telnet(ip, port=port, timeout=30)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 218, in __init__
+    self.open(host, port, timeout)
+  File "D:\Program Files\Python37\lib\telnetlib.py", line 234, in open
+    self.sock = socket.create_connection((host, port), timeout)
+  File "D:\Program Files\Python37\lib\socket.py", line 727, in create_connection
+    raise err
+  File "D:\Program Files\Python37\lib\socket.py", line 716, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。

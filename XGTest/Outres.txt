@@ -1,0 +1,5 @@
+ mpstat;exit
+Linux 4.9.37 (xgai)     12/03/19        _aarch64_       (4 CPU)
+
+16:31:04     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest   %idle
+16:31:04     all    1.96    0.00    5.49    0.00    0.00    0.74    0.00    0.00   91.81

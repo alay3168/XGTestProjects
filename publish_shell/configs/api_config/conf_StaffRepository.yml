@@ -1,0 +1,21 @@
+version: "2"
+services:
+  common: 
+    {
+      baseip: 0.0.0.0, port: 9003, xgfaceaddr: xgface:50000, deadline: 5,
+      logLevel: "DebugLevel",  #PanicLevel FatalLevel ErrorLevel WarnLevel InfoLevel DebugLevel TraceLevel
+      homeycasename: ["homey1"],
+      feidancasename: [],
+    }
+  case:
+    - name: "homey1"
+      mysql: { host: mysql:3306, user: "puppy", password: "123456", database: "xgface", gormlogmode: true }
+      redis: { host: redis:6379, user: "root", password: "" }
+      staff:
+        defaultlibrary: ["黑名单"]
+        xgindexaddr: xgindex_2:50002
+        staffhold: 0.65 #人员库查找的阈值
+        imgbasepath: /home/root/image  # 图片保存的路径前缀  /home1/image
+        accessbasepath: /cameraimages  # 图片外部访问的路径前缀
+        facefilepath: /camera/facefile/    #人员图片保存的路径
+        peopleimgpath: /staff/   #人员的xlsx保存在这里 ./

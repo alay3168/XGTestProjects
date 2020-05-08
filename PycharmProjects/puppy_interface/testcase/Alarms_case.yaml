@@ -1,0 +1,40 @@
+-
+  url : http://10.58.122.61:84/api/v1/1/alarms/events/confs
+  method : put  # 请求方式
+  detail : 事件规则配置信息 # 用例描述
+  header:
+  cookie:
+  is_json : True
+  data:  # 请求数据
+    data:
+      - {name: blacklistSensitivity, value: '2'}
+      - {name: bodyFallSensitivity, value: '2'}
+      - {name: bodyFallFrequency, value: '10'}
+      - {name: childAloneSensitivity, value: '2'}
+      - {name: childAloneFrequency, value: '10'}
+      - {name: doubtSensitivity, value: '2'}
+      - {name: doubtType, value: '2'}
+      - {name: longrepeatStatus, value: '2'}
+      - {name: longrepeatDay, value: '7'}
+      - {name: longrepeatThreshold, value: '3'}
+      - {name: longstayStatus, value: '1'}
+      - {name: longstayThreshold, value: '5'}
+      - {name: shorttrackStatus, value: '1'}
+      - {name: shorttrackHour, value: '2'}
+      - {name: shorttrackCamera, value: '2'}
+      - {name: hotspotMale, value: '0'}
+      - {name: hotspotFemale, value: '0'}
+      - {name: hotspotChild, value: '0'}
+      - {name: hotspotAdolescence, value: '0'}
+      - {name: hotspotMidlife, value: '0'}
+      - {name: hotspotSenium, value: '0'}
+      - {name: hotspotHat, value: '0'}
+      - {name: hotspotHatless, value: '0'}
+      - {name: hotspoWithglasses, value: '0'}
+      - {name: hotspotWithoutglasses, value: '0'}
+
+  check:  # 检查点
+      - data
+      - bodyFallSensitivity
+      - bodyFallFrequency
+
